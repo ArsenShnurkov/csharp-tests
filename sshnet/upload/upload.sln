@@ -5,13 +5,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "upload", "upload\upload.csp
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x86 = Debug|x86
-		Release|x86 = Release|x86
+		Debug = Debug
+		Release = Release
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{578F7BD4-EB83-4F57-9F9E-5E074634E5D5}.Debug|x86.ActiveCfg = Debug|x86
-		{578F7BD4-EB83-4F57-9F9E-5E074634E5D5}.Debug|x86.Build.0 = Debug|x86
-		{578F7BD4-EB83-4F57-9F9E-5E074634E5D5}.Release|x86.ActiveCfg = Release|x86
-		{578F7BD4-EB83-4F57-9F9E-5E074634E5D5}.Release|x86.Build.0 = Release|x86
+		{578F7BD4-EB83-4F57-9F9E-5E074634E5D5}.Debug.ActiveCfg = Debug
+		{578F7BD4-EB83-4F57-9F9E-5E074634E5D5}.Debug.Build.0 = Debug
+		{578F7BD4-EB83-4F57-9F9E-5E074634E5D5}.Release.ActiveCfg = Release
+		{578F7BD4-EB83-4F57-9F9E-5E074634E5D5}.Release.Build.0 = Release
 	EndGlobalSection
 EndGlobal
