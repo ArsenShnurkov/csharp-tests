@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8" />
+<title>Проблема установки msbuild с сервера бинарных файлов</title>
+</head>
+<body>
+<pre>
+<span style="color:red;font-weight:bold;">localhost</span><span style="color:blue;font-weight:bold;"> /home/user #</span> emerge -av 1 GK microsoft-net-sdk
+merge
+Local copy of remote index is up-to-date and will be used.
+
+<span style="color:green;font-weight:bold;">Local copy of remote index is up-to-date and will be used.</span>
+
+<span style="color:green;">These are the packages that would be merged, in order:</span>
+
+Calculating dependencies   ... done!
+[<span style="color:purple;">binary</span>  <span style="color:green;font-weight:bold;">N</span>     ] <span style="color:purple;">dev-dotnet/microsoft-net-sdk-2.1.300::shnurise</span>  USE=&quot;<span style="color:red;font-weight:bold;">msbuild</span> <span style="color:blue;font-weight:bold;">-net45</span>&quot; MSBUILD_TARGETS=&quot;<span style="color:red;font-weight:bold;">msbuild15-9</span> <span style="color:blue;font-weight:bold;">-msbuild15-4</span> <span style="color:blue;font-weight:bold;">-msbuild15-7</span>&quot; 0 KiB
+
+Total: 1 package (1 new, 1 binary), Size of downloads: 0 KiB
+
+<span style="font-weight:bold;">Would you like to merge these packages?</span> [<span style="color:green;font-weight:bold;">Yes</span>/<span style="color:red;font-weight:bold;">No</span>] yes
+
+&gt;&gt;&gt; Emerging binary (<span style="color:olive;font-weight:bold;">1</span> of <span style="color:olive;font-weight:bold;">1</span>) <span style="color:purple;">dev-dotnet/microsoft-net-sdk-2.1.300::shnurise</span>
+<span style="color:green;font-weight:bold;"> * </span>microsoft-net-sdk-2.1.300.tbz2 MD5 SHA1 size ;-) ...                  <span style="color:blue;font-weight:bold;">[ </span><span style="color:green;font-weight:bold;">ok</span><span style="color:blue;font-weight:bold;"> ]</span>
+merge: (1 of 1) dev-dotnet/microsoft-net-sdk-2.1.300 Merge Binary&gt;&gt;&gt; Extracting info
+ <span style="color:red;font-weight:bold;">*</span> ERROR: dev-dotnet/microsoft-net-sdk-2.1.300::shnurise failed (setup phase):
+ <span style="color:red;font-weight:bold;">*</span>   __eapi7_ver_compare: invalid version: 
+ <span style="color:red;font-weight:bold;">*</span> 
+ <span style="color:red;font-weight:bold;">*</span> Call stack:
+ <span style="color:red;font-weight:bold;">*</span>     ebuild.sh, line  125:  Called pkg_setup
+ <span style="color:red;font-weight:bold;">*</span>   environment, line  822:  Called dotnet_pkg_setup
+ <span style="color:red;font-weight:bold;">*</span>   environment, line  452:  Called ver_test '' '-gt' '4.5'
+ <span style="color:red;font-weight:bold;">*</span>   environment, line 1007:  Called __eapi7_ver_compare '' '4.5'
+ <span style="color:red;font-weight:bold;">*</span>   environment, line  242:  Called die
+ <span style="color:red;font-weight:bold;">*</span> The specific snippet of code:
+ <span style="color:red;font-weight:bold;">*</span>       [[ ${va} =~ ${re} ]] || die &quot;${FUNCNAME}: invalid version: ${va}&quot;;
+ <span style="color:red;font-weight:bold;">*</span> 
+ <span style="color:red;font-weight:bold;">*</span> If you need support, post the output of `emerge --info '=dev-dotnet/microsoft-net-sdk-2.1.300::shnurise'`,
+ <span style="color:red;font-weight:bold;">*</span> the complete build log and the output of `emerge -pqv '=dev-dotnet/microsoft-net-sdk-2.1.300::shnurise'`.
+ <span style="color:red;font-weight:bold;">*</span> The complete build log is located at '/var/tmp/portage/dev-dotnet/microsoft-net-sdk-2.1.300/temp/build.log'.
+ <span style="color:red;font-weight:bold;">*</span> The ebuild environment file is located at '/var/tmp/portage/dev-dotnet/microsoft-net-sdk-2.1.300/temp/environment'.
+ <span style="color:red;font-weight:bold;">*</span> Working directory: '/var/tmp/portage/dev-dotnet/microsoft-net-sdk-2.1.300/homedir'
+ <span style="color:red;font-weight:bold;">*</span> S: '/var/tmp/portage/dev-dotnet/microsoft-net-sdk-2.1.300/work/microsoft-net-sdk-2.1.300'
+
+&gt;&gt;&gt; <span style="color:red;font-weight:bold;">Failed</span> to emerge <span style="color:green;">dev-dotnet/microsoft-net-sdk-2.1.300</span>, Log file:
+
+&gt;&gt;&gt;  '<span style="color:green;">/var/tmp/portage/dev-dotnet/microsoft-net-sdk-2.1.300/temp/build.log</span>'
+
+<span style="color:green;font-weight:bold;"> * </span>Messages for package <span style="color:green;">dev-dotnet/microsoft-net-sdk-2.1.300</span>:
+
+<span style="color:red;font-weight:bold;"> * </span>ERROR: dev-dotnet/microsoft-net-sdk-2.1.300::shnurise failed (setup phase):
+<span style="color:red;font-weight:bold;"> * </span>  __eapi7_ver_compare: invalid version: 
+<span style="color:red;font-weight:bold;"> * </span>
+<span style="color:red;font-weight:bold;"> * </span>Call stack:
+<span style="color:red;font-weight:bold;"> * </span>    ebuild.sh, line  125:  Called pkg_setup
+<span style="color:red;font-weight:bold;"> * </span>  environment, line  822:  Called dotnet_pkg_setup
+<span style="color:red;font-weight:bold;"> * </span>  environment, line  452:  Called ver_test '' '-gt' '4.5'
+<span style="color:red;font-weight:bold;"> * </span>  environment, line 1007:  Called __eapi7_ver_compare '' '4.5'
+<span style="color:red;font-weight:bold;"> * </span>  environment, line  242:  Called die
+<span style="color:red;font-weight:bold;"> * </span>The specific snippet of code:
+<span style="color:red;font-weight:bold;"> * </span>      [[ ${va} =~ ${re} ]] || die &quot;${FUNCNAME}: invalid version: ${va}&quot;;
+<span style="color:red;font-weight:bold;"> * </span>
+<span style="color:red;font-weight:bold;"> * </span>If you need support, post the output of `emerge --info '=dev-dotnet/microsoft-net-sdk-2.1.300::shnurise'`,
+<span style="color:red;font-weight:bold;"> * </span>the complete build log and the output of `emerge -pqv '=dev-dotnet/microsoft-net-sdk-2.1.300::shnurise'`.
+<span style="color:red;font-weight:bold;"> * </span>The complete build log is located at '/var/tmp/portage/dev-dotnet/microsoft-net-sdk-2.1.300/temp/build.log'.
+<span style="color:red;font-weight:bold;"> * </span>The ebuild environment file is located at '/var/tmp/portage/dev-dotnet/microsoft-net-sdk-2.1.300/temp/environment'.
+<span style="color:red;font-weight:bold;"> * </span>Working directory: '/var/tmp/portage/dev-dotnet/microsoft-net-sdk-2.1.300/homedir'
+<span style="color:red;font-weight:bold;"> * </span>S: '/var/tmp/portage/dev-dotnet/microsoft-net-sdk-2.1.300/work/microsoft-net-sdk-2.1.300'
+</pre>
+
+</body>
+</html>
