@@ -2,11 +2,42 @@
 <head>
 <meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8" />
 <title>Проблема установки msbuild с сервера бинарных файлов</title>
+<style>
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+</style>
 </head>
 <body>
+Для начала хотелось бы установить то, что есть на текущий момент, однако не получается.
+<br />
+<br />
+<button type="button" class="collapsible">Ошибка: __eapi7_ver_compare: invalid version</button>
+
+<div class="content">
 <pre>
 <span style="color:red;font-weight:bold;">localhost</span><span style="color:blue;font-weight:bold;"> /home/user #</span> emerge -av 1 GK microsoft-net-sdk
-merge
+
 Local copy of remote index is up-to-date and will be used.
 
 <span style="color:green;font-weight:bold;">Local copy of remote index is up-to-date and will be used.</span>
@@ -67,6 +98,26 @@ merge: (1 of 1) dev-dotnet/microsoft-net-sdk-2.1.300 Merge Binary&gt;&gt;&gt; E
 <span style="color:red;font-weight:bold;"> * </span>Working directory: '/var/tmp/portage/dev-dotnet/microsoft-net-sdk-2.1.300/homedir'
 <span style="color:red;font-weight:bold;"> * </span>S: '/var/tmp/portage/dev-dotnet/microsoft-net-sdk-2.1.300/work/microsoft-net-sdk-2.1.300'
 </pre>
+</div>
+
+Разбираться с ней в принципе надо. Можно, конечно отложить, но... лучше сразу исправить.
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
+</script>
 
 </body>
 </html>
