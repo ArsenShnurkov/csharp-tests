@@ -1,0 +1,623 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8" />
+<title>Проблема со сборкой xsp</title>
+<link rel="stylesheet" href="../collapsable.css">
+</head>
+<body>
+<h1>Проблема со сборкой xsp</h1>
+
+<button type="button" class="collapsible">
+Access to the path '/Release/' is denied. 
+</button>
+<div class="content">
+<pre>
+# emerge xsp -v
+
+Calculating dependencies   - / / | - - \ / - | - - | / / / \ - - - \ \ \ | / | / - / / - | / | \ \ | \ - / | - \ | - | - \ - - / / \ - \ \ / - \ | - / - / | - | \ \ \ - / | \ / / \ \ / / | - | - \ | | / \ - | | - / | - / \ / \ / - - \ | - | | - / - | \ - - | \ | / | | \ - \ \ \ \ \ / | \ - \ \ | \ \ - | / - / \ / / | / \ | | / / \ | - / / | | \ - - | | \ - | | \ | \ \ \ \ \ - / / \ \ | - / / - | | / - | - | \ | - \ - |... done!
+[<span style="color:green;font-weight:bold;">ebuild</span>   <span style="color:olive;font-weight:bold;">R</span>    ] <span style="color:green;font-weight:bold;">www-servers/xsp-4.7.1::shnurise</span>  USE=&quot;<span style="color:red;font-weight:bold;">modmono</span> <span style="color:red;font-weight:bold;">net45</span> <span style="color:red;font-weight:bold;">systemd</span> <span style="color:red;font-weight:bold;">xsp</span> <span style="color:olive;font-weight:bold;">-debug</span>% <span style="color:olive;font-weight:bold;">-developer</span>% <span style="color:blue;font-weight:bold;">-doc</span> <span style="color:blue;font-weight:bold;">-examples</span> <span style="color:blue;font-weight:bold;">-fastcgi</span> <span style="color:blue;font-weight:bold;">-net35</span> <span style="color:blue;font-weight:bold;">-net40</span> <span style="color:blue;font-weight:bold;">-openrc</span> <span style="color:blue;font-weight:bold;">-test</span>&quot; 0 KiB
+
+Total: 1 package (1 reinstall), Size of downloads: 0 KiB
+
+
+&gt;&gt;&gt; Verifying ebuild manifests
+
+&gt;&gt;&gt; Emerging (<span style="color:olive;font-weight:bold;">1</span> of <span style="color:olive;font-weight:bold;">1</span>) <span style="color:green;">www-servers/xsp-4.7.1::shnurise</span>
+merge: (1 of 1) www-servers/xsp-4.7.1 Clean<span style="color:green;font-weight:bold;"> * </span>xsp-4.7.1.tar.gz SHA256 SHA512 WHIRLPOOL size ;-) ...                                                                                                                                            <span style="color:blue;font-weight:bold;">[ </span><span style="color:green;font-weight:bold;">ok</span><span style="color:blue;font-weight:bold;"> ]</span>
+merge: (1 of 1) www-servers/xsp-4.7.1 Compile <span style="color:green;font-weight:bold;">*</span>  -- USING .NET 4.5 FRAMEWORK -- 
+&gt;&gt;&gt; Unpacking source...
+&gt;&gt;&gt; Unpacking xsp-4.7.1.tar.gz to /var/tmp/portage/www-servers/xsp-4.7.1/work
+&gt;&gt;&gt; Source unpacked in /var/tmp/portage/www-servers/xsp-4.7.1/work
+&gt;&gt;&gt; Preparing source in /var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f ...
+ <span style="color:green;font-weight:bold;">*</span> Applying acme.patch ...
+ <span style="color:blue;font-weight:bold;">[ </span><span style="color:green;font-weight:bold;">ok</span><span style="color:blue;font-weight:bold;"> ]</span>
+ <span style="color:green;font-weight:bold;">*</span> Applying aclocal-fix.patch ...
+patching file Makefile.am
+Hunk #1 succeeded at 1 with fuzz 1.
+ <span style="color:blue;font-weight:bold;">[ </span><span style="color:green;font-weight:bold;">ok</span><span style="color:blue;font-weight:bold;"> ]</span>
+ <span style="color:green;font-weight:bold;">*</span> Running aclocal -I build/m4/shamrock -I build/m4/shave ...
+ <span style="color:blue;font-weight:bold;">[ </span><span style="color:green;font-weight:bold;">ok</span><span style="color:blue;font-weight:bold;"> ]</span>
+libtoolize: putting auxiliary files in '.'.
+libtoolize: copying file './ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'build/m4'.
+libtoolize: copying file 'build/m4/libtool.m4'
+libtoolize: copying file 'build/m4/ltoptions.m4'
+libtoolize: copying file 'build/m4/ltsugar.m4'
+libtoolize: copying file 'build/m4/ltversion.m4'
+libtoolize: copying file 'build/m4/lt~obsolete.m4'
+libtoolize: Consider adding '-I build/m4' to ACLOCAL_AMFLAGS in Makefile.am.
+ <span style="color:green;font-weight:bold;">*</span> Running autoconf ...
+ <span style="color:blue;font-weight:bold;">[ </span><span style="color:green;font-weight:bold;">ok</span><span style="color:blue;font-weight:bold;"> ]</span>
+ <span style="color:green;font-weight:bold;">*</span> Running automake --add-missing --copy --force-missing --gnu --add-missing --force --copy ...
+ <span style="color:blue;font-weight:bold;">[ </span><span style="color:green;font-weight:bold;">ok</span><span style="color:blue;font-weight:bold;"> ]</span>
+&gt;&gt;&gt; Source prepared.
+&gt;&gt;&gt; Configuring source in /var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f ...
+ * econf: updating xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/config.sub with /usr/share/gnuconfig/config.sub
+ * econf: updating xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/config.guess with /usr/share/gnuconfig/config.guess
+./configure --prefix=/usr --build=x86_64-pc-linux-gnu --host=x86_64-pc-linux-gnu --mandir=/usr/share/man --infodir=/usr/share/info --datadir=/usr/share --sysconfdir=/etc --localstatedir=/var/lib --disable-dependency-tracking --disable-silent-rules --docdir=/usr/share/doc/xsp-4.7.1 --htmldir=/usr/share/doc/xsp-4.7.1/html --with-sysroot=/ --libdir=/usr/lib64 --enable-maintainer-mode
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking target system type... x86_64-pc-linux-gnu
+checking for a BSD-compatible install... /usr/lib/portage/python3.7/ebuild-helpers/xattr/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether to enable maintainer-specific portions of Makefiles... yes
+checking for gawk... (cached) gawk
+checking how to print strings... printf
+checking whether make supports the include directive... yes (GNU style)
+checking for x86_64-pc-linux-gnu-gcc... x86_64-pc-linux-gnu-gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether x86_64-pc-linux-gnu-gcc accepts -g... yes
+checking for x86_64-pc-linux-gnu-gcc option to accept ISO C89... none needed
+checking whether x86_64-pc-linux-gnu-gcc understands -c and -o together... yes
+checking dependency style of x86_64-pc-linux-gnu-gcc... none
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by x86_64-pc-linux-gnu-gcc... /usr/x86_64-pc-linux-gnu/bin/ld
+checking if the linker (/usr/x86_64-pc-linux-gnu/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/x86_64-pc-linux-gnu-nm -B
+checking the name lister (/usr/bin/x86_64-pc-linux-gnu-nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/x86_64-pc-linux-gnu/bin/ld option to reload object files... -r
+checking for x86_64-pc-linux-gnu-objdump... x86_64-pc-linux-gnu-objdump
+checking how to recognize dependent libraries... pass_all
+checking for x86_64-pc-linux-gnu-dlltool... no
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for x86_64-pc-linux-gnu-ar... x86_64-pc-linux-gnu-ar
+checking for archiver @FILE support... @
+checking for x86_64-pc-linux-gnu-strip... x86_64-pc-linux-gnu-strip
+checking for x86_64-pc-linux-gnu-ranlib... x86_64-pc-linux-gnu-ranlib
+checking command to parse /usr/bin/x86_64-pc-linux-gnu-nm -B output from x86_64-pc-linux-gnu-gcc object... ok
+checking for sysroot... /
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for x86_64-pc-linux-gnu-mt... no
+checking for mt... no
+checking if : is a manifest tool... no
+checking how to run the C preprocessor... x86_64-pc-linux-gnu-gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if x86_64-pc-linux-gnu-gcc supports -fno-rtti -fno-exceptions... no
+checking for x86_64-pc-linux-gnu-gcc option to produce PIC... -fPIC -DPIC
+checking if x86_64-pc-linux-gnu-gcc PIC flag -fPIC -DPIC works... yes
+checking if x86_64-pc-linux-gnu-gcc static flag -static works... yes
+checking if x86_64-pc-linux-gnu-gcc supports -c -o file.o... yes
+checking if x86_64-pc-linux-gnu-gcc supports -c -o file.o... (cached) yes
+checking whether the x86_64-pc-linux-gnu-gcc linker (/usr/x86_64-pc-linux-gnu/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for send... yes
+checking for recv... yes
+checking for bind... yes
+checking for listen... yes
+checking for accept... yes
+checking for chmod... yes
+checking for unlink... yes
+checking for fork... yes
+checking for execv... yes
+checking for exit... yes
+checking for getpid... yes
+checking for getuid... yes
+checking for geteuid... yes
+checking for getgid... yes
+checking for getegid... yes
+checking for setreuid... yes
+checking for setregid... yes
+checking for strlen... yes
+checking for strncpy... yes
+checking for strncmp... yes
+checking for printf... yes
+checking for fprintf... yes
+checking for snprintf... yes
+checking for vprintf... yes
+checking for strftime... yes
+checking for time... yes
+checking for perror... yes
+checking for x86_64-pc-linux-gnu-pkg-config... /usr/bin/x86_64-pc-linux-gnu-pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for mono &gt;= 2.10.0... yes
+checking for dmcs... /usr/local/bin/dmcs
+checking for mono... /usr/local/bin/mono
+checking for gacutil... /usr/local/bin/gacutil
+checking for sn... /usr/local/bin/sn
+checking for Mono 4.5 GAC for System.Core.dll... found
+checking for Mono 4.5 GAC for System.Configuration.dll... found
+checking for Mono 4.5 GAC for System.Data.dll... found
+checking for Mono 4.5 GAC for System.Web.dll... found
+checking for Mono 4.5 GAC for Mono.Posix.dll... found
+checking for Mono 4.5 GAC for Mono.Security.dll... found
+checking for Mono 4.5 GAC for Mono.Data.Sqlite.dll... found
+checking for mdoc... /usr/local/bin/mdoc
+checking for sed... /bin/sed
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating build/Makefile
+config.status: creating build/m4/Makefile
+config.status: creating build/m4/shave/shave
+config.status: creating build/m4/shave/shave-libtool
+config.status: creating docs/Makefile
+config.status: creating docs/Mono.FastCGI/Makefile
+config.status: creating docs/Mono.WebServer/Makefile
+config.status: creating man/Makefile
+config.status: creating packaging/Makefile
+config.status: creating packaging/opensuse/Makefile
+config.status: creating scripts/Makefile
+config.status: creating lib/Makefile
+config.status: creating shim/Makefile
+config.status: creating src/Makefile
+config.status: creating src/Mono.WebServer.Apache/Makefile
+config.status: creating src/Mono.WebServer.FastCgi/Makefile
+config.status: creating src/Mono.WebServer.XSP/Makefile
+config.status: creating src/Mono.WebServer/Makefile
+config.status: creating src/Mono.WebServer.Fpm/Makefile
+config.status: creating test/1.1/Makefile
+config.status: creating test/1.1/asp.net/Makefile
+config.status: creating test/1.1/authtest/Makefile
+config.status: creating test/1.1/customcontrol/Makefile
+config.status: creating test/1.1/databind/Makefile
+config.status: creating test/1.1/handlers/Makefile
+config.status: creating test/1.1/html/Makefile
+config.status: creating test/1.1/webcontrols/Makefile
+config.status: creating test/1.1/webservice/Makefile
+config.status: creating test/2.0/Makefile
+config.status: creating test/2.0/gridview/Makefile
+config.status: creating test/2.0/masterpages/Makefile
+config.status: creating test/2.0/menu/Makefile
+config.status: creating test/2.0/treeview/Makefile
+config.status: creating test/App_Code/Makefile
+config.status: creating test/Makefile
+config.status: creating test/controls/Makefile
+config.status: creating tools/Makefile
+config.status: creating tools/asp_state/Makefile
+config.status: creating tools/dbsessmgr/Makefile
+config.status: creating tools/mono-asp-apps/Makefile
+config.status: creating unittests/Makefile
+config.status: creating unittests/Tests.XSP.Security/Makefile
+config.status: creating unittests/webroot/Makefile
+config.status: creating xsp.spec
+config.status: creating man/xsp.1
+config.status: creating man/dbsessmgr.1
+config.status: creating man/asp-state.1
+config.status: creating man/mono-asp-apps.1
+config.status: creating src/Mono.WebServer/AssemblyInfo2.cs
+config.status: creating src/Mono.WebServer/AssemblyInfo4.cs
+config.status: creating src/Mono.WebServer.Apache/AssemblyInfo.cs
+config.status: creating src/Mono.WebServer.FastCgi/AssemblyInfo.cs
+config.status: creating src/Mono.WebServer.Fpm/AssemblyInfo.cs
+config.status: creating src/Mono.WebServer.XSP/AssemblyInfo.cs
+config.status: creating src/Mono.WebServer.XSP/xsp.pc
+config.status: creating src/Mono.WebServer.XSP/xsp-2.pc
+config.status: creating src/Mono.WebServer.XSP/xsp-4.pc
+config.status: creating tools/asp_state/AssemblyInfo.cs
+config.status: creating tools/dbsessmgr/AssemblyInfo.cs
+config.status: executing depfiles commands
+config.status: executing libtool commands
+
+xsp-4.7.1
+
+  Build Environment
+    Install prefix:          /usr
+    Datadir:                 /usr/share
+    Libdir:                  /usr/lib64
+    Build documentation:     yes
+    Mono compiler:           /usr/local/bin/dmcs
+    Target frameworks:       .NET 4.5
+    Build SQLite samples:    yes
+&gt;&gt;&gt; Source configured.
+&gt;&gt;&gt; Compiling source in /var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f ...
+ <span style="color:green;font-weight:bold;">*</span> /p:Configuration=Release /p:DebugSymbols=False xsp.sln
+Microsoft (R) Build Engine version 15.9.20.62856 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Building the projects in this solution one at a time. To enable parallel build, please add the &quot;/m&quot; switch.
+Build started 10/23/2020 09:24:22.
+Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; on node 1 (default targets).
+ValidateSolutionConfiguration:
+  Building solution configuration &quot;Release|Any CPU&quot;.
+Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (1) is building &quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/Mono.WebServer.csproj&quot; (2) on node 1 (default targets).
+PrepareForBuild:
+  Creating directory &quot;bin/Release/&quot;.
+  Creating directory &quot;/Release/&quot;.
+ <span style="color:red;font-weight:bold;">*</span> <span style="color:red;font-weight:bold;">ACCESS DENIED</span>:  mkdir:        /Release
+/usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1128,5): warning MSB3191: Unable to create directory &quot;/Release/&quot;. Access to the path '/Release/' is denied. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/Mono.WebServer.csproj]
+  The previous error was converted to a warning because the task was called with ContinueOnError=true.
+  Build continuing because &quot;ContinueOnError&quot; on the task &quot;MakeDir&quot; is set to &quot;True&quot;.
+ <span style="color:red;font-weight:bold;">*</span> <span style="color:red;font-weight:bold;">ACCESS DENIED</span>:  open_wr:      /Release\Mono.WebServer.csprojAssemblyReference.cache
+/usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(2110,5): warning MSB3101: Could not write state file &quot;/Release\Mono.WebServer.csprojAssemblyReference.cache&quot;. Access to the path &quot;/Release\Mono.WebServer.csprojAssemblyReference.cache&quot; is denied. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/Mono.WebServer.csproj]
+/usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(3430,5): error MSB3491: Could not write lines to file &quot;/Release/Mono.WebServer.csproj.CoreCompileInputs.cache&quot;. Could not find a part of the path &quot;/Release/Mono.WebServer.csproj.CoreCompileInputs.cache&quot;. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/Mono.WebServer.csproj]
+_CleanRecordFileWrites:
+  Creating directory &quot;/Release/&quot;.
+ <span style="color:red;font-weight:bold;">*</span> <span style="color:red;font-weight:bold;">ACCESS DENIED</span>:  mkdir:        /Release
+/usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(5103,5): error MSB3191: Unable to create directory &quot;/Release/&quot;. Access to the path '/Release/' is denied. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/Mono.WebServer.csproj]
+Done Building Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/Mono.WebServer.csproj&quot; (default targets) -- FAILED.
+Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (1) is building &quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Apache/Mono.WebServer.Apache.csproj&quot; (3) on node 1 (default targets).
+PrepareForBuild:
+  Creating directory &quot;bin/Release/&quot;.
+  Creating directory &quot;/Release/&quot;.
+ <span style="color:red;font-weight:bold;">*</span> <span style="color:red;font-weight:bold;">ACCESS DENIED</span>:  mkdir:        /Release
+/usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1128,5): warning MSB3191: Unable to create directory &quot;/Release/&quot;. Access to the path '/Release/' is denied. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Apache/Mono.WebServer.Apache.csproj]
+  The previous error was converted to a warning because the task was called with ContinueOnError=true.
+  Build continuing because &quot;ContinueOnError&quot; on the task &quot;MakeDir&quot; is set to &quot;True&quot;.
+/usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1657,5): error MSB4036: The &quot;GetReferenceNearestTargetFrameworkTask&quot; task was not found. Check the following: 1.) The name of the task in the project file is the same as the name of the task class. 2.) The task class is &quot;public&quot; and implements the Microsoft.Build.Framework.ITask interface. 3.) The task is correctly declared with &lt;UsingTask&gt; in the project file, or in the *.tasks files located in the &quot;/usr/share/msbuild/15.9&quot; directory. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Apache/Mono.WebServer.Apache.csproj]
+_CleanRecordFileWrites:
+  Creating directory &quot;/Release/&quot;.
+ <span style="color:red;font-weight:bold;">*</span> <span style="color:red;font-weight:bold;">ACCESS DENIED</span>:  mkdir:        /Release
+/usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(5103,5): error MSB3191: Unable to create directory &quot;/Release/&quot;. Access to the path '/Release/' is denied. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Apache/Mono.WebServer.Apache.csproj]
+Done Building Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Apache/Mono.WebServer.Apache.csproj&quot; (default targets) -- FAILED.
+Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (1) is building &quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/Mono.WebServer.FastCgi.csproj&quot; (4) on node 1 (default targets).
+PrepareForBuild:
+  Creating directory &quot;bin/Release/&quot;.
+  Creating directory &quot;/Release/&quot;.
+ <span style="color:red;font-weight:bold;">*</span> <span style="color:red;font-weight:bold;">ACCESS DENIED</span>:  mkdir:        /Release
+/usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1128,5): warning MSB3191: Unable to create directory &quot;/Release/&quot;. Access to the path '/Release/' is denied. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/Mono.WebServer.FastCgi.csproj]
+  The previous error was converted to a warning because the task was called with ContinueOnError=true.
+  Build continuing because &quot;ContinueOnError&quot; on the task &quot;MakeDir&quot; is set to &quot;True&quot;.
+/usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1657,5): error MSB4036: The &quot;GetReferenceNearestTargetFrameworkTask&quot; task was not found. Check the following: 1.) The name of the task in the project file is the same as the name of the task class. 2.) The task class is &quot;public&quot; and implements the Microsoft.Build.Framework.ITask interface. 3.) The task is correctly declared with &lt;UsingTask&gt; in the project file, or in the *.tasks files located in the &quot;/usr/share/msbuild/15.9&quot; directory. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/Mono.WebServer.FastCgi.csproj]
+_CleanRecordFileWrites:
+  Creating directory &quot;/Release/&quot;.
+ <span style="color:red;font-weight:bold;">*</span> <span style="color:red;font-weight:bold;">ACCESS DENIED</span>:  mkdir:        /Release
+/usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(5103,5): error MSB3191: Unable to create directory &quot;/Release/&quot;. Access to the path '/Release/' is denied. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/Mono.WebServer.FastCgi.csproj]
+Done Building Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/Mono.WebServer.FastCgi.csproj&quot; (default targets) -- FAILED.
+Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (1) is building &quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.XSP/Mono.WebServer.XSP.csproj&quot; (5) on node 1 (default targets).
+PrepareForBuild:
+  Creating directory &quot;bin/Release/&quot;.
+  Creating directory &quot;/Release/&quot;.
+ <span style="color:red;font-weight:bold;">*</span> <span style="color:red;font-weight:bold;">ACCESS DENIED</span>:  mkdir:        /Release
+/usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1128,5): warning MSB3191: Unable to create directory &quot;/Release/&quot;. Access to the path '/Release/' is denied. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.XSP/Mono.WebServer.XSP.csproj]
+  The previous error was converted to a warning because the task was called with ContinueOnError=true.
+  Build continuing because &quot;ContinueOnError&quot; on the task &quot;MakeDir&quot; is set to &quot;True&quot;.
+/usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1657,5): error MSB4036: The &quot;GetReferenceNearestTargetFrameworkTask&quot; task was not found. Check the following: 1.) The name of the task in the project file is the same as the name of the task class. 2.) The task class is &quot;public&quot; and implements the Microsoft.Build.Framework.ITask interface. 3.) The task is correctly declared with &lt;UsingTask&gt; in the project file, or in the *.tasks files located in the &quot;/usr/share/msbuild/15.9&quot; directory. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.XSP/Mono.WebServer.XSP.csproj]
+_CleanRecordFileWrites:
+  Creating directory &quot;/Release/&quot;.
+ <span style="color:red;font-weight:bold;">*</span> <span style="color:red;font-weight:bold;">ACCESS DENIED</span>:  mkdir:        /Release
+/usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(5103,5): error MSB3191: Unable to create directory &quot;/Release/&quot;. Access to the path '/Release/' is denied. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.XSP/Mono.WebServer.XSP.csproj]
+Done Building Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.XSP/Mono.WebServer.XSP.csproj&quot; (default targets) -- FAILED.
+Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (1) is building &quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj&quot; (6) on node 1 (default targets).
+PrepareForBuild:
+  Creating directory &quot;bin/Release/&quot;.
+  Creating directory &quot;/Release/&quot;.
+ <span style="color:red;font-weight:bold;">*</span> <span style="color:red;font-weight:bold;">ACCESS DENIED</span>:  mkdir:        /Release
+/usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1128,5): warning MSB3191: Unable to create directory &quot;/Release/&quot;. Access to the path '/Release/' is denied. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+  The previous error was converted to a warning because the task was called with ContinueOnError=true.
+  Build continuing because &quot;ContinueOnError&quot; on the task &quot;MakeDir&quot; is set to &quot;True&quot;.
+/usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1657,5): error MSB4036: The &quot;GetReferenceNearestTargetFrameworkTask&quot; task was not found. Check the following: 1.) The name of the task in the project file is the same as the name of the task class. 2.) The task class is &quot;public&quot; and implements the Microsoft.Build.Framework.ITask interface. 3.) The task is correctly declared with &lt;UsingTask&gt; in the project file, or in the *.tasks files located in the &quot;/usr/share/msbuild/15.9&quot; directory. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+_CleanRecordFileWrites:
+  Creating directory &quot;/Release/&quot;.
+ <span style="color:red;font-weight:bold;">*</span> <span style="color:red;font-weight:bold;">ACCESS DENIED</span>:  mkdir:        /Release
+/usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(5103,5): error MSB3191: Unable to create directory &quot;/Release/&quot;. Access to the path '/Release/' is denied. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+Done Building Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj&quot; (default targets) -- FAILED.
+Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (1) is building &quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Fpm/Mono.WebServer.Fpm.csproj&quot; (7:2) on node 1 (default targets).
+PrepareForBuild:
+  Creating directory &quot;bin/Release/&quot;.
+  Creating directory &quot;/Release/&quot;.
+ <span style="color:red;font-weight:bold;">*</span> <span style="color:red;font-weight:bold;">ACCESS DENIED</span>:  mkdir:        /Release
+/usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1128,5): warning MSB3191: Unable to create directory &quot;/Release/&quot;. Access to the path '/Release/' is denied. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Fpm/Mono.WebServer.Fpm.csproj]
+  The previous error was converted to a warning because the task was called with ContinueOnError=true.
+  Build continuing because &quot;ContinueOnError&quot; on the task &quot;MakeDir&quot; is set to &quot;True&quot;.
+/usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1657,5): error MSB4036: The &quot;GetReferenceNearestTargetFrameworkTask&quot; task was not found. Check the following: 1.) The name of the task in the project file is the same as the name of the task class. 2.) The task class is &quot;public&quot; and implements the Microsoft.Build.Framework.ITask interface. 3.) The task is correctly declared with &lt;UsingTask&gt; in the project file, or in the *.tasks files located in the &quot;/usr/share/msbuild/15.9&quot; directory. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Fpm/Mono.WebServer.Fpm.csproj]
+_CleanRecordFileWrites:
+  Creating directory &quot;/Release/&quot;.
+ <span style="color:red;font-weight:bold;">*</span> <span style="color:red;font-weight:bold;">ACCESS DENIED</span>:  mkdir:        /Release
+/usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(5103,5): error MSB3191: Unable to create directory &quot;/Release/&quot;. Access to the path '/Release/' is denied. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Fpm/Mono.WebServer.Fpm.csproj]
+Done Building Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Fpm/Mono.WebServer.Fpm.csproj&quot; (default targets) -- FAILED.
+Done Building Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default targets) -- FAILED.
+
+Build FAILED.
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/Mono.WebServer.csproj&quot; (default target) (2) -&gt;
+(PrepareForBuild target) -&gt; 
+  /usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1128,5): warning MSB3191: Unable to create directory &quot;/Release/&quot;. Access to the path '/Release/' is denied. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/Mono.WebServer.csproj]
+
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/Mono.WebServer.csproj&quot; (default target) (2) -&gt;
+(ResolveAssemblyReferences target) -&gt; 
+  /usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(2110,5): warning MSB3101: Could not write state file &quot;/Release\Mono.WebServer.csprojAssemblyReference.cache&quot;. Access to the path &quot;/Release\Mono.WebServer.csprojAssemblyReference.cache&quot; is denied. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/Mono.WebServer.csproj]
+
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Apache/Mono.WebServer.Apache.csproj&quot; (default target) (3) -&gt;
+(PrepareForBuild target) -&gt; 
+  /usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1128,5): warning MSB3191: Unable to create directory &quot;/Release/&quot;. Access to the path '/Release/' is denied. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Apache/Mono.WebServer.Apache.csproj]
+
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/Mono.WebServer.FastCgi.csproj&quot; (default target) (4) -&gt;
+  /usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1128,5): warning MSB3191: Unable to create directory &quot;/Release/&quot;. Access to the path '/Release/' is denied. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/Mono.WebServer.FastCgi.csproj]
+
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.XSP/Mono.WebServer.XSP.csproj&quot; (default target) (5) -&gt;
+  /usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1128,5): warning MSB3191: Unable to create directory &quot;/Release/&quot;. Access to the path '/Release/' is denied. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.XSP/Mono.WebServer.XSP.csproj]
+
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj&quot; (default target) (6) -&gt;
+  /usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1128,5): warning MSB3191: Unable to create directory &quot;/Release/&quot;. Access to the path '/Release/' is denied. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Fpm/Mono.WebServer.Fpm.csproj&quot; (default target) (7:2) -&gt;
+  /usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1128,5): warning MSB3191: Unable to create directory &quot;/Release/&quot;. Access to the path '/Release/' is denied. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Fpm/Mono.WebServer.Fpm.csproj]
+
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/Mono.WebServer.csproj&quot; (default target) (2) -&gt;
+(_GenerateCompileDependencyCache target) -&gt; 
+  /usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(3430,5): error MSB3491: Could not write lines to file &quot;/Release/Mono.WebServer.csproj.CoreCompileInputs.cache&quot;. Could not find a part of the path &quot;/Release/Mono.WebServer.csproj.CoreCompileInputs.cache&quot;. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/Mono.WebServer.csproj]
+
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/Mono.WebServer.csproj&quot; (default target) (2) -&gt;
+(_CleanRecordFileWrites target) -&gt; 
+  /usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(5103,5): error MSB3191: Unable to create directory &quot;/Release/&quot;. Access to the path '/Release/' is denied. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/Mono.WebServer.csproj]
+
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Apache/Mono.WebServer.Apache.csproj&quot; (default target) (3) -&gt;
+(_GetProjectReferenceTargetFrameworkProperties target) -&gt; 
+  /usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1657,5): error MSB4036: The &quot;GetReferenceNearestTargetFrameworkTask&quot; task was not found. Check the following: 1.) The name of the task in the project file is the same as the name of the task class. 2.) The task class is &quot;public&quot; and implements the Microsoft.Build.Framework.ITask interface. 3.) The task is correctly declared with &lt;UsingTask&gt; in the project file, or in the *.tasks files located in the &quot;/usr/share/msbuild/15.9&quot; directory. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Apache/Mono.WebServer.Apache.csproj]
+
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Apache/Mono.WebServer.Apache.csproj&quot; (default target) (3) -&gt;
+(_CleanRecordFileWrites target) -&gt; 
+  /usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(5103,5): error MSB3191: Unable to create directory &quot;/Release/&quot;. Access to the path '/Release/' is denied. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Apache/Mono.WebServer.Apache.csproj]
+
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/Mono.WebServer.FastCgi.csproj&quot; (default target) (4) -&gt;
+(_GetProjectReferenceTargetFrameworkProperties target) -&gt; 
+  /usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1657,5): error MSB4036: The &quot;GetReferenceNearestTargetFrameworkTask&quot; task was not found. Check the following: 1.) The name of the task in the project file is the same as the name of the task class. 2.) The task class is &quot;public&quot; and implements the Microsoft.Build.Framework.ITask interface. 3.) The task is correctly declared with &lt;UsingTask&gt; in the project file, or in the *.tasks files located in the &quot;/usr/share/msbuild/15.9&quot; directory. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/Mono.WebServer.FastCgi.csproj]
+
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/Mono.WebServer.FastCgi.csproj&quot; (default target) (4) -&gt;
+(_CleanRecordFileWrites target) -&gt; 
+  /usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(5103,5): error MSB3191: Unable to create directory &quot;/Release/&quot;. Access to the path '/Release/' is denied. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/Mono.WebServer.FastCgi.csproj]
+
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.XSP/Mono.WebServer.XSP.csproj&quot; (default target) (5) -&gt;
+(_GetProjectReferenceTargetFrameworkProperties target) -&gt; 
+  /usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1657,5): error MSB4036: The &quot;GetReferenceNearestTargetFrameworkTask&quot; task was not found. Check the following: 1.) The name of the task in the project file is the same as the name of the task class. 2.) The task class is &quot;public&quot; and implements the Microsoft.Build.Framework.ITask interface. 3.) The task is correctly declared with &lt;UsingTask&gt; in the project file, or in the *.tasks files located in the &quot;/usr/share/msbuild/15.9&quot; directory. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.XSP/Mono.WebServer.XSP.csproj]
+
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.XSP/Mono.WebServer.XSP.csproj&quot; (default target) (5) -&gt;
+(_CleanRecordFileWrites target) -&gt; 
+  /usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(5103,5): error MSB3191: Unable to create directory &quot;/Release/&quot;. Access to the path '/Release/' is denied. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.XSP/Mono.WebServer.XSP.csproj]
+
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj&quot; (default target) (6) -&gt;
+(_GetProjectReferenceTargetFrameworkProperties target) -&gt; 
+  /usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1657,5): error MSB4036: The &quot;GetReferenceNearestTargetFrameworkTask&quot; task was not found. Check the following: 1.) The name of the task in the project file is the same as the name of the task class. 2.) The task class is &quot;public&quot; and implements the Microsoft.Build.Framework.ITask interface. 3.) The task is correctly declared with &lt;UsingTask&gt; in the project file, or in the *.tasks files located in the &quot;/usr/share/msbuild/15.9&quot; directory. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj&quot; (default target) (6) -&gt;
+(_CleanRecordFileWrites target) -&gt; 
+  /usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(5103,5): error MSB3191: Unable to create directory &quot;/Release/&quot;. Access to the path '/Release/' is denied. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Fpm/Mono.WebServer.Fpm.csproj&quot; (default target) (7:2) -&gt;
+(_GetProjectReferenceTargetFrameworkProperties target) -&gt; 
+  /usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1657,5): error MSB4036: The &quot;GetReferenceNearestTargetFrameworkTask&quot; task was not found. Check the following: 1.) The name of the task in the project file is the same as the name of the task class. 2.) The task class is &quot;public&quot; and implements the Microsoft.Build.Framework.ITask interface. 3.) The task is correctly declared with &lt;UsingTask&gt; in the project file, or in the *.tasks files located in the &quot;/usr/share/msbuild/15.9&quot; directory. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Fpm/Mono.WebServer.Fpm.csproj]
+
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Fpm/Mono.WebServer.Fpm.csproj&quot; (default target) (7:2) -&gt;
+(_CleanRecordFileWrites target) -&gt; 
+  /usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(5103,5): error MSB3191: Unable to create directory &quot;/Release/&quot;. Access to the path '/Release/' is denied. [/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Fpm/Mono.WebServer.Fpm.csproj]
+
+    7 Warning(s)
+    12 Error(s)
+
+Time Elapsed 00:00:01.33
+ <span style="color:red;font-weight:bold;">*</span> ERROR: www-servers/xsp-4.7.1::shnurise failed (compile phase):
+ <span style="color:red;font-weight:bold;">*</span>   (no error message)
+ <span style="color:red;font-weight:bold;">*</span> 
+ <span style="color:red;font-weight:bold;">*</span> Call stack:
+ <span style="color:red;font-weight:bold;">*</span>     ebuild.sh, line  125:  Called src_compile
+ <span style="color:red;font-weight:bold;">*</span>   environment, line 2426:  Called emsbuild 'xsp.sln'
+ <span style="color:red;font-weight:bold;">*</span>   environment, line 1298:  Called emsbuild_raw '/p:Configuration=Release' '/p:DebugSymbols=False' 'xsp.sln'
+ <span style="color:red;font-weight:bold;">*</span>   environment, line 1303:  Called die
+ <span style="color:red;font-weight:bold;">*</span> The specific snippet of code:
+ <span style="color:red;font-weight:bold;">*</span>       msbuild &quot;$@&quot; || die
+ <span style="color:red;font-weight:bold;">*</span> 
+ <span style="color:red;font-weight:bold;">*</span> If you need support, post the output of `emerge --info '=www-servers/xsp-4.7.1::shnurise'`,
+ <span style="color:red;font-weight:bold;">*</span> the complete build log and the output of `emerge -pqv '=www-servers/xsp-4.7.1::shnurise'`.
+ <span style="color:red;font-weight:bold;">*</span> The complete build log is located at '/var/tmp/portage/www-servers/xsp-4.7.1/temp/build.log'.
+ <span style="color:red;font-weight:bold;">*</span> The ebuild environment file is located at '/var/tmp/portage/www-servers/xsp-4.7.1/temp/environment'.
+ <span style="color:red;font-weight:bold;">*</span> Working directory: '/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f'
+ <span style="color:red;font-weight:bold;">*</span> S: '/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f'
+ <span style="color:red;font-weight:bold;">*</span> --------------------------- ACCESS VIOLATION SUMMARY ---------------------------
+ <span style="color:red;font-weight:bold;">*</span> LOG FILE: &quot;/var/tmp/portage/www-servers/xsp-4.7.1/temp/sandbox.log&quot;
+ <span style="color:red;font-weight:bold;">*</span> 
+VERSION 1.0
+FORMAT: F - Function called
+FORMAT: S - Access Status
+FORMAT: P - Path as passed to function
+FORMAT: A - Absolute Path (not canonical)
+FORMAT: R - Canonical Path
+FORMAT: C - Command Line
+
+F: mkdir
+S: deny
+P: /Release
+A: /Release
+R: /Release
+C: /usr/bin/mono /usr/share/msbuild/15.9/MSBuild.exe /p:Configuration=Release /p:DebugSymbols=False xsp.sln 
+
+F: open_wr
+S: deny
+P: /Release\Mono.WebServer.csprojAssemblyReference.cache
+A: /Release\Mono.WebServer.csprojAssemblyReference.cache
+R: /Release\Mono.WebServer.csprojAssemblyReference.cache
+C: /usr/bin/mono /usr/share/msbuild/15.9/MSBuild.exe /p:Configuration=Release /p:DebugSymbols=False xsp.sln 
+
+F: mkdir
+S: deny
+P: /Release
+A: /Release
+R: /Release
+C: /usr/bin/mono /usr/share/msbuild/15.9/MSBuild.exe /p:Configuration=Release /p:DebugSymbols=False xsp.sln 
+
+F: mkdir
+S: deny
+P: /Release
+A: /Release
+R: /Release
+C: /usr/bin/mono /usr/share/msbuild/15.9/MSBuild.exe /p:Configuration=Release /p:DebugSymbols=False xsp.sln 
+
+F: mkdir
+S: deny
+P: /Release
+A: /Release
+R: /Release
+C: /usr/bin/mono /usr/share/msbuild/15.9/MSBuild.exe /p:Configuration=Release /p:DebugSymbols=False xsp.sln 
+
+F: mkdir
+S: deny
+P: /Release
+A: /Release
+R: /Release
+C: /usr/bin/mono /usr/share/msbuild/15.9/MSBuild.exe /p:Configuration=Release /p:DebugSymbols=False xsp.sln 
+
+F: mkdir
+S: deny
+P: /Release
+A: /Release
+R: /Release
+C: /usr/bin/mono /usr/share/msbuild/15.9/MSBuild.exe /p:Configuration=Release /p:DebugSymbols=False xsp.sln 
+
+F: mkdir
+S: deny
+P: /Release
+A: /Release
+R: /Release
+C: /usr/bin/mono /usr/share/msbuild/15.9/MSBuild.exe /p:Configuration=Release /p:DebugSymbols=False xsp.sln 
+
+F: mkdir
+S: deny
+P: /Release
+A: /Release
+R: /Release
+C: /usr/bin/mono /usr/share/msbuild/15.9/MSBuild.exe /p:Configuration=Release /p:DebugSymbols=False xsp.sln 
+
+F: mkdir
+S: deny
+P: /Release
+A: /Release
+R: /Release
+C: /usr/bin/mono /usr/share/msbuild/15.9/MSBuild.exe /p:Configuration=Release /p:DebugSymbols=False xsp.sln 
+
+F: mkdir
+S: deny
+P: /Release
+A: /Release
+R: /Release
+C: /usr/bin/mono /usr/share/msbuild/15.9/MSBuild.exe /p:Configuration=Release /p:DebugSymbols=False xsp.sln 
+
+F: mkdir
+S: deny
+P: /Release
+A: /Release
+R: /Release
+C: /usr/bin/mono /usr/share/msbuild/15.9/MSBuild.exe /p:Configuration=Release /p:DebugSymbols=False xsp.sln 
+
+F: mkdir
+S: deny
+P: /Release
+A: /Release
+R: /Release
+C: /usr/bin/mono /usr/share/msbuild/15.9/MSBuild.exe /p:Configuration=Release /p:DebugSymbols=False xsp.sln 
+ <span style="color:red;font-weight:bold;">*</span> --------------------------------------------------------------------------------
+
+&gt;&gt;&gt; <span style="color:red;font-weight:bold;">Failed</span> to emerge <span style="color:green;">www-servers/xsp-4.7.1</span>, Log file:
+
+&gt;&gt;&gt;  '<span style="color:green;">/var/tmp/portage/www-servers/xsp-4.7.1/temp/build.log</span>'
+
+<span style="color:green;font-weight:bold;"> * </span>Messages for package <span style="color:green;">www-servers/xsp-4.7.1</span>:
+
+<span style="color:green;font-weight:bold;"> * </span>/p:Configuration=Release /p:DebugSymbols=False xsp.sln
+<span style="color:red;font-weight:bold;"> * </span>ERROR: www-servers/xsp-4.7.1::shnurise failed (compile phase):
+<span style="color:red;font-weight:bold;"> * </span>  (no error message)
+<span style="color:red;font-weight:bold;"> * </span>
+<span style="color:red;font-weight:bold;"> * </span>Call stack:
+<span style="color:red;font-weight:bold;"> * </span>    ebuild.sh, line  125:  Called src_compile
+<span style="color:red;font-weight:bold;"> * </span>  environment, line 2426:  Called emsbuild 'xsp.sln'
+<span style="color:red;font-weight:bold;"> * </span>  environment, line 1298:  Called emsbuild_raw '/p:Configuration=Release' '/p:DebugSymbols=False' 'xsp.sln'
+<span style="color:red;font-weight:bold;"> * </span>  environment, line 1303:  Called die
+<span style="color:red;font-weight:bold;"> * </span>The specific snippet of code:
+<span style="color:red;font-weight:bold;"> * </span>      msbuild &quot;$@&quot; || die
+<span style="color:red;font-weight:bold;"> * </span>
+<span style="color:red;font-weight:bold;"> * </span>If you need support, post the output of `emerge --info '=www-servers/xsp-4.7.1::shnurise'`,
+<span style="color:red;font-weight:bold;"> * </span>the complete build log and the output of `emerge -pqv '=www-servers/xsp-4.7.1::shnurise'`.
+<span style="color:red;font-weight:bold;"> * </span>The complete build log is located at '/var/tmp/portage/www-servers/xsp-4.7.1/temp/build.log'.
+<span style="color:red;font-weight:bold;"> * </span>The ebuild environment file is located at '/var/tmp/portage/www-servers/xsp-4.7.1/temp/environment'.
+<span style="color:red;font-weight:bold;"> * </span>Working directory: '/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f'
+<span style="color:red;font-weight:bold;"> * </span>S: '/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f'
+</pre>
+</div>
+
+<script type="text/javascript" src="../collapsable.js" ></script>
+<script type="text/javascript">
+	page_process();
+</script>
+</body>
+</html>
