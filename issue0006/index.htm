@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8" />
+<title>Проблема с элементом ProjectReference</title>
+<link rel="stylesheet" href="../collapsable.css">
+</head>
+<body>
+<h1>Проблема с элементом ProjectReference</h1>
+
+<button type="button" class="collapsible">
+Microsoft.Common.CurrentVersion.targets(1657,5): error MSB4036: The &quot;GetReferenceNearestTargetFrameworkTask&quot; task was not found.
+</button>
+<div class="content">
+$ msbuild /p:Configuration=Release /p:DebugSymbols=False xsp.sln
+<pre>
+Microsoft (R) Build Engine version 15.9.20.62856 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Building the projects in this solution one at a time. To enable parallel build, please add the &quot;/m&quot; switch.
+Build started 23.10.2020 18:09:40.
+Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; on node 1 (default targets).
+<span style="color:black;background-color:white;">ValidateSolutionConfiguration:
+  Building solution configuration &quot;Release|Any CPU&quot;.
+Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (1) is building &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/Mono.WebServer.csproj&quot; (2) on node 1 (default targets).
+/usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(3325,5): warning MSB3491: Could not write lines to file &quot;/tmp/.NETFramework,Version=v4.0.AssemblyAttributes.cs&quot;. Access to the path &quot;/tmp/.NETFramework,Version=v4.0.AssemblyAttributes.cs&quot; is denied. [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/Mono.WebServer.csproj]
+  The previous error was converted to a warning because the task was called with ContinueOnError=true.
+  Build continuing because &quot;ContinueOnError&quot; on the task &quot;WriteLinesToFile&quot; is set to &quot;true&quot;.
+CoreCompile:
+Skipping target &quot;CoreCompile&quot; because all output files are up-to-date with respect to the input files.
+CopyFilesToOutputDirectory:
+  Mono.WebServer -&gt; /var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/bin/Release/Mono.WebServer.dll
+Done Building Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/Mono.WebServer.csproj&quot; (default targets).
+Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (1) is building &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Apache/Mono.WebServer.Apache.csproj&quot; (3) on node 1 (default targets).
+/usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1657,5): error MSB4036: The &quot;GetReferenceNearestTargetFrameworkTask&quot; task was not found. Check the following: 1.) The name of the task in the project file is the same as the name of the task class. 2.) The task class is &quot;public&quot; and implements the Microsoft.Build.Framework.ITask interface. 3.) The task is correctly declared with &lt;UsingTask&gt; in the project file, or in the *.tasks files located in the &quot;/usr/share/msbuild/15.9&quot; directory. [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Apache/Mono.WebServer.Apache.csproj]
+Done Building Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Apache/Mono.WebServer.Apache.csproj&quot; (default targets) -- FAILED.
+Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (1) is building &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/Mono.WebServer.FastCgi.csproj&quot; (4) on node 1 (default targets).
+/usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1657,5): error MSB4036: The &quot;GetReferenceNearestTargetFrameworkTask&quot; task was not found. Check the following: 1.) The name of the task in the project file is the same as the name of the task class. 2.) The task class is &quot;public&quot; and implements the Microsoft.Build.Framework.ITask interface. 3.) The task is correctly declared with &lt;UsingTask&gt; in the project file, or in the *.tasks files located in the &quot;/usr/share/msbuild/15.9&quot; directory. [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/Mono.WebServer.FastCgi.csproj]
+Done Building Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/Mono.WebServer.FastCgi.csproj&quot; (default targets) -- FAILED.
+Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (1) is building &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.XSP/Mono.WebServer.XSP.csproj&quot; (5) on node 1 (default targets).
+/usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1657,5): error MSB4036: The &quot;GetReferenceNearestTargetFrameworkTask&quot; task was not found. Check the following: 1.) The name of the task in the project file is the same as the name of the task class. 2.) The task class is &quot;public&quot; and implements the Microsoft.Build.Framework.ITask interface. 3.) The task is correctly declared with &lt;UsingTask&gt; in the project file, or in the *.tasks files located in the &quot;/usr/share/msbuild/15.9&quot; directory. [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.XSP/Mono.WebServer.XSP.csproj]
+Done Building Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.XSP/Mono.WebServer.XSP.csproj&quot; (default targets) -- FAILED.
+Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (1) is building &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj&quot; (6) on node 1 (default targets).
+/usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1657,5): error MSB4036: The &quot;GetReferenceNearestTargetFrameworkTask&quot; task was not found. Check the following: 1.) The name of the task in the project file is the same as the name of the task class. 2.) The task class is &quot;public&quot; and implements the Microsoft.Build.Framework.ITask interface. 3.) The task is correctly declared with &lt;UsingTask&gt; in the project file, or in the *.tasks files located in the &quot;/usr/share/msbuild/15.9&quot; directory. [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+Done Building Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj&quot; (default targets) -- FAILED.
+Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (1) is building &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Fpm/Mono.WebServer.Fpm.csproj&quot; (7:2) on node 1 (default targets).
+/usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1657,5): error MSB4036: The &quot;GetReferenceNearestTargetFrameworkTask&quot; task was not found. Check the following: 1.) The name of the task in the project file is the same as the name of the task class. 2.) The task class is &quot;public&quot; and implements the Microsoft.Build.Framework.ITask interface. 3.) The task is correctly declared with &lt;UsingTask&gt; in the project file, or in the *.tasks files located in the &quot;/usr/share/msbuild/15.9&quot; directory. [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Fpm/Mono.WebServer.Fpm.csproj]
+Done Building Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Fpm/Mono.WebServer.Fpm.csproj&quot; (default targets) -- FAILED.
+Done Building Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default targets) -- FAILED.
+
+Build FAILED.
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/Mono.WebServer.csproj&quot; (default target) (2) -&gt;
+(GenerateTargetFrameworkMonikerAttribute target) -&gt; 
+  /usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(3325,5): warning MSB3491: Could not write lines to file &quot;/tmp/.NETFramework,Version=v4.0.AssemblyAttributes.cs&quot;. Access to the path &quot;/tmp/.NETFramework,Version=v4.0.AssemblyAttributes.cs&quot; is denied. [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/Mono.WebServer.csproj]
+
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Apache/Mono.WebServer.Apache.csproj&quot; (default target) (3) -&gt;
+(_GetProjectReferenceTargetFrameworkProperties target) -&gt; 
+  /usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1657,5): error MSB4036: The &quot;GetReferenceNearestTargetFrameworkTask&quot; task was not found. Check the following: 1.) The name of the task in the project file is the same as the name of the task class. 2.) The task class is &quot;public&quot; and implements the Microsoft.Build.Framework.ITask interface. 3.) The task is correctly declared with &lt;UsingTask&gt; in the project file, or in the *.tasks files located in the &quot;/usr/share/msbuild/15.9&quot; directory. [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Apache/Mono.WebServer.Apache.csproj]
+
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/Mono.WebServer.FastCgi.csproj&quot; (default target) (4) -&gt;
+  /usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1657,5): error MSB4036: The &quot;GetReferenceNearestTargetFrameworkTask&quot; task was not found. Check the following: 1.) The name of the task in the project file is the same as the name of the task class. 2.) The task class is &quot;public&quot; and implements the Microsoft.Build.Framework.ITask interface. 3.) The task is correctly declared with &lt;UsingTask&gt; in the project file, or in the *.tasks files located in the &quot;/usr/share/msbuild/15.9&quot; directory. [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/Mono.WebServer.FastCgi.csproj]
+
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.XSP/Mono.WebServer.XSP.csproj&quot; (default target) (5) -&gt;
+  /usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1657,5): error MSB4036: The &quot;GetReferenceNearestTargetFrameworkTask&quot; task was not found. Check the following: 1.) The name of the task in the project file is the same as the name of the task class. 2.) The task class is &quot;public&quot; and implements the Microsoft.Build.Framework.ITask interface. 3.) The task is correctly declared with &lt;UsingTask&gt; in the project file, or in the *.tasks files located in the &quot;/usr/share/msbuild/15.9&quot; directory. [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.XSP/Mono.WebServer.XSP.csproj]
+
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj&quot; (default target) (6) -&gt;
+  /usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1657,5): error MSB4036: The &quot;GetReferenceNearestTargetFrameworkTask&quot; task was not found. Check the following: 1.) The name of the task in the project file is the same as the name of the task class. 2.) The task class is &quot;public&quot; and implements the Microsoft.Build.Framework.ITask interface. 3.) The task is correctly declared with &lt;UsingTask&gt; in the project file, or in the *.tasks files located in the &quot;/usr/share/msbuild/15.9&quot; directory. [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Fpm/Mono.WebServer.Fpm.csproj&quot; (default target) (7:2) -&gt;
+  /usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1657,5): error MSB4036: The &quot;GetReferenceNearestTargetFrameworkTask&quot; task was not found. Check the following: 1.) The name of the task in the project file is the same as the name of the task class. 2.) The task class is &quot;public&quot; and implements the Microsoft.Build.Framework.ITask interface. 3.) The task is correctly declared with &lt;UsingTask&gt; in the project file, or in the *.tasks files located in the &quot;/usr/share/msbuild/15.9&quot; directory. [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Fpm/Mono.WebServer.Fpm.csproj]
+
+    1 Warning(s)
+    5 Error(s)
+
+Time Elapsed 00:00:02.20
+</span>
+</pre>
+</div>
+
+<a href="https://stackoverflow.com/questions/47797510/the-getreferencenearesttargetframeworktask-task-was-not-found">https://stackoverflow.com/questions/47797510/the-getreferencenearesttargetframeworktask-task-was-not-found</a>
+<br />
+<br />
+<font style="color:red">А как так вообще получается, что требуется NuGet? Только что ведь без него собиралось. Отключить его никак нельзя?</font>
+<br />
+Это разные проекты.
+<br />
+Собирается .dll-ка src/Mono.WebServer/Mono.WebServer.csproj
+<br />
+а не собираются все остальные пять проектов, в частности src/Mono.WebServer.Apache/Mono.WebServer.Apache.csproj
+<br />
+<br />
+Я сравнивал их при помощи meld
+<br />
+<br />
+но существенной разницы не увидел (ну, кроме того, что они exe), да и то не все:
+<br />
+# find . -iname "*.csproj" -print0 | xargs -0 grep OutputType
+<pre>
+./src/Mono.WebServer/Mono.WebServer.csproj:    &lt;OutputType&gt;Library&lt;/OutputType&gt;
+./src/Mono.WebServer.Test/Mono.WebServer.Test.csproj:    &lt;OutputType&gt;Library&lt;/OutputType&gt;
+./src/Mono.WebServer.Apache/Mono.WebServer.Apache.csproj:    &lt;OutputType&gt;Exe&lt;/OutputType&gt;
+./src/Mono.WebServer.XSP/Mono.WebServer.XSP.csproj:    &lt;OutputType&gt;Exe&lt;/OutputType&gt;
+./src/Mono.WebServer.Fpm/Mono.WebServer.Fpm.csproj:    &lt;OutputType&gt;Exe&lt;/OutputType&gt;
+./src/Mono.WebServer.FastCgi/Mono.WebServer.FastCgi.csproj:    &lt;OutputType&gt;Exe&lt;/OutputType&gt;
+</pre>
+
+Зато во всех них есть ProjectReference:
+<br />
+# find . -iname "*.csproj" -print0 | xargs -0 grep -nil ProjectReference
+<pre>
+./src/Mono.WebServer.Apache/Mono.WebServer.Apache.csproj
+./src/Mono.WebServer.XSP/Mono.WebServer.XSP.csproj
+./src/Mono.WebServer.Fpm/Mono.WebServer.Fpm.csproj
+./src/Mono.WebServer.Test/Mono.WebServer.Test.csproj
+./src/Mono.WebServer.FastCgi/Mono.WebServer.FastCgi.csproj
+</pre>
+<br />
+<a href="https://github.com/dotnet/msbuild/blob/88f5fadfbef809b7ed2689f72319b7d91792460e/src/Tasks/Microsoft.Common.CurrentVersion.targets#L1657">https://github.com/dotnet/msbuild/blob/88f5fadfbef809b7ed2689f72319b7d91792460e/src/Tasks/Microsoft.Common.CurrentVersion.targets#L1657</a>
+
+
+<script type="text/javascript" src="../collapsable.js"></script>
+<script type="text/javascript">
+	page_process();
+</script>
+
+</body>
+</html>

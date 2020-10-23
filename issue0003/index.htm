@@ -2,11 +2,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8" />
-<title>Проблема со сборкой xsp</title>
+<title>Проблема с вычислением значения переменной MSBuildExtensionsPath</title>
 <link rel="stylesheet" href="../collapsable.css">
 </head>
 <body>
-<h1>Проблема со сборкой xsp</h1>
+<h1>Проблема с вычислением значения переменной MSBuildExtensionsPath</h1>
 
 <button type="button" class="collapsible">
 /usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(1128,5): warning MSB3191: Unable to create directory "/Release/".
@@ -4392,7 +4392,11 @@ class BuildEnvironment
 Когда собирается msbuild.exe, ему туда передаются полные пути.
 И эти пути записываются в его манифест (наверное).
 А затем при запуске он загружает сборки по этим путям, вместо того, чтобы искать их в директории ./bin
-
+<br />
+<br />
+Проблема более или менее временно разрешилась, после установки значения 
+<br />
+MSBuildExtensionsPath в конфигурационном файле вручную принудительно.
 
 <script type="text/javascript" src="../collapsable.js" ></script>
 <script type="text/javascript">
