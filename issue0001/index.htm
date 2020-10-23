@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8" />
 <title>Проблема установки msbuild с сервера бинарных файлов</title>
@@ -33,12 +33,9 @@
 <br />
 <br />
 <button type="button" class="collapsible">Ошибка: __eapi7_ver_compare: invalid version</button>
-
 <div class="content">
 <pre>
-<span style="color:red;font-weight:bold;">localhost</span><span style="color:blue;font-weight:bold;"> /home/user #</span> emerge -av 1 GK microsoft-net-sdk
-
-Local copy of remote index is up-to-date and will be used.
+<span style="color:red;font-weight:bold;">localhost</span><span style="color:blue;font-weight:bold;"> /home/user #</span> emerge -av1GK microsoft-net-sdk
 
 <span style="color:green;font-weight:bold;">Local copy of remote index is up-to-date and will be used.</span>
 
@@ -101,6 +98,1223 @@ merge: (1 of 1) dev-dotnet/microsoft-net-sdk-2.1.300 Merge Binary&gt;&gt;&gt; E
 </div>
 
 Разбираться с ней в принципе надо. Можно, конечно отложить, но... лучше сразу исправить.
+
+<button type="button" class="collapsible">Список файлов, устанавливаемых билдом</button>
+<div class="content">
+# equery files =dev-dotnet/microsoft-net-sdk-2.1.300
+<pre>
+ * Searching for microsoft-net-sdk2.1.300 in dev-dotnet ...
+ * Contents of dev-dotnet/microsoft-net-sdk-2.1.300:
+/usr
+/usr/share
+/usr/share/msbuild
+/usr/share/msbuild/15.9
+/usr/share/msbuild/15.9/Sdks
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/sdk
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/sdk/Sdk.props
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/sdk/Sdk.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/GenerateDeps
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/GenerateDeps/GenerateDeps.proj
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.ComposeStore.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.ConflictResolution.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.CrossGen.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.DefaultAssemblyInfo.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.DefaultOutputPaths.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.DefaultPackageConflictOverrides.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.DisableStandardFrameworkResolution.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.GenerateAssemblyInfo.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.NuGetOfflineCache.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.ObsoleteReferences.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.PackTool.props
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.PackTool.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.PreserveCompilationContext.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Publish.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.RuntimeIdentifierInference.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.BeforeCommon.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.BeforeCommonCrossTargeting.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.CSharp.props
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.CSharp.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.Common.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.CrossTargeting.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.FSharp.props
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.FSharp.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.FSharpTargetsShim.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.VisualBasic.props
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.VisualBasic.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.props
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.SupportedTargetFrameworks.props
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.TargetFrameworkInference.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.PackageDependencyResolution.targets
+</pre>
+</div>
+
+<button type="button" class="collapsible">Как выглядит файл /var/tmp/portage/dev-dotnet/microsoft-net-sdk-2.1.300/temp/environment</button>
+<div class="content">
+<pre>
+declare -x A="microsoft-net-sdk-2.1.300.tar.gz"
+declare -x ABI="amd64"
+declare -x ABI_MIPS=""
+declare -x ABI_PPC=""
+declare -x ABI_RISCV=""
+declare -x ABI_S390=""
+declare -x ABI_X86="64"
+declare -x ADA_TARGET=""
+declare -x ALSA_CARDS=""
+declare -x ANT_HOME="/usr/share/ant"
+declare -x APACHE2_MODULES=""
+declare -x APACHE2_MPMS=""
+declare -- APPENDIX=""
+declare -x ARCH="amd64"
+declare -- BDEPEND=""
+declare -x BOOTSTRAP_USE="unicode internal-glib pkg-config split-usr python_targets_python3_7 python_targets_python2_7 multilib systemd udev"
+declare -x CALLIGRA_FEATURES=""
+declare -x CAMERAS=""
+declare -x CBUILD="x86_64-pc-linux-gnu"
+declare -x CFLAGS="-O2 -pipe"
+declare -x CFLAGS_amd64="-m64"
+declare -x CFLAGS_x32="-mx32"
+declare -x CFLAGS_x86="-m32"
+declare -x CHOST="x86_64-pc-linux-gnu"
+declare -x CHOST_amd64="x86_64-pc-linux-gnu"
+declare -x CHOST_x32="x86_64-pc-linux-gnux32"
+declare -x CHOST_x86="i686-pc-linux-gnu"
+declare -x COLLECTD_PLUGINS=""
+declare -- COMMON_DEPEND=">=dev-lang/mono-4.0.2.5
+"
+declare -x COMMON_FLAGS="-O2 -pipe"
+declare -x CPU_FLAGS_ARM=""
+declare -x CPU_FLAGS_PPC=""
+declare -x CPU_FLAGS_X86=""
+declare -x CURL_SSL=""
+declare -x CXXFLAGS="-O2 -pipe"
+declare -x DEFAULT_ABI="amd64"
+declare -x DEFINED_PHASES=" compile install prepare setup"
+declare -- DEPEND=">=dev-lang/mono-4.0.2.5
+
+  dev-dotnet/msbuild-tasks-api"
+declare -- DESCRIPTION="'Microsoft.NET.Sdk' for msbuild"
+declare -x DIROPTIONS="-m0755"
+declare -x EAPI="7"
+declare -- EBF="4.5"
+declare -- EBUILD_FRAMEWORK="4.5"
+declare -- EGIT_COMMIT="4908e1f6d532cb823b6889816c49fb5134b0278c"
+declare -x ELIBC="glibc"
+declare -x ENLIGHTENMENT_MODULES=""
+declare -x ENV_UNSET="CARGO_HOME DBUS_SESSION_BUS_ADDRESS DISPLAY GOBIN GOPATH PERL5LIB PERL5OPT PERLPREFIX PERL_CORE PERL_MB_OPT PERL_MM_OPT XAUTHORITY XDG_CACHE_HOME XDG_CONFIG_HOME XDG_DATA_HOME XDG_RUNTIME_DIR"
+declare -- EPOCHREALTIME="1603336993.948656"
+declare -- EPOCHSECONDS="1603336993"
+declare -x EXEOPTIONS="-m0755"
+declare -x FCFLAGS="-O2 -pipe"
+declare -x FETCHCOMMAND_SSH="bash -c \"x=\\\${2#ssh://} ; host=\\\${x%%/*} ; port=\\\${host##*:} ; host=\\\${host%:*} ; [[ \\\${host} = \\\${port} ]] && port= ; exec rsync --rsh=\\\"ssh \\\${port:+-p\\\${port}} \\\${3}\\\" -avP \\\"\\\${host}:/\\\${x#*/}\\\" \\\"\\\$1\\\"\" rsync \"\${DISTDIR}/\${FILE}\" \"\${URI}\" \"\${PORTAGE_SSH_OPTS}\""
+declare -x FFLAGS="-O2 -pipe"
+declare -x FFTOOLS=""
+declare -x FLTK_DOCDIR="/usr/share/doc/fltk-1.3.5-r4/html"
+declare -- FRAMEWORK="4.5"
+declare -x GCC_SPECS=""
+declare -- GITHUB_ACCOUNT="dotnet"
+declare -- GITHUB_REPONAME="sdk"
+declare -x GPSD_PROTOCOLS=""
+declare -x GRUB_PLATFORMS=""
+declare -x GSETTINGS_BACKEND="dconf"
+declare -- HOMEPAGE="https://github.com/dotnet/sdk/"
+declare -x INHERITED=" msbuild-framework edos2unix l10n wrapper eutils mono-env dotnet-native dotnet"
+declare -x INPUT_DEVICES=""
+declare -x INSOPTIONS="-m0644"
+declare -- IUSE="net45  msbuild_targets_msbuild15-9 msbuild_targets_msbuild15-7 msbuild_targets_msbuild15-4 +msbuild  net45"
+declare -x IUSE_EFFECTIVE="abi_x86_64 alpha amd64 amd64-fbsd amd64-linux arm arm64 elibc_AIX elibc_Cygwin elibc_Darwin elibc_DragonFly elibc_FreeBSD elibc_HPUX elibc_Interix elibc_NetBSD elibc_OpenBSD elibc_SunOS elibc_Winnt elibc_bionic elibc_glibc elibc_mingw elibc_mintlib elibc_musl elibc_uclibc hppa ia64 kernel_AIX kernel_Darwin kernel_FreeBSD kernel_HPUX kernel_NetBSD kernel_OpenBSD kernel_SunOS kernel_Winnt kernel_freemint kernel_linux m68k m68k-mint mips msbuild msbuild_targets_msbuild15-4 msbuild_targets_msbuild15-7 msbuild_targets_msbuild15-9 net45 ppc ppc-aix ppc-macos ppc64 ppc64-linux prefix prefix-guest prefix-stack riscv s390 sparc sparc-solaris sparc64-solaris userland_BSD userland_GNU x64-cygwin x64-macos x64-solaris x64-winnt x86 x86-cygwin x86-fbsd x86-linux x86-macos x86-solaris x86-winnt"
+declare -x IUSE_IMPLICIT="abi_x86_64 prefix prefix-guest prefix-stack"
+declare -x JAVAC="/etc/java-config-2/current-system-vm/bin/javac"
+declare -x JAVA_HOME="/etc/java-config-2/current-system-vm"
+declare -x JDK_HOME="/etc/java-config-2/current-system-vm"
+declare -x KERNEL="linux"
+declare -x KEYWORDS="amd64"
+declare -x L10N=""
+declare -x LANG="ru_RU.utf8"
+declare -x LANGUAGE="en_US.UTF-8"
+declare -x LCD_DEVICES=""
+declare -x LC_COLLATE="C"
+declare -x LC_MESSAGES="C"
+declare -x LDFLAGS="-Wl,-O1 -Wl,--as-needed"
+declare -x LDFLAGS_amd64="-m elf_x86_64"
+declare -x LDFLAGS_x32="-m elf32_x86_64"
+declare -x LDFLAGS_x86="-m elf_i386"
+declare -x LIBDIR_amd64="lib64"
+declare -x LIBDIR_x32="libx32"
+declare -x LIBDIR_x86="lib"
+declare -x LIBOPTIONS="-m0644"
+declare -x LIBREOFFICE_EXTENSIONS=""
+declare -x LICENSE="MIT"
+declare -x LIRC_DEVICES=""
+declare -x LLVM_TARGETS=""
+declare -x MAIL="/var/mail/root"
+declare -x MAKEOPTS="-j4"
+declare -x MANPAGER="manpager"
+declare -x MONKEYD_PLUGINS=""
+declare -x MONO_REGISTRY_PATH="/var/tmp/portage/dev-dotnet/microsoft-net-sdk-2.1.300/temp/registry"
+declare -x MONO_SHARED_DIR="/var/tmp/portage/dev-dotnet/microsoft-net-sdk-2.1.300/temp"
+declare -x MOTD_SHOWN="pam"
+declare -x MOZ_GMP_PATH="/usr/lib64/nsbrowser/plugins/gmp-gmpopenh264/system-installed"
+declare -- MSBUILD_TARGET="msbuild15-9"
+declare -x MSBUILD_TARGETS="msbuild15-9"
+declare -x MULTILIB_ABIS="amd64 x86"
+declare -x MULTILIB_STRICT_DENY="64-bit.*shared object"
+declare -x MULTILIB_STRICT_DIRS="/lib32 /lib /usr/lib32 /usr/lib /usr/kde/*/lib32 /usr/kde/*/lib /usr/qt/*/lib32 /usr/qt/*/lib /usr/X11R6/lib32 /usr/X11R6/lib"
+declare -x MULTILIB_STRICT_EXEMPT="(perl5|gcc|binutils|eclipse-3|debug|portage|udev|systemd|clang|python-exec|llvm)"
+declare -x NGINX_MODULES_HTTP=""
+declare -x NGINX_MODULES_MAIL=""
+declare -x NGINX_MODULES_STREAM=""
+declare -x OFED_DRIVERS=""
+declare -x OFFICE_IMPLEMENTATION=""
+declare -x OPENMPI_FABRICS=""
+declare -x OPENMPI_OFED_FEATURES=""
+declare -x OPENMPI_RM=""
+declare -x PATH="/usr/lib/portage/python3.7/ebuild-helpers/xattr:/usr/lib/portage/python3.7/ebuild-helpers:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/bin:/usr/lib/llvm/10/bin:/usr/lib/llvm/9/bin"
+declare -- PDEPEND=""
+declare -x PHP_TARGETS=""
+declare -x PORTAGE_COMPRESSION_COMMAND="bzip2"
+declare -a PORTAGE_DOCOMPRESS=([0]="/usr/share/doc" [1]="/usr/share/info" [2]="/usr/share/man")
+declare -x PORTAGE_DOCOMPRESS_SIZE_LIMIT="128"
+declare -a PORTAGE_DOCOMPRESS_SKIP=([0]="/usr/share/doc/microsoft-net-sdk-2.1.300/html")
+declare -a PORTAGE_DOSTRIP=([0]="/")
+declare -a PORTAGE_DOSTRIP_SKIP=()
+declare -x POSTGRES_TARGETS=""
+declare -x PROFILE_ONLY_VARIABLES="ARCH ELIBC IUSE_IMPLICIT KERNEL USERLAND USE_EXPAND_IMPLICIT USE_EXPAND_UNPREFIXED USE_EXPAND_VALUES_ARCH USE_EXPAND_VALUES_ELIBC USE_EXPAND_VALUES_KERNEL USE_EXPAND_VALUES_USERLAND"
+declare -x PROPERTIES=""
+declare -x PYTHONDONTWRITEBYTECODE="1"
+declare -x PYTHON_SINGLE_TARGET=""
+declare -x PYTHON_TARGETS=""
+declare -- QA_MULTILIB_PATHS="usr/lib/"
+declare -x QEMU_SOFTMMU_TARGETS=""
+declare -x QEMU_USER_TARGETS=""
+declare -- RDEPEND=">=dev-lang/mono-4.0.2.5
+
+ "
+declare -- REPOSITORY
+declare -- REQUIRED_USE=""
+declare -x RESTRICT="mirror"
+declare -x RESUMECOMMAND_SSH="bash -c \"x=\\\${2#ssh://} ; host=\\\${x%%/*} ; port=\\\${host##*:} ; host=\\\${host%:*} ; [[ \\\${host} = \\\${port} ]] && port= ; exec rsync --rsh=\\\"ssh \\\${port:+-p\\\${port}} \\\${3}\\\" -avP \\\"\\\${host}:/\\\${x#*/}\\\" \\\"\\\$1\\\"\" rsync \"\${DISTDIR}/\${FILE}\" \"\${URI}\" \"\${PORTAGE_SSH_OPTS}\""
+declare -x ROS_MESSAGES=""
+declare -x RUBY_TARGETS=""
+declare -x S="/var/tmp/portage/dev-dotnet/microsoft-net-sdk-2.1.300/work/microsoft-net-sdk-2.1.300"
+declare -x SANDBOX_READ="/:/var/tmp/portage"
+declare -x SANDBOX_WRITE="/var/tmp/portage"
+declare -x SANE_BACKENDS=""
+declare -x SHELL="/bin/bash"
+declare -x SLOT="0"
+declare -- SRC_URI="https://codeload.github.com/dotnet/sdk/tar.gz/4908e1f6d532cb823b6889816c49fb5134b0278c -> microsoft-net-sdk-2.1.300.tar.gz"
+declare -x SSH_CLIENT="192.168.2.200 57876 22"
+declare -x SSH_CONNECTION="192.168.2.200 57876 192.168.2.211 22"
+declare -x SSH_TTY="/dev/pts/4"
+declare -x SYMLINK_LIB="no"
+declare -x TWISTED_DISABLE_WRITING_OF_PLUGIN_CACHE="1"
+declare -x USE="abi_x86_64 amd64 elibc_glibc kernel_linux msbuild msbuild_targets_msbuild15-9 userland_GNU"
+declare -x USERLAND="GNU"
+declare -- USE_DOTNET="net45"
+declare -x USE_EXPAND_IMPLICIT="ARCH ELIBC KERNEL USERLAND"
+declare -x USE_EXPAND_UNPREFIXED="ARCH"
+declare -x USE_EXPAND_VALUES_ARCH="alpha amd64 amd64-fbsd amd64-linux arm arm64 hppa ia64 m68k m68k-mint mips ppc ppc64 ppc64-linux ppc-aix ppc-macos riscv s390 sparc sparc64-solaris sparc-solaris x64-cygwin x64-macos x64-solaris x64-winnt x86 x86-cygwin x86-fbsd x86-linux x86-macos x86-solaris x86-winnt"
+declare -x USE_EXPAND_VALUES_ELIBC="AIX bionic Cygwin Darwin DragonFly FreeBSD glibc HPUX Interix mingw mintlib musl NetBSD OpenBSD SunOS uclibc Winnt"
+declare -x USE_EXPAND_VALUES_KERNEL="AIX Darwin FreeBSD freemint HPUX linux NetBSD OpenBSD SunOS Winnt"
+declare -x USE_EXPAND_VALUES_USERLAND="BSD GNU"
+declare -- USE_MSBUILD="msbuild15-9 msbuild15-7 msbuild15-4"
+declare -x UWSGI_PLUGINS=""
+declare -x VIDEO_CARDS=""
+declare -x VOICEMAIL_STORAGE=""
+declare -x XDG_CONFIG_DIRS="/etc/xdg"
+declare -x XDG_CONFIG_HOME="/var/tmp/portage/dev-dotnet/microsoft-net-sdk-2.1.300/temp"
+declare -x XDG_DATA_DIRS="/usr/local/share:/usr/share"
+declare -x XDG_DATA_HOME="/var/tmp/portage/dev-dotnet/microsoft-net-sdk-2.1.300/temp/data"
+declare -x XDG_SESSION_CLASS="user"
+declare -x XDG_SESSION_ID="5"
+declare -x XDG_SESSION_TYPE="tty"
+declare -x XFCE_PLUGINS=""
+declare -x XTABLES_ADDONS=""
+declare -- _EUTILS_ECLASS="1"
+declare -x _E_DESTTREE_="/usr"
+declare -x _E_DOCDESTTREE_=""
+declare -x _E_EXEDESTTREE_=""
+declare -x _E_INSDESTTREE_="/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets"
+declare -- _L10N_ECLASS="1"
+declare -- _MONO_ENV="1"
+declare -- _WRAPPER_ECLASS="1"
+declare -- f
+declare -a isz=([0]="328" [1]="/var/tmp/portage/dev-dotnet/microsoft-net-sdk-2.1.300/image")
+declare -a nsz=([0]="4400" [1]="/var/tmp/portage/dev-dotnet/microsoft-net-sdk-2.1.300/work")
+declare -- target="msbuild15-4"
+BuildToolsVersion () 
+{ 
+    if [ -z ${MSBUILD_TARGET+x} ]; then
+        local VER="$(ver_cut 1-2 ${SLOT})";
+        MSBUILD_TARGET="msbuild${VER/./-}";
+    fi;
+    local DEF=${MSBUILD_TARGET/msbuild/};
+    echo ${DEF/-/.}
+}
+MSBuildBinPath () 
+{ 
+    echo "$(MSBuildToolsPath)"
+}
+MSBuildExtensionsPath () 
+{ 
+    echo "/usr/share/msbuild"
+}
+MSBuildSdksPath () 
+{ 
+    echo "$(MSBuildBinPath)/Sdks"
+}
+MSBuildToolsPath () 
+{ 
+    echo "$(MSBuildExtensionsPath)/$(BuildToolsVersion)"
+}
+RoslynTargetsPath () 
+{ 
+    echo "$(MSBuildBinPath)/Roslyn"
+}
+__eapi6_src_install () 
+{ 
+    if [[ -f Makefile || -f GNUmakefile || -f makefile ]]; then
+        emake DESTDIR="${D}" install;
+    fi;
+    einstalldocs
+}
+__eapi6_src_prepare () 
+{ 
+    if ___is_indexed_array_var PATCHES; then
+        [[ ${#PATCHES[@]} -gt 0 ]] && eapply "${PATCHES[@]}";
+    else
+        if [[ -n ${PATCHES} ]]; then
+            eapply ${PATCHES};
+        fi;
+    fi;
+    eapply_user
+}
+__eapi7_ver_compare () 
+{ 
+    local va=${1} vb=${2} a an al as ar b bn bl bs br re LC_ALL=C;
+    re="^([0-9]+(\.[0-9]+)*)([a-z]?)((_(alpha|beta|pre|rc|p)[0-9]*)*)(-r[0-9]+)?$";
+    [[ ${va} =~ ${re} ]] || die "${FUNCNAME}: invalid version: ${va}";
+    an=${BASH_REMATCH[1]};
+    al=${BASH_REMATCH[3]};
+    as=${BASH_REMATCH[4]};
+    ar=${BASH_REMATCH[7]};
+    [[ ${vb} =~ ${re} ]] || die "${FUNCNAME}: invalid version: ${vb}";
+    bn=${BASH_REMATCH[1]};
+    bl=${BASH_REMATCH[3]};
+    bs=${BASH_REMATCH[4]};
+    br=${BASH_REMATCH[7]};
+    __eapi7_ver_compare_int "${an%%.*}" "${bn%%.*}" || return;
+    while [[ ${an} == *.* && ${bn} == *.* ]]; do
+        an=${an#*.};
+        bn=${bn#*.};
+        a=${an%%.*};
+        b=${bn%%.*};
+        if [[ ${a} == 0* || ${b} == 0* ]]; then
+            [[ ${a} =~ 0+$ ]] && a=${a%"${BASH_REMATCH[0]}"};
+            [[ ${b} =~ 0+$ ]] && b=${b%"${BASH_REMATCH[0]}"};
+            [[ ${a} > ${b} ]] && return 3;
+            [[ ${a} < ${b} ]] && return 1;
+        else
+            __eapi7_ver_compare_int "${a}" "${b}" || return;
+        fi;
+    done;
+    [[ ${an} == *.* ]] && return 3;
+    [[ ${bn} == *.* ]] && return 1;
+    [[ ${al} > ${bl} ]] && return 3;
+    [[ ${al} < ${bl} ]] && return 1;
+    as=${as#_}${as:+_};
+    bs=${bs#_}${bs:+_};
+    while [[ -n ${as} && -n ${bs} ]]; do
+        a=${as%%_*};
+        b=${bs%%_*};
+        if [[ ${a%%[0-9]*} == "${b%%[0-9]*}" ]]; then
+            __eapi7_ver_compare_int "${a##*[a-z]}" "${b##*[a-z]}" || return;
+        else
+            [[ ${a%%[0-9]*} == p ]] && return 3;
+            [[ ${b%%[0-9]*} == p ]] && return 1;
+            [[ ${a} > ${b} ]] && return 3 || return 1;
+        fi;
+        as=${as#*_};
+        bs=${bs#*_};
+    done;
+    if [[ -n ${as} ]]; then
+        [[ ${as} == p[_0-9]* ]] && return 3 || return 1;
+    else
+        if [[ -n ${bs} ]]; then
+            [[ ${bs} == p[_0-9]* ]] && return 1 || return 3;
+        fi;
+    fi;
+    __eapi7_ver_compare_int "${ar#-r}" "${br#-r}" || return;
+    return 2
+}
+__eapi7_ver_compare_int () 
+{ 
+    local a=$1 b=$2 d=$(( ${#1}-${#2} ));
+    if [[ ${d} -gt 0 ]]; then
+        printf -v b "%0${d}d%s" 0 "${b}";
+    else
+        if [[ ${d} -lt 0 ]]; then
+            printf -v a "%0$(( -d ))d%s" 0 "${a}";
+        fi;
+    fi;
+    [[ ${a} > ${b} ]] && return 3;
+    [[ ${a} == "${b}" ]]
+}
+__eapi7_ver_parse_range () 
+{ 
+    local range=${1};
+    local max=${2};
+    [[ ${range} == [0-9]* ]] || die "${FUNCNAME}: range must start with a number";
+    start=${range%-*};
+    [[ ${range} == *-* ]] && end=${range#*-} || end=${start};
+    if [[ -n ${end} ]]; then
+        [[ ${start} -le ${end} ]] || die "${FUNCNAME}: end of range must be >= start";
+        [[ ${end} -le ${max} ]] || end=${max};
+    else
+        end=${max};
+    fi
+}
+__eapi7_ver_split () 
+{ 
+    local v=${1} LC_ALL=C;
+    comp=();
+    local s c;
+    while [[ -n ${v} ]]; do
+        s=${v%%[a-zA-Z0-9]*};
+        v=${v:${#s}};
+        [[ ${v} == [0-9]* ]] && c=${v%%[^0-9]*} || c=${v%%[^a-zA-Z]*};
+        v=${v:${#c}};
+        comp+=("${s}" "${c}");
+    done
+}
+anycpu_assembly_dir () 
+{ 
+    echo "/usr/share/mono/assemblies/${1}$(directory_modificator_for_slot $2)"
+}
+anycpu_current_assembly_dir () 
+{ 
+    echo "$(anycpu_assembly_dir ${PN} ${SLOT})"
+}
+anycpu_current_symlink_dir () 
+{ 
+    echo "$(anycpu_symlink_dir ${PN} ${SLOT})"
+}
+anycpu_symlink_dir () 
+{ 
+    echo "/usr/share/mono/assemblies/${1}$(directory_modificator_for_slot $2)/bin"
+}
+bin_dir () 
+{ 
+    echo "${WORKDIR}/$(output_relpath)"
+}
+csharp_sources () 
+{ 
+    local DIR_NAME=$1;
+    for f in "${DIR_NAME}"/*;
+    do
+        if [ -d "$f" ]; then
+            csharp_sources "$f";
+        else
+            case "$f" in 
+                *.cs)
+                    echo -n ' ' $f
+                ;;
+                *)
+
+                ;;
+            esac;
+        fi;
+    done
+}
+directory_modificator_for_slot () 
+{ 
+    local MODIFICATOR="";
+    if [ "${1}" != "0" ]; then
+        MODIFICATOR="-${1}";
+    fi;
+    echo "${MODIFICATOR}"
+}
+dotnet_expand () 
+{ 
+    echo "$@"
+}
+dotnet_multilib_comply () 
+{ 
+    use !prefix && has "${EAPI:-0}" 0 1 2 && ED="${D}";
+    local dir finddirs=() mv_command=${mv_command:-mv};
+    if [[ -d "${ED}/usr/lib" && "$(get_libdir)" != "lib" ]]; then
+        if ! [[ -d "${ED}"/usr/"$(get_libdir)" ]]; then
+            mkdir "${ED}"/usr/"$(get_libdir)" || die "Couldn't mkdir ${ED}/usr/$(get_libdir)";
+        fi;
+        ${mv_command} "${ED}"/usr/lib/* "${ED}"/usr/"$(get_libdir)"/ || die "Moving files into correct libdir failed";
+        rm -rf "${ED}"/usr/lib;
+        for dir in "${ED}"/usr/"$(get_libdir)"/pkgconfig "${ED}"/usr/share/pkgconfig;
+        do
+            if [[ -d "${dir}" && "$(find "${dir}" -name '*.pc')" != "" ]]; then
+                pushd "${dir}" &> /dev/null;
+                sed -i -r -e 's:/(lib)([^a-zA-Z0-9]|$):/'"$(get_libdir)"'\2:g' *.pc || die "Sedding some sense into pkgconfig files failed.";
+                popd "${dir}" &> /dev/null;
+            fi;
+        done;
+        if [[ -d "${ED}/usr/bin" ]]; then
+            for exe in "${ED}/usr/bin"/*;
+            do
+                if [[ "$(file "${exe}")" == *"shell script text"* ]]; then
+                    sed -r -i -e ":/lib(/|$): s:/lib(/|$):/$(get_libdir)\1:" "${exe}" || die "Sedding some sense into ${exe} failed";
+                fi;
+            done;
+        fi;
+    fi
+}
+dotnet_pkg_setup () 
+{ 
+    EBUILD_FRAMEWORK="";
+    mono-env_pkg_setup;
+    for x in ${USE_DOTNET};
+    do
+        case ${x} in 
+            net45)
+                EBF="4.5";
+                if use net45; then
+                    F="${EBF}";
+                fi
+            ;;
+            net40)
+                EBF="4.0";
+                if use net40; then
+                    F="${EBF}";
+                fi
+            ;;
+            net35)
+                EBF="3.5";
+                if use net35; then
+                    F="${EBF}";
+                fi
+            ;;
+            net20)
+                EBF="2.0";
+                if use net20; then
+                    F="${EBF}";
+                fi
+            ;;
+        esac;
+        if [[ -z ${FRAMEWORK} ]]; then
+            if [[ -n ${F} ]]; then
+                FRAMEWORK="${F}";
+            fi;
+        else
+            ver_test "${F}" -gt "${FRAMEWORK}" || FRAMEWORK="${F}";
+        fi;
+        if [[ -z ${EBUILD_FRAMEWORK} ]]; then
+            if [[ -n ${EBF} ]]; then
+                EBUILD_FRAMEWORK="${EBF}";
+            fi;
+        else
+            ver_test "${EBF}" -gt "${EBUILD_FRAMEWORK}" || EBUILD_FRAMEWORK="${EBF}";
+        fi;
+    done;
+    if [[ -z ${FRAMEWORK} ]]; then
+        if [[ -z ${EBUILD_FRAMEWORK} ]]; then
+            FRAMEWORK="4.0";
+            elog "Ebuild doesn't contain USE_DOTNET=";
+        else
+            FRAMEWORK="${EBUILD_FRAMEWORK}";
+            elog "User did not set any netNN use-flags in make.conf or profile, .ebuild demands USE_DOTNET=""${USE_DOTNET}""";
+        fi;
+    fi;
+    einfo " -- USING .NET ${FRAMEWORK} FRAMEWORK -- "
+}
+eapply () 
+{ 
+    local failed patch_cmd=patch;
+    local -x LC_COLLATE=POSIX;
+    type -P gpatch > /dev/null && patch_cmd=gpatch;
+    function _eapply_patch () 
+    { 
+        local f=${1};
+        local prefix=${2};
+        ebegin "${prefix:-Applying }${f##*/}";
+        local all_opts=(-p1 -f -g0 --no-backup-if-mismatch "${patch_options[@]}");
+        if ${patch_cmd} "${all_opts[@]}" --dry-run -s -F0 < "${f}" &> /dev/null; then
+            all_opts+=(-s -F0);
+        fi;
+        ${patch_cmd} "${all_opts[@]}" < "${f}";
+        failed=${?};
+        if ! eend "${failed}"; then
+            __helpers_die "patch -p1 ${patch_options[*]} failed with ${f}";
+        fi
+    };
+    local patch_options=() files=();
+    local i found_doublehyphen;
+    for ((i = 1; i <= ${#@}; ++i ))
+    do
+        if [[ ${@:i:1} == -- ]]; then
+            patch_options=("${@:1:i-1}");
+            files=("${@:i+1}");
+            found_doublehyphen=1;
+            break;
+        fi;
+    done;
+    if [[ -z ${found_doublehyphen} ]]; then
+        for ((i = 1; i <= ${#@}; ++i ))
+        do
+            if [[ ${@:i:1} != -* ]]; then
+                patch_options=("${@:1:i-1}");
+                files=("${@:i}");
+                break;
+            fi;
+        done;
+        for i in "${files[@]}";
+        do
+            if [[ ${i} == -* ]]; then
+                die "eapply: all options must be passed before non-options";
+            fi;
+        done;
+    fi;
+    if [[ ${#files[@]} -eq 0 ]]; then
+        die "eapply: no files specified";
+    fi;
+    local f;
+    for f in "${files[@]}";
+    do
+        if [[ -d ${f} ]]; then
+            function _eapply_get_files () 
+            { 
+                local LC_ALL=POSIX;
+                local prev_shopt=$(shopt -p nullglob);
+                shopt -s nullglob;
+                local f;
+                for f in "${1}"/*;
+                do
+                    if [[ ${f} == *.diff || ${f} == *.patch ]]; then
+                        files+=("${f}");
+                    fi;
+                done;
+                ${prev_shopt}
+            };
+            local files=();
+            _eapply_get_files "${f}";
+            [[ ${#files[@]} -eq 0 ]] && die "No *.{patch,diff} files in directory ${f}";
+            einfo "Applying patches from ${f} ...";
+            local f2;
+            for f2 in "${files[@]}";
+            do
+                _eapply_patch "${f2}" '  ';
+                [[ ${failed} -ne 0 ]] && return "${failed}";
+            done;
+        else
+            _eapply_patch "${f}";
+            [[ ${failed} -ne 0 ]] && return "${failed}";
+        fi;
+    done;
+    return 0
+}
+eapply_user () 
+{ 
+    [[ ${EBUILD_PHASE} == prepare ]] || die "eapply_user() called during invalid phase: ${EBUILD_PHASE}";
+    local tagfile=${T}/.portage_user_patches_applied;
+    [[ -f ${tagfile} ]] && return;
+     >> "${tagfile}";
+    local basedir=${PORTAGE_CONFIGROOT%/}/etc/portage/patches;
+    local applied d f;
+    local -A _eapply_user_patches;
+    local prev_shopt=$(shopt -p nullglob);
+    shopt -s nullglob;
+    for d in "${basedir}"/${CATEGORY}/{${P}-${PR},${P},${PN}}{:${SLOT%/*},};
+    do
+        for f in "${d}"/*;
+        do
+            if [[ ( ${f} == *.diff || ${f} == *.patch ) && -z ${_eapply_user_patches[${f##*/}]} ]]; then
+                _eapply_user_patches[${f##*/}]=${f};
+            fi;
+        done;
+    done;
+    if [[ ${#_eapply_user_patches[@]} -gt 0 ]]; then
+        while read -r -d '' f; do
+            f=${_eapply_user_patches[${f}]};
+            if [[ -s ${f} ]]; then
+                eapply "${f}";
+                applied=1;
+            fi;
+        done < <(printf -- '%s\0' "${!_eapply_user_patches[@]}" |
+				LC_ALL=C sort -z);
+    fi;
+    ${prev_shopt};
+    [[ -n ${applied} ]] && ewarn "User patches applied."
+}
+ecsc () 
+{ 
+    einfo /usr/bin/csc $@;
+    /usr/bin/csc $@ || die "Compilation failed"
+}
+edos2unix () 
+{ 
+    [[ $# -eq 0 ]] && return 0;
+    sed -i 's/\r$//' -- "$@" || die
+}
+einstalldocs () 
+{ 
+    ( if [[ $(declare -p DOCS 2>/dev/null) != *=* ]]; then
+        local d;
+        for d in README* ChangeLog AUTHORS NEWS TODO CHANGES THANKS BUGS FAQ CREDITS CHANGELOG;
+        do
+            [[ -f ${d} && -s ${d} ]] && docinto / && dodoc "${d}";
+        done;
+    else
+        if ___is_indexed_array_var DOCS; then
+            [[ ${#DOCS[@]} -gt 0 ]] && docinto / && dodoc -r "${DOCS[@]}";
+        else
+            [[ -n ${DOCS} ]] && docinto / && dodoc -r ${DOCS};
+        fi;
+    fi );
+    ( if ___is_indexed_array_var HTML_DOCS; then
+        [[ ${#HTML_DOCS[@]} -gt 0 ]] && docinto html && dodoc -r "${HTML_DOCS[@]}";
+    else
+        [[ -n ${HTML_DOCS} ]] && docinto html && dodoc -r ${HTML_DOCS};
+    fi )
+}
+emktemp () 
+{ 
+    eqawarn "emktemp is deprecated. Create a temporary file in \${T} instead.";
+    local exe="touch";
+    [[ $1 == -d ]] && exe="mkdir" && shift;
+    local topdir=$1;
+    if [[ -z ${topdir} ]]; then
+        [[ -z ${T} ]] && topdir="/tmp" || topdir=${T};
+    fi;
+    if ! type -P mktemp > /dev/null; then
+        local tmp=/;
+        while [[ -e ${tmp} ]]; do
+            tmp=${topdir}/tmp.${RANDOM}.${RANDOM}.${RANDOM};
+        done;
+        ${exe} "${tmp}" || ${exe} -p "${tmp}";
+        echo "${tmp}";
+    else
+        if [[ ${exe} == "touch" ]]; then
+            TMPDIR="${topdir}" mktemp -t tmp.XXXXXXXXXX;
+        else
+            TMPDIR="${topdir}" mktemp -dt tmp.XXXXXXXXXX;
+        fi;
+    fi
+}
+executable_assembly_dir () 
+{ 
+    echo "/usr/share/${PN}${APPENDIX}"
+}
+framework_api_dir () 
+{ 
+    echo "/usr/$(get_libdir)/mono/${FRAMEWORK}-api"
+}
+framework_assembly_dir () 
+{ 
+    echo "/usr/$(get_libdir)/mono/${FRAMEWORK}/${PN}${APPENDIX}"
+}
+get_libdir () 
+{ 
+    local libdir_var="LIBDIR_${ABI}";
+    local libdir="lib";
+    [[ -n ${ABI} && -n ${!libdir_var} ]] && libdir=${!libdir_var};
+    echo "${libdir}"
+}
+in_iuse () 
+{ 
+    local use=${1};
+    if [[ -z "${use}" ]]; then
+        echo "!!! in_iuse() called without a parameter." 1>&2;
+        echo "!!! in_iuse <USEFLAG>" 1>&2;
+        die "in_iuse() called without a parameter";
+    fi;
+    local liuse=(${IUSE_EFFECTIVE});
+    has "${use}" "${liuse[@]#[+-]}"
+}
+l10n_find_plocales_changes () 
+{ 
+    [[ $# -ne 3 ]] && die "Exactly 3 arguments are needed!";
+    ebegin "Looking in ${1} for new locales";
+    pushd "${1}" > /dev/null || die "Cannot access ${1}";
+    local current= x=;
+    for x in ${2}*${3};
+    do
+        x=${x#"${2}"};
+        x=${x%"${3}"};
+        current+="${x} ";
+    done;
+    popd > /dev/null;
+    if [[ "$(printf '%s\n' ${PLOCALES} | LC_ALL=C sort)" != "$(printf '%s\n' ${current} | LC_ALL=C sort)" ]]; then
+        eend 1 "There are changes in locales! This ebuild should be updated to:";
+        eerror "PLOCALES=\"${current%[[:space:]]}\"";
+        return 1;
+    else
+        eend 0;
+    fi
+}
+l10n_for_each_disabled_locale_do () 
+{ 
+    local locs x;
+    locs=$(l10n_get_locales disabled);
+    for x in ${locs};
+    do
+        "${@}" ${x} || die "failed to process disabled ${x} locale";
+    done
+}
+l10n_for_each_locale_do () 
+{ 
+    local locs x;
+    locs=$(l10n_get_locales);
+    for x in ${locs};
+    do
+        "${@}" ${x} || die "failed to process enabled ${x} locale";
+    done
+}
+l10n_get_locales () 
+{ 
+    local loc locs;
+    if [[ -z ${LINGUAS+set} ]]; then
+        locs=${PLOCALES};
+    else
+        for loc in ${LINGUAS};
+        do
+            has ${loc} ${PLOCALES} && locs+="${loc} ";
+        done;
+    fi;
+    [[ -z ${locs} ]] && locs=${PLOCALE_BACKUP};
+    if [[ ${1} == disabled ]]; then
+        local disabled_locs;
+        for loc in ${PLOCALES};
+        do
+            has ${loc} ${locs} || disabled_locs+="${loc} ";
+        done;
+        locs=${disabled_locs};
+    fi;
+    printf "%s" "${locs}"
+}
+library_assembly_dir () 
+{ 
+    echo "/usr/share/dev-dotnet/${PN}${APPENDIX}"
+}
+make_wrapper () 
+{ 
+    local wrapper=$1 bin=$2 chdir=$3 libdir=$4 path=$5;
+    local tmpwrapper="${T}/tmp.wrapper.${wrapper##*/}";
+    has "${EAPI:-0}" 0 1 2 && local EPREFIX="";
+    ( echo '#!/bin/sh';
+    if [[ -n ${libdir} ]]; then
+        local var;
+        if [[ ${CHOST} == *-darwin* ]]; then
+            var=DYLD_LIBRARY_PATH;
+        else
+            var=LD_LIBRARY_PATH;
+        fi;
+        cat <<-EOF
+if [ "\${${var}+set}" = "set" ] ; then
+export ${var}="\${${var}}:${EPREFIX}${libdir}"
+else
+export ${var}="${EPREFIX}${libdir}"
+fi
+EOF
+
+    fi
+    [[ -n ${chdir} ]] && printf 'cd "%s" &&\n' "${EPREFIX}${chdir}";
+    printf 'exec %s "$@"\n' "${bin/#\//${EPREFIX}/}" ) > "${tmpwrapper}";
+    chmod go+rx "${tmpwrapper}";
+    if [[ -n ${path} ]]; then
+        ( exeopts -m 0755;
+        exeinto "${path}";
+        newexe "${tmpwrapper}" "${wrapper}" ) || die;
+    else
+        newbin "${tmpwrapper}" "${wrapper}" || die;
+    fi
+}
+mono-env_pkg_setup () 
+{ 
+    export MONO_SHARED_DIR="${T}";
+    export MONO_REGISTRY_PATH="${T}/registry";
+    export XDG_DATA_HOME="${T}/data";
+    export LC_ALL=C;
+    export XDG_CONFIG_HOME="${T}";
+    unset MONO_AOT_CACHE;
+    QA_MULTILIB_PATHS="usr/lib/"
+}
+msbuild_expand () 
+{ 
+    local res="";
+    for word in $@;
+    do
+        res="${res} ${word//msbuild/msbuild_targets_msbuild}";
+    done;
+    echo "${res}"
+}
+output_dll () 
+{ 
+    local OUTPUT_TYPE="library";
+    local OUTPUT_NAME="$(bin_dir)/$1.dll";
+    echo "/target:${OUTPUT_TYPE}" "/out:${OUTPUT_NAME}"
+}
+output_exe () 
+{ 
+    local OUTPUT_TYPE="exe";
+    local OUTPUT_NAME="$(bin_dir)/$1.exe";
+    echo "/target:${OUTPUT_TYPE}" "/out:${OUTPUT_NAME}"
+}
+output_relpath () 
+{ 
+    echo "bin/$(usedebug_tostring)"
+}
+path_exists () 
+{ 
+    eerror "path_exists has been removed.  Please see the following post";
+    eerror "for a replacement snippet:";
+    eerror "https://blogs.gentoo.org/mgorny/2018/08/09/inlining-path_exists/";
+    die "path_exists is banned"
+}
+pkg_nofetch () 
+{ 
+    default
+}
+pkg_setup () 
+{ 
+    dotnet_pkg_setup "$@"
+}
+platform_assembly_dir () 
+{ 
+    echo "/var/$(get_libdir)/mono/assemblies/${1}$(directory_modificator_for_slot $2)"
+}
+platform_current_assembly_dir () 
+{ 
+    echo "$(platform_assembly_dir ${PN} ${SLOT})"
+}
+platform_current_symlink_dir () 
+{ 
+    echo "$(platform_symlink_dir ${PN} ${SLOT})"
+}
+platform_symlink_dir () 
+{ 
+    echo "/var/$(get_libdir)/mono/assemblies/${1}$(directory_modificator_for_slot $2)/bin"
+}
+reference_dependency () 
+{ 
+    local REF=$(pkg-config --libs ${1}) || die;
+    echo -n " " ${REF}
+}
+reference_framework () 
+{ 
+    echo -n " " /reference:${1}.dll
+}
+reference_project () 
+{ 
+    echo -n " " /reference:$(bin_dir)/$1.dll
+}
+src_compile () 
+{ 
+    default
+}
+src_configure () 
+{ 
+    default
+}
+src_install () 
+{ 
+    if use msbuild; then
+        local targets=(${USE_MSBUILD});
+        for target in ${targets[@]};
+        do
+            local etarget="$( msbuild_expand ${target} )";
+            if use ${etarget}; then
+                local TARGET_SLOT=${target//msbuild/};
+                MSBUILD_TARGET="${target}";
+                insinto $(MSBuildSdksPath)/Microsoft.NET.Sdk/sdk;
+                doins -r "${S}"/src/Tasks/Microsoft.NET.Build.Tasks/sdk/*;
+                insinto $(MSBuildSdksPath)/Microsoft.NET.Sdk/targets;
+                doins -r "${S}"/src/Tasks/Microsoft.NET.Build.Tasks/targets/*;
+                doins -r "${S}"/src/Tasks/Common/targets/*;
+            fi;
+        done;
+    fi
+}
+src_prepare () 
+{ 
+    eapply_user
+}
+src_test () 
+{ 
+    default
+}
+src_unpack () 
+{ 
+    default
+}
+strip-linguas () 
+{ 
+    local ls newls nols;
+    if [[ $1 == "-i" ]] || [[ $1 == "-u" ]]; then
+        local op=$1;
+        shift;
+        ls=$(find "$1" -name '*.po' -exec basename {} .po ';');
+        shift;
+        local d f;
+        for d in "$@";
+        do
+            if [[ ${op} == "-u" ]]; then
+                newls=${ls};
+            else
+                newls="";
+            fi;
+            for f in $(find "$d" -name '*.po' -exec basename {} .po ';');
+            do
+                if [[ ${op} == "-i" ]]; then
+                    has ${f} ${ls} && newls="${newls} ${f}";
+                else
+                    has ${f} ${ls} || newls="${newls} ${f}";
+                fi;
+            done;
+            ls=${newls};
+        done;
+    else
+        ls="$@";
+    fi;
+    nols="";
+    newls="";
+    for f in ${LINGUAS};
+    do
+        if has ${f} ${ls}; then
+            newls="${newls} ${f}";
+        else
+            nols="${nols} ${f}";
+        fi;
+    done;
+    [[ -n ${nols} ]] && einfo "Sorry, but ${PN} does not support the LINGUAS:" ${nols};
+    export LINGUAS=${newls:1}
+}
+use_if_iuse () 
+{ 
+    eqawarn "use_if_iuse is deprecated.";
+    eqawarn "Define it as a local function, or inline it:";
+    eqawarn "    in_iuse foo && use foo";
+    in_iuse $1 || return 1;
+    use $1
+}
+usedebug_tostring () 
+{ 
+    local DIR="";
+    if use debug; then
+        DIR="Debug";
+    else
+        DIR="Release";
+    fi;
+    echo "${DIR}"
+}
+ver_cut () 
+{ 
+    local range=${1};
+    local v=${2:-${PV}};
+    local start end;
+    local -a comp;
+    __eapi7_ver_split "${v}";
+    local max=$((${#comp[@]}/2));
+    __eapi7_ver_parse_range "${range}" "${max}";
+    local IFS=;
+    if [[ ${start} -gt 0 ]]; then
+        start=$(( start*2 - 1 ));
+    fi;
+    echo "${comp[*]:start:end*2-start}"
+}
+ver_rs () 
+{ 
+    local v;
+    (( ${#} & 1 )) && v=${@: -1} || v=${PV};
+    local start end i;
+    local -a comp;
+    __eapi7_ver_split "${v}";
+    local max=$((${#comp[@]}/2 - 1));
+    while [[ ${#} -ge 2 ]]; do
+        __eapi7_ver_parse_range "${1}" "${max}";
+        for ((i = start*2; i <= end*2; i+=2 ))
+        do
+            [[ ${i} -eq 0 && -z ${comp[i]} ]] && continue;
+            comp[i]=${2};
+        done;
+        shift 2;
+    done;
+    local IFS=;
+    echo "${comp[*]}"
+}
+ver_test () 
+{ 
+    local va op vb;
+    if [[ $# -eq 3 ]]; then
+        va=${1};
+        shift;
+    else
+        va=${PVR};
+    fi;
+    [[ $# -eq 2 ]] || die "${FUNCNAME}: bad number of arguments";
+    op=${1};
+    vb=${2};
+    case ${op} in 
+        -eq | -ne | -lt | -le | -gt | -ge)
+
+        ;;
+        *)
+            die "${FUNCNAME}: invalid operator: ${op}"
+        ;;
+    esac;
+    __eapi7_ver_compare "${va}" "${vb}";
+    test $? "${op}" 2
+}
+</pre>
+</div>
+
+Попробовал поменять функцию <strong>dotnet_pkg_setup</strong> в классе dotnet.eclass в репозитории shnurise
+<br />
+<a href="https://github.com/ArsenShnurkov/shnurise/commit/eb4caae2c5c34a1679ebc625e5a8870bb8180891#diff-4d3df8d8b6ce25108d35e8111c3b67e372e7ab10516b98ba1edbe2ac5dea0ac7">https://github.com/ArsenShnurkov/shnurise/commit/eb4caae2c5c34a1679ebc625e5a8870bb8180891#diff-4d3df8d8b6ce25108d35e8111c3b67e372e7ab10516b98ba1edbe2ac5dea0ac7</a>
+<br />
+Добавил "+" для net45:
+<br />
+<a href="https://github.com/ArsenShnurkov/shnurise/commit/a3025f6db95ae953c0bff002718e639326a729e6#diff-63eee8d7ed78e24114437e5b95475b9004fd2fc58b91629cc27e89c15fc916cd">https://github.com/ArsenShnurkov/shnurise/commit/a3025f6db95ae953c0bff002718e639326a729e6#diff-63eee8d7ed78e24114437e5b95475b9004fd2fc58b91629cc27e89c15fc916cd</a>
+
+<button type="button" class="collapsible">Лог (почти) успешной установки</button>
+<div class="content">
+<pre>
+emerge -GK msbuild-meta
+
+<span style="color:green;font-weight:bold;">Local copy of remote index is up-to-date and will be used.</span>
+Calculating dependencies   - \ - / \ - \ \ \ | | | - / / - - | \ - | | | - | - - / | / - / - / - \ | - - | | \ \ | \ / | / - | | - | | / \ / - | \ \ / / \ \ | / | /... done!
+
+&gt;&gt;&gt; Emerging binary (<span style="color:olive;font-weight:bold;">1</span> of <span style="color:olive;font-weight:bold;">7</span>) <span style="color:purple;">dev-dotnet/msbuild-tasks-api-15.9.20.62856-r5::shnurise</span>
+<span style="color:green;font-weight:bold;"> * </span>Fetching in the background:
+<span style="color:green;font-weight:bold;"> * </span>/var/cache/binpkgs/dev-dotnet/msbuild-tasks-api-15.9.20.62856-r5.tbz2.partial
+<span style="color:green;font-weight:bold;"> * </span>To view fetch progress, run in another terminal:
+<span style="color:green;font-weight:bold;"> * </span>tail -f /var/log/emerge-fetch.log
+<span style="color:green;font-weight:bold;"> * </span>msbuild-tasks-api-15.9.20.62856-r5.tbz2 MD5 SHA1 size ;-) ...         <span style="color:blue;font-weight:bold;">[ </span><span style="color:green;font-weight:bold;">ok</span><span style="color:blue;font-weight:bold;"> ]</span>
+merge: (1 of 7) dev-dotnet/msbuild-tasks-api-15.9.20.62856-r5 Merge Binary&gt;&gt;&gt; Extracting info
+ <span style="color:green;font-weight:bold;">*</span>  -- USING .NET 4.5 FRAMEWORK -- 
+&gt;&gt;&gt; Extracting dev-dotnet/msbuild-tasks-api-15.9.20.62856-r5
+
+&gt;&gt;&gt; Installing (<span style="color:olive;font-weight:bold;">1</span> of <span style="color:olive;font-weight:bold;">7</span>) <span style="color:purple;">dev-dotnet/msbuild-tasks-api-15.9.20.62856-r5::shnurise</span>
+merge: (1 of 7) dev-dotnet/msbuild-tasks-api-15.9.20.62856-r5 Clean Post
+&gt;&gt;&gt; Emerging binary (<span style="color:olive;font-weight:bold;">2</span> of <span style="color:olive;font-weight:bold;">7</span>) <span style="color:purple;">app-eselect/eselect-msbuild-15.9::shnurise</span>
+<span style="color:green;font-weight:bold;"> * </span>eselect-msbuild-15.9.tbz2 MD5 SHA1 size ;-) ...                       <span style="color:blue;font-weight:bold;">[ </span><span style="color:green;font-weight:bold;">ok</span><span style="color:blue;font-weight:bold;"> ]</span>
+merge: (2 of 7) app-eselect/eselect-msbuild-15.9 Merge Binary&gt;&gt;&gt; Extracting info
+&gt;&gt;&gt; Extracting app-eselect/eselect-msbuild-15.9
+
+&gt;&gt;&gt; Installing (<span style="color:olive;font-weight:bold;">2</span> of <span style="color:olive;font-weight:bold;">7</span>) <span style="color:purple;">app-eselect/eselect-msbuild-15.9::shnurise</span>
+merge: (2 of 7) app-eselect/eselect-msbuild-15.9 Clean Post
+&gt;&gt;&gt; Emerging binary (<span style="color:olive;font-weight:bold;">3</span> of <span style="color:olive;font-weight:bold;">7</span>) <span style="color:purple;">dev-dotnet/microsoft-net-sdk-2.1.300::shnurise</span>
+<span style="color:green;font-weight:bold;"> * </span>microsoft-net-sdk-2.1.300.tbz2 MD5 SHA1 size ;-) ...                  <span style="color:blue;font-weight:bold;">[ </span><span style="color:green;font-weight:bold;">ok</span><span style="color:blue;font-weight:bold;"> ]</span>
+merge: (3 of 7) dev-dotnet/microsoft-net-sdk-2.1.300 Merge Binary&gt;&gt;&gt; Extracting info
+ <span style="color:green;font-weight:bold;">*</span>  -- USING .NET 4.5 FRAMEWORK -- 
+&gt;&gt;&gt; Extracting dev-dotnet/microsoft-net-sdk-2.1.300
+
+&gt;&gt;&gt; Installing (<span style="color:olive;font-weight:bold;">3</span> of <span style="color:olive;font-weight:bold;">7</span>) <span style="color:purple;">dev-dotnet/microsoft-net-sdk-2.1.300::shnurise</span>
+merge: (3 of 7) dev-dotnet/microsoft-net-sdk-2.1.300 Clean Post
+&gt;&gt;&gt; Emerging binary (<span style="color:olive;font-weight:bold;">4</span> of <span style="color:olive;font-weight:bold;">7</span>) <span style="color:purple;">dev-dotnet/msbuild-defaulttasks-15.9.20.62856::shnurise</span>
+<span style="color:green;font-weight:bold;"> * </span>msbuild-defaulttasks-15.9.20.62856.tbz2 MD5 SHA1 size ;-) ...         <span style="color:blue;font-weight:bold;">[ </span><span style="color:green;font-weight:bold;">ok</span><span style="color:blue;font-weight:bold;"> ]</span>
+merge: (4 of 7) dev-dotnet/msbuild-defaulttasks-15.9.20.62856 Merge Binary&gt;&gt;&gt; Extracting info
+ <span style="color:green;font-weight:bold;">*</span>  -- USING .NET 4.5 FRAMEWORK -- 
+&gt;&gt;&gt; Extracting dev-dotnet/msbuild-defaulttasks-15.9.20.62856
+
+&gt;&gt;&gt; Installing (<span style="color:olive;font-weight:bold;">4</span> of <span style="color:olive;font-weight:bold;">7</span>) <span style="color:purple;">dev-dotnet/msbuild-defaulttasks-15.9.20.62856::shnurise</span>
+merge: (4 of 7) dev-dotnet/msbuild-defaulttasks-15.9.20.62856 Clean Post
+&gt;&gt;&gt; Emerging binary (<span style="color:olive;font-weight:bold;">5</span> of <span style="color:olive;font-weight:bold;">7</span>) <span style="color:purple;">dev-dotnet/msbuild-roslyn-csc-15.9-r1::shnurise</span>
+<span style="color:green;font-weight:bold;"> * </span>msbuild-roslyn-csc-15.9-r1.tbz2 MD5 SHA1 size ;-) ...                 <span style="color:blue;font-weight:bold;">[ </span><span style="color:green;font-weight:bold;">ok</span><span style="color:blue;font-weight:bold;"> ]</span>
+merge: (5 of 7) dev-dotnet/msbuild-roslyn-csc-15.9-r1 Merge Binary&gt;&gt;&gt; Extracting info
+ <span style="color:green;font-weight:bold;">*</span>  -- USING .NET 4.5 FRAMEWORK -- 
+&gt;&gt;&gt; Extracting dev-dotnet/msbuild-roslyn-csc-15.9-r1
+
+&gt;&gt;&gt; Installing (<span style="color:olive;font-weight:bold;">5</span> of <span style="color:olive;font-weight:bold;">7</span>) <span style="color:purple;">dev-dotnet/msbuild-roslyn-csc-15.9-r1::shnurise</span>
+merge: (5 of 7) dev-dotnet/msbuild-roslyn-csc-15.9-r1 Clean Post
+&gt;&gt;&gt; Emerging binary (<span style="color:olive;font-weight:bold;">6</span> of <span style="color:olive;font-weight:bold;">7</span>) <span style="color:purple;">dev-util/msbuild-15.9.20.62856-r5::shnurise</span>
+<span style="color:green;font-weight:bold;"> * </span>msbuild-15.9.20.62856-r5.tbz2 MD5 SHA1 size ;-) ...                   <span style="color:blue;font-weight:bold;">[ </span><span style="color:green;font-weight:bold;">ok</span><span style="color:blue;font-weight:bold;"> ]</span>
+merge: (6 of 7) dev-util/msbuild-15.9.20.62856-r5 Merge Binary&gt;&gt;&gt; Extracting info
+ <span style="color:green;font-weight:bold;">*</span>  -- USING .NET 4.5 FRAMEWORK -- 
+&gt;&gt;&gt; Extracting dev-util/msbuild-15.9.20.62856-r5
+
+&gt;&gt;&gt; Installing (<span style="color:olive;font-weight:bold;">6</span> of <span style="color:olive;font-weight:bold;">7</span>) <span style="color:purple;">dev-util/msbuild-15.9.20.62856-r5::shnurise</span>
+<span style="color:red;font-weight:bold;"> * </span>This package will overwrite one or more files that may belong to other
+<span style="color:red;font-weight:bold;"> * </span>packages (see list below). You can use a command such as `portageq
+<span style="color:red;font-weight:bold;"> * </span>owners / &lt;filename&gt;` to identify the installed package that owns a
+<span style="color:red;font-weight:bold;"> * </span>file. If portageq reports that only one package owns a file then do
+<span style="color:red;font-weight:bold;"> * </span>NOT file a bug report. A bug report is only useful if it identifies at
+<span style="color:red;font-weight:bold;"> * </span>least two or more packages that are known to install the same file(s).
+<span style="color:red;font-weight:bold;"> * </span>If a collision occurs and you can not explain where the file came from
+<span style="color:red;font-weight:bold;"> * </span>then you should simply ignore the collision since there is not enough
+<span style="color:red;font-weight:bold;"> * </span>information to determine if a real problem exists. Please do NOT file
+<span style="color:red;font-weight:bold;"> * </span>a bug report at https://bugs.gentoo.org/ unless you report exactly
+<span style="color:red;font-weight:bold;"> * </span>which two packages install the same file(s). See
+<span style="color:red;font-weight:bold;"> * </span>https://wiki.gentoo.org/wiki/Knowledge_Base:Blockers for tips on how
+<span style="color:red;font-weight:bold;"> * </span>to solve the problem. And once again, please do NOT file a bug report
+<span style="color:red;font-weight:bold;"> * </span>unless you have completely understood the above message.
+<span style="color:red;font-weight:bold;"> * </span>
+<span style="color:red;font-weight:bold;"> * </span>Detected file collision(s):
+<span style="color:red;font-weight:bold;"> * </span>
+<span style="color:red;font-weight:bold;"> * </span>	/usr/bin/msbuild
+<span style="color:red;font-weight:bold;"> * </span>
+<span style="color:red;font-weight:bold;"> * </span>Searching all installed packages for file collisions...
+<span style="color:red;font-weight:bold;"> * </span>
+<span style="color:red;font-weight:bold;"> * </span>Press Ctrl-C to Stop
+<span style="color:red;font-weight:bold;"> * </span>
+<span style="color:red;font-weight:bold;"> * </span>None of the installed packages claim the file(s).
+<span style="color:red;font-weight:bold;"> * </span>
+<span style="color:red;font-weight:bold;"> * </span>Package 'dev-util/msbuild-15.9.20.62856-r5' merged despite file
+<span style="color:red;font-weight:bold;"> * </span>collisions. If necessary, refer to your elog messages for the whole
+<span style="color:red;font-weight:bold;"> * </span>content of the above message.
+ <span style="color:green;font-weight:bold;">*</span> To install Sdks for this version of msbuild, you will need to
+ <span style="color:green;font-weight:bold;">*</span> add msbuild15-9 to your MSBUILD_TARGETS USE_EXPAND variable.
+ <span style="color:green;font-weight:bold;">*</span> 
+merge: (6 of 7) dev-util/msbuild-15.9.20.62856-r5 Clean Post
+&gt;&gt;&gt; Emerging binary (<span style="color:olive;font-weight:bold;">7</span> of <span style="color:olive;font-weight:bold;">7</span>) <span style="color:purple;">dev-util/msbuild-meta-15.9::shnurise</span>
+<span style="color:green;font-weight:bold;"> * </span>msbuild-meta-15.9.tbz2 MD5 SHA1 size ;-) ...                          <span style="color:blue;font-weight:bold;">[ </span><span style="color:green;font-weight:bold;">ok</span><span style="color:blue;font-weight:bold;"> ]</span>
+merge: (7 of 7) dev-util/msbuild-meta-15.9 Merge Binary&gt;&gt;&gt; Extracting info
+&gt;&gt;&gt; Extracting dev-util/msbuild-meta-15.9
+
+&gt;&gt;&gt; Installing (<span style="color:olive;font-weight:bold;">7</span> of <span style="color:olive;font-weight:bold;">7</span>) <span style="color:purple;">dev-util/msbuild-meta-15.9::shnurise</span>
+
+&gt;&gt;&gt; Recording dev-util/msbuild-meta in &quot;world&quot; favorites file...
+merge: (7 of 7) dev-util/msbuild-meta-15.9 Clean Post
+<span style="color:green;font-weight:bold;"> * </span>Messages for package <span style="color:green;">dev-util/msbuild-15.9.20.62856-r5</span>:
+
+<span style="color:red;font-weight:bold;"> * </span>This package will overwrite one or more files that may belong to other
+<span style="color:red;font-weight:bold;"> * </span>packages (see list below). You can use a command such as `portageq
+<span style="color:red;font-weight:bold;"> * </span>owners / &lt;filename&gt;` to identify the installed package that owns a
+<span style="color:red;font-weight:bold;"> * </span>file. If portageq reports that only one package owns a file then do
+<span style="color:red;font-weight:bold;"> * </span>NOT file a bug report. A bug report is only useful if it identifies at
+<span style="color:red;font-weight:bold;"> * </span>least two or more packages that are known to install the same file(s).
+<span style="color:red;font-weight:bold;"> * </span>If a collision occurs and you can not explain where the file came from
+<span style="color:red;font-weight:bold;"> * </span>then you should simply ignore the collision since there is not enough
+<span style="color:red;font-weight:bold;"> * </span>information to determine if a real problem exists. Please do NOT file
+<span style="color:red;font-weight:bold;"> * </span>a bug report at https://bugs.gentoo.org/ unless you report exactly
+<span style="color:red;font-weight:bold;"> * </span>which two packages install the same file(s). See
+<span style="color:red;font-weight:bold;"> * </span>https://wiki.gentoo.org/wiki/Knowledge_Base:Blockers for tips on how
+<span style="color:red;font-weight:bold;"> * </span>to solve the problem. And once again, please do NOT file a bug report
+<span style="color:red;font-weight:bold;"> * </span>unless you have completely understood the above message.
+<span style="color:red;font-weight:bold;"> * </span>
+<span style="color:red;font-weight:bold;"> * </span>Detected file collision(s):
+<span style="color:red;font-weight:bold;"> * </span>
+<span style="color:red;font-weight:bold;"> * </span>	/usr/bin/msbuild
+<span style="color:red;font-weight:bold;"> * </span>
+<span style="color:red;font-weight:bold;"> * </span>Searching all installed packages for file collisions...
+<span style="color:red;font-weight:bold;"> * </span>
+<span style="color:red;font-weight:bold;"> * </span>Press Ctrl-C to Stop
+<span style="color:red;font-weight:bold;"> * </span>
+<span style="color:red;font-weight:bold;"> * </span>None of the installed packages claim the file(s).
+<span style="color:red;font-weight:bold;"> * </span>
+<span style="color:red;font-weight:bold;"> * </span>Package 'dev-util/msbuild-15.9.20.62856-r5' merged despite file
+<span style="color:red;font-weight:bold;"> * </span>collisions. If necessary, refer to your elog messages for the whole
+<span style="color:red;font-weight:bold;"> * </span>content of the above message.
+<span style="color:green;font-weight:bold;"> * </span>To install Sdks for this version of msbuild, you will need to
+<span style="color:green;font-weight:bold;"> * </span>add msbuild15-9 to your MSBUILD_TARGETS USE_EXPAND variable.
+<span style="color:green;font-weight:bold;"> * </span>
+&gt;&gt;&gt; Auto-cleaning packages...
+
+&gt;&gt;&gt; No outdated packages were found on your system.
+
+<span style="color:green;font-weight:bold;"> * </span>GNU info directory index is up-to-date.
+</pre>
+</div>
 
 <script>
 var coll = document.getElementsByClassName("collapsible");
