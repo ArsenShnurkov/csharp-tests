@@ -16,22 +16,111 @@
 просто в прошлый раз я поленился скопировать реализацию из microsoft-net-sdk.
 <br />
 <br />
-<button type="button" class="collapsible">$ equery files gentoo-net-sdk</button>
+<button type="button" class="collapsible">
+$ equery files gentoo-net-sdk
+</button>
 <div class="content">
 <pre>
- * Searching for gentoo-net-sdk ...
- * Contents of dev-dotnet/gentoo-net-sdk-1.0.0-r1:
-/usr
-/usr/share
-/usr/share/msbuild
-/usr/share/msbuild/Gentoo.NET.Sdk.Tasks.dll
-/usr/share/msbuild/Sdks
-/usr/share/msbuild/Sdks/Gentoo.NET.Sdk
-/usr/share/msbuild/Sdks/Gentoo.NET.Sdk/Sdk
-/usr/share/msbuild/Sdks/Gentoo.NET.Sdk/Sdk/Sdk.props
-/usr/share/msbuild/Sdks/Gentoo.NET.Sdk/Sdk/Sdk.targets
+ * Searching for <span style="font-weight:bold;">gentoo-net-sdk</span> ...
+ * Contents of <span style="color:green;font-weight:bold;">dev-dotnet/gentoo-net-sdk-1.0.0-r2</span>:
+<span style="font-weight:bold;">/usr</span>
+<span style="font-weight:bold;">/usr/share</span>
+<span style="font-weight:bold;">/usr/share/msbuild</span>
+<span style="font-weight:bold;">/usr/share/msbuild/15.9</span>
+/usr/share/msbuild/15.9/Gentoo.NET.Sdk.Tasks.dll
+<span style="font-weight:bold;">/usr/share/msbuild/15.9/Sdks</span>
+<span style="font-weight:bold;">/usr/share/msbuild/15.9/Sdks/Gentoo.NET.Sdk</span>
+<span style="font-weight:bold;">/usr/share/msbuild/15.9/Sdks/Gentoo.NET.Sdk/sdk</span>
+/usr/share/msbuild/15.9/Sdks/Gentoo.NET.Sdk/sdk/Sdk.props
+/usr/share/msbuild/15.9/Sdks/Gentoo.NET.Sdk/sdk/Sdk.targets
 </pre>
 </div>
+Надо скорректировать путь, куда Sdk устанавливаются:
+<pre>
+# @FUNCTION: get_MSBuildExtensionsPath
+# @DESCRIPTION: returns path to .targets files
+get_MSBuildExtensionsPath() {
+	echo /usr/share/msbuild
+}
+</pre>
+
+<br />
+<br />
+Используются функции 
+<a href="https://github.com/ArsenShnurkov/shnurise/blob/adeb9a9c8f1ae0813ea4d4c16b4cd5883d43f69f/eclass/dotbuildtask.eclass#L51-L70">einssdk</a> и 
+<a href="https://github.com/ArsenShnurkov/shnurise/blob/adeb9a9c8f1ae0813ea4d4c16b4cd5883d43f69f/eclass/dotbuildtask.eclass#L24-L45">einstask</a>
+из класса <strong>dotbuildtask</strong>.
+<pre>
+	einssdk &quot;Gentoo.NET.Sdk&quot; \
+		&quot;${S}/Gentoo.NET.Sdk/sdk/Sdk.props&quot; \
+		&quot;${S}/Gentoo.NET.Sdk/sdk/Sdk.targets&quot;
+	einstask &quot;$(bin_dir)/Gentoo.NET.Sdk.Tasks.dll&quot;
+</pre>
+<br />
+<br />
+Поддерживают ли эти функции установку сразу нескольких файлов?
+<br />
+Проверил по внешнему виду исходного кода, вроде бы да.
+<br />
+<br />
+Надо проверить, работает ли microsoft-net-sdk после изменений
+
+<button type="button" class="collapsible">
+$ equery files microsoft-net-sdk-2.1.300-r1
+</button>
+<div class="content">
+<pre>
+ * Searching for <span style="font-weight:bold;">microsoft-net-sdk2.1.300-r1</span> ...
+ * Contents of <span style="color:green;font-weight:bold;">dev-dotnet/microsoft-net-sdk-2.1.300-r1</span>:
+<span style="font-weight:bold;">/usr</span>
+<span style="font-weight:bold;">/usr/share</span>
+<span style="font-weight:bold;">/usr/share/msbuild</span>
+<span style="font-weight:bold;">/usr/share/msbuild/15.9</span>
+<span style="font-weight:bold;">/usr/share/msbuild/15.9/Sdks</span>
+<span style="font-weight:bold;">/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk</span>
+<span style="font-weight:bold;">/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/sdk</span>
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/sdk/Sdk.props
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/sdk/Sdk.targets
+<span style="font-weight:bold;">/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets</span>
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.ComposeStore.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.ConflictResolution.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.CrossGen.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.DefaultAssemblyInfo.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.DefaultOutputPaths.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.DefaultPackageConflictOverrides.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.DisableStandardFrameworkResolution.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.GenerateAssemblyInfo.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.NuGetOfflineCache.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.ObsoleteReferences.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.PackTool.props
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.PackTool.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.PreserveCompilationContext.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Publish.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.RuntimeIdentifierInference.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.BeforeCommon.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.BeforeCommonCrossTargeting.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.CSharp.props
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.CSharp.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.Common.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.CrossTargeting.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.props
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.DefaultItems.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.FSharp.props
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.FSharp.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.FSharpTargetsShim.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.VisualBasic.props
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.VisualBasic.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.props
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.SupportedTargetFrameworks.props
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.TargetFrameworkInference.targets
+/usr/share/msbuild/15.9/Sdks/Microsoft.NET.Sdk/targets/Microsoft.PackageDependencyResolution.targets
+</pre>
+</div>
+
+Работать он, конечно, не может, потому что скрипт не собирает код.
+<br />
+А код не соберётся, потому что он весь завязан на nuget (вместо portage).
 
 <script type="text/javascript" src="../collapsable.js"></script>
 <script type="text/javascript">
