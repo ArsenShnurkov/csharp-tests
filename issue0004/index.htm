@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8" />
+<title>gentoo-net-sdk поместить внутрь MSBuildToolsPath</title>
+<link rel="stylesheet" href="../collapsable.css">
+</head>
+<body>
+<h1>gentoo-net-sdk поместить внутрь MSBuildToolsPath</h1>
+Это нужно потому, что по умолчанию msbuild.exe ищет директорию Sdks в своей поддиректории.
+<br />
+(кстати, где это в коде?)
+<br />
+Если распологать свои Sdk по такому пути, то не будет необходимости добавлять дополнительные строки в конфигурационный файл.
+<br />
+Никаких других разумных причин менять месторасположение сейчас не известно,
+просто в прошлый раз я поленился скопировать реализацию из microsoft-net-sdk.
+<br />
+<br />
+<button type="button" class="collapsible">$ equery files gentoo-net-sdk</button>
+<div class="content">
+<pre>
+ * Searching for gentoo-net-sdk ...
+ * Contents of dev-dotnet/gentoo-net-sdk-1.0.0-r1:
+/usr
+/usr/share
+/usr/share/msbuild
+/usr/share/msbuild/Gentoo.NET.Sdk.Tasks.dll
+/usr/share/msbuild/Sdks
+/usr/share/msbuild/Sdks/Gentoo.NET.Sdk
+/usr/share/msbuild/Sdks/Gentoo.NET.Sdk/Sdk
+/usr/share/msbuild/Sdks/Gentoo.NET.Sdk/Sdk/Sdk.props
+/usr/share/msbuild/Sdks/Gentoo.NET.Sdk/Sdk/Sdk.targets
+</pre>
+</div>
+
+<script type="text/javascript" src="../collapsable.js"></script>
+<script type="text/javascript">
+	page_process();
+</script>
+</body>
+</html>

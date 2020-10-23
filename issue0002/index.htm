@@ -387,6 +387,21 @@ and compilers such as csc.exe and vbc.exe.»
 <br />
 Посмотрел <a href="https://github.com/ArsenShnurkov/shnurise/commits/master/dev-util/msbuild/files/15.9.20.62856/MSBuild.exe.config">историю</a>, раньше ровно так и было (но зачем-то один раз <a href="https://github.com/ArsenShnurkov/shnurise/commit/33f3c87687bb3cf4a49ec6d8388975210f003ac5#diff-e1b82e7b00e31f571d1c8036321cf9487cd3ca1e7ac210fca414354914026393">менял</a> на директорию выше).
 
+<h3>Из-за чего проблема возникла?</h3>
+MSBuildBinPath = /usr/share/msbuild/15.9
+<br />
+Была идея настроить переменные MSBuildToolsPath и MSBuildBinPath по-разному, чтобы
+<br />
+MSBuildToolsPath = /usr/share/msbuild/15.9
+<br />
+MSBuildBinPath = /usr/share/msbuild/15.9/bin
+<br />
+Но это была плохая идея, потому что значения этих переменных должны совпадать
+(где-то была ошибка, выдаваемая msbuild-ом, о том, что значения этих переменных не совпадают)
+<br />
+Поэтому откатиться назад - это хорошо и правильно. Директория bin, возможно, зря возникла
+(если желание разделения переменных было единственной причиной перемещения).
+
 
 <script type="text/javascript" src="../collapsable.js" ></script>
 <script type="text/javascript">
