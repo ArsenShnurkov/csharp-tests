@@ -4274,6 +4274,125 @@ Time Elapsed 00:00:00.99
 Неправильное свойство - это скорее всего IntermediateOutputPath
 <br />
 Именно у него значение = "/Release\"
+<br />
+<br />
+# msbuild /verbosity:diag /p:Configuration=Release ./src/Mono.WebServer/Mono.WebServer.csproj | grep "BaseIntermediateOutputPath ="
+<br />
+<br />
+<br />
+BaseIntermediateOutputPath = /
+<br />
+<br />
+<a href="https://docs.microsoft.com/en-us/visualstudio/msbuild/common-msbuild-project-properties?view=vs-2019">https://docs.microsoft.com/en-us/visualstudio/msbuild/common-msbuild-project-properties?view=vs-2019</a>
+<dl>
+<dt>BaseIntermediateOutputPath</dt>
+<dd>
+The top-level folder where all configuration-specific intermediate output folders are created.
+<strong>The default value is obj\.</strong>
+The following code is an example: &lt;BaseIntermediateOutputPath&gt;c:\xyz\obj\&lt;/BaseIntermediateOutputPath&gt;
+</dd>
+<a href="https://github.com/dotnet/msbuild/blob/a0c916cc71a2930da09d4605b7b2fd5def4ad569/src/Tasks/Microsoft.Common.props#L46">https://github.com/dotnet/msbuild/blob/a0c916cc71a2930da09d4605b7b2fd5def4ad569/src/Tasks/Microsoft.Common.props#L46</a>
+<br />
+<br />
+Одиночный слеш в нём образуется здесь:
+<br />
+<a href="https://github.com/dotnet/msbuild/blob/master/src/Tasks/Microsoft.Common.CurrentVersion.targets#L339">https://github.com/dotnet/msbuild/blob/master/src/Tasks/Microsoft.Common.CurrentVersion.targets#L339</a>
+<br />
+<br />
+error MSB4019: The imported project "<strong>/usr/share/msbuild/15.9</strong>/15.0/Microsoft.Common.props" was not found. Confirm that the path in the <Import> declaration is correct, and that the file exists on disk.
+<br />
+MSBuildExtensionsPath
+<br />
+<br />
+Есть ещё такая строчка:
+<br />
+<a href="https://github.com/dotnet/msbuild/blob/e70a3159d64f9ed6ec3b60253ef863fa883a99b1/src/Samples/NetCoreCompileTest/NetCoreCompileTest.csproj#L11">https://github.com/dotnet/msbuild/blob/e70a3159d64f9ed6ec3b60253ef863fa883a99b1/src/Samples/NetCoreCompileTest/NetCoreCompileTest.csproj#L11</a>
+<br />
+&lt;Import Project=&quot;$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props&quot; Condition=&quot;Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')&quot; /&gt;
+<br />
+Которая подразумевает, что MSBuildExtensionsPath на одну директорию выше чем MSBuildToolsVersion
+<br />
+(А у меня это не так, у меня MSBuildExtensionsPath совпадает с MSBuildToolsPath)
+<br />
+И такая строчка точно есть:
+<br />
+&lt;Import Project=&quot;$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props&quot; Condition=&quot;Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')&quot; /&gt;
+<br />
+<br />
+Ещё её подключаю строками вида:
+<br />
+&lt;Import Project=`$(MSBuildBinPath)\Microsoft.Common.props` /&gt;
+<br />
+<br />
+<a href="https://stackoverflow.com/questions/50069577/what-does-microsoft-common-props-do">https://stackoverflow.com/questions/50069577/what-does-microsoft-common-props-do</a>
+<br />
+ну не импортируются .props прямо в проекте  - <a href="https://github.com/mono/xsp/blob/master/src/Mono.WebServer/Mono.WebServer.csproj">https://github.com/mono/xsp/blob/master/src/Mono.WebServer/Mono.WebServer.csproj</a>
+<br />
+<br />
+csproj for .NET 4.6.2 app:
+<br />
+&lt;Import Project=&quot;$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props&quot; Condition=&quot;Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')&quot; /&gt;
+<br />
+<br />
+<a href="https://stackoverflow.com/questions/52400116/msbuild-condition-for-new-sdk-style-vs-old-project-format/52554961#52554961">https://stackoverflow.com/questions/52400116/msbuild-condition-for-new-sdk-style-vs-old-project-format/52554961#52554961</a>
+<br />
+«the property UsingMicrosoftNETSdk which is set to true in the props file which auto-imports Microsoft.Common.props when you are using an SDK-style project. This auto-import (which leads to the auto-import of Directory.Build.props seems to be one of the most important defining characteristics of SDK-style projects, and the name of the property makes it look like something more likely to stick around.»
+<br />
+<br />
+BuildEnvironmentHelper.Instance.MSBuildExtensionsPath
+<br />
+<a href="https://github.com/dotnet/msbuild/blob/295bf2e8355b6e8e3454a3a3bb4511d255455506/src/Build/Evaluation/IntrinsicFunctions.cs#L552-L555">https://github.com/dotnet/msbuild/blob/295bf2e8355b6e8e3454a3a3bb4511d255455506/src/Build/Evaluation/IntrinsicFunctions.cs#L552-L555</a>
+<br />
+<pre>
+public static string GetMSBuildExtensionsPath()
+{
+	return BuildEnvironmentHelper.Instance.MSBuildExtensionsPath;
+}
+</pre>
+<a href="https://github.com/dotnet/msbuild/blob/5b052e34e9cf7578680e0b251d93e1da0cd9b431/src/MSBuild/app.config#L94-L95">https://github.com/dotnet/msbuild/blob/5b052e34e9cf7578680e0b251d93e1da0cd9b431/src/MSBuild/app.config#L94-L95</a>
+<br />
+<pre>
+        &lt;property name=&quot;MSBuildExtensionsPath&quot; value=&quot;$([MSBuild]::GetMSBuildExtensionsPath())&quot; /&gt;
+        &lt;property name=&quot;MSBuildExtensionsPath32&quot; value=&quot;$([MSBuild]::GetMSBuildExtensionsPath())&quot; /&gt;
+</pre>
+<br />
+<br />
+msbuild.exe находится на одну директорию выше, чем сборка, которая всё конфигурирует:
+<br />
+<a href="https://github.com/dotnet/msbuild/blob/master/src/Shared/BuildEnvironmentHelper.cs#L182">https://github.com/dotnet/msbuild/blob/master/src/Shared/BuildEnvironmentHelper.cs#L182</a>
+<br />
+var msBuildExe = Path.Combine(FileUtilities.GetFolderAbove(buildAssembly), "MSBuild.exe");
+<br />
+<br />
+class BuildEnvironment
+<br />
+<a href="https://github.com/dotnet/msbuild/blob/40beb5a025fb18c82a159f407b5ce2383531a8eb/src/Shared/BuildEnvironmentHelper.cs#L489">https://github.com/dotnet/msbuild/blob/40beb5a025fb18c82a159f407b5ce2383531a8eb/src/Shared/BuildEnvironmentHelper.cs#L489</a>
+<br />
+<br />
+/usr/lib/mono/gac/Microsoft.Build.Utilities.Core/15.9.0.0__b03f5f7f11d50a3a/Microsoft.Build.Utilities.Core.dll
+<br />
+/usr/lib/mono/msbuild-tasks-api/Microsoft.Build.Utilities.Core.dll
+<br />
+/usr/lib/mono/gac/Microsoft.Build.Tasks.CodeAnalysis/0.0.0.0__b03f5f7f11d50a3a/Microsoft.Build.Tasks.CodeAnalysis.dll
+<br />
+/usr/share/msbuild/15.9/Roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll
+<br />
+/usr/lib/mono/gac/Microsoft.Build/15.9.20.62856__b03f5f7f11d50a3a/Microsoft.Build.dll
+<br />
+/usr/lib/mono/gac/Microsoft.Build.Tasks.Core/15.9.0.0__b03f5f7f11d50a3a/Microsoft.Build.Tasks.Core.dll
+<br />
+/usr/share/msbuild/15.9/Microsoft.Build.Tasks.Core.dll
+<br />
+/usr/lib/mono/msbuild-tasks-api/Microsoft.Build.Framework.dll
+<br />
+/usr/share/msbuild/15.9/Gentoo.NET.Sdk.Tasks.dll
+<br />
+<br />
+Похоже что процесс сборки неправильный.
+Когда собирается msbuild.exe, ему туда передаются полные пути.
+И эти пути записываются в его манифест (наверное).
+А затем при запуске он загружает сборки по этим путям, вместо того, чтобы искать их в директории ./bin
+
 
 <script type="text/javascript" src="../collapsable.js" ></script>
 <script type="text/javascript">
