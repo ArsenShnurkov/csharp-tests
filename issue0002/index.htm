@@ -2,17 +2,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8" />
-<title>Проблема со сборкой xsp</title>
+<title>Проблема с поиском задач в msbuild</title>
 <link rel="stylesheet" href="../collapsable.css">
 </head>
-
 <body>
+<h1>Проблема с поиском задач в msbuild</h1>
 
 При попытке установки xsp возникает ошибка при сборке
 
 <br />
 
-<button type="button" class="collapsible">&quot;*.tasks&quot; files could not be successfully loaded from their expected location</button>
+<button type="button" class="collapsible">
+MSBUILD : warning MSB4010: The "*.tasks" files could not be successfully loaded from their expected location "/usr/share/msbuild/15.9/..".
+</button>
 <div class="content">
 # emerge -v xsp
 <pre>
@@ -329,8 +331,62 @@ Time Elapsed 00:00:00.57
 <span style="color:red;font-weight:bold;"> * </span>S: '/var/tmp/portage/www-servers/xsp-4.7.1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f'
 </pre>
 </div>
-Я думаю, что это происходит из-за того, что устанавливаются не все пакеты от msbuild,
-в частности не устанавливаются задачи по-умолчанию, и после добавления зависимости всё заработает.
+<font style="color:red">почему "expected location" именно такой?</font>
+<font style="color:red">Можно ли его поменять, каким образом?</font>
+
+<br />
+<br />
+$ find /usr/share/msbuild -iname "*.tasks"
+<br />
+/usr/share/msbuild/15.9/Microsoft.Common.tasks
+<br />
+<br />
+$ qfile /usr/share/msbuild/15.9/Microsoft.Common.tasks
+<br />
+dev-dotnet/msbuild-defaulttasks: /usr/share/msbuild/15.9/Microsoft.Common.tasks
+<br />
+<br />
+файл *.tasks устанавливает пакет <strong>dev-dotnet/msbuild-defaulttasks</strong>, но похоже, что не туда. Или туда, но не там ищется.
+<br />
+<button type="button" class="collapsible">&quot;*.tasks&quot; files could not be successfully loaded from their expected location</button>
+<div class="content">
+# equery files dev-dotnet/msbuild-defaulttasks
+<pre>
+ * Searching for msbuild-defaulttasks in dev-dotnet ...
+ * Contents of dev-dotnet/msbuild-defaulttasks-15.9.20.62856:
+/usr
+/usr/lib
+/usr/lib/mono
+/usr/lib/mono/gac
+/usr/lib/mono/gac/Microsoft.Build.Tasks.Core
+/usr/lib/mono/gac/Microsoft.Build.Tasks.Core/15.9.0.0__b03f5f7f11d50a3a
+/usr/lib/mono/gac/Microsoft.Build.Tasks.Core/15.9.0.0__b03f5f7f11d50a3a/Microsoft.Build.Tasks.Core.dll
+/usr/share
+/usr/share/msbuild
+/usr/share/msbuild/15.9
+/usr/share/msbuild/15.9/Microsoft.Build.Tasks.Core.dll
+/usr/share/msbuild/15.9/Microsoft.Common.tasks
+</pre>
+</div>
+<br />
+<br />
+<a href="https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-toolset-toolsversion?view=vs-2019">https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild-toolset-toolsversion?view=vs-2019</a>
+<br />
+«Typically, an MSBuild Toolset includes a 
+microsoft.common.tasks file, a microsoft.common.targets file, 
+and compilers such as csc.exe and vbc.exe.»
+<br />
+«MSBuild finds the Microsoft.CSharp.targets file by using the MSBuildToolsPath reserved property.»
+<br />
+&lt;Import Project=&quot;$(MSBuildToolsPath)\Microsoft.CSharp.targets&quot; /&gt;
+<br />
+<br />
+Исправил путь:
+<br />
+<a href="https://github.com/ArsenShnurkov/shnurise/commit/f7d3ff3b8b463fef06022b584b842d8c639969d2#diff-e1b82e7b00e31f571d1c8036321cf9487cd3ca1e7ac210fca414354914026393">https://github.com/ArsenShnurkov/shnurise/commit/f7d3ff3b8b463fef06022b584b842d8c639969d2#diff-e1b82e7b00e31f571d1c8036321cf9487cd3ca1e7ac210fca414354914026393</a>
+<br />
+Посмотрел <a href="https://github.com/ArsenShnurkov/shnurise/commits/master/dev-util/msbuild/files/15.9.20.62856/MSBuild.exe.config">историю</a>, раньше ровно так и было (но зачем-то один раз <a href="https://github.com/ArsenShnurkov/shnurise/commit/33f3c87687bb3cf4a49ec6d8388975210f003ac5#diff-e1b82e7b00e31f571d1c8036321cf9487cd3ca1e7ac210fca414354914026393">менял</a> на директорию выше).
+
 
 <script type="text/javascript" src="../collapsable.js" ></script>
 <script type="text/javascript">
