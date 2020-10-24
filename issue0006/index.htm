@@ -89,6 +89,42 @@ Time Elapsed 00:00:02.20
 </pre>
 </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href="https://github.com/dotnet/msbuild/blob/master/documentation/ProjectReference-Protocol.md">https://github.com/dotnet/msbuild/blob/master/documentation/ProjectReference-Protocol.md</a>
+<br />
+The <strong>GetReferenceNearestTargetFrameworkTask</strong> (provided by NuGet) 
+is responsible for selecting the best matching TargetFramework of the referenced project
+<br />
+<br />
+Можно в .ebuild-файл добавить
+<br />
+/p:PrepareProjectReferencesDependsOn=AssignProjectConfiguration;_SplitProjectReferencesByFileExistence
+<br />
+/p:GetCopyToOutputDirectoryItemsDependsOn=AssignTargetPaths;_SplitProjectReferencesByFileExistence;
+<br />
+<br />
+&lt;Target Name=&quot;_GetProjectReferenceTargetFrameworkProperties&quot;&gt;
+
+<hr />
+
+
+
+
 <a href="https://stackoverflow.com/questions/47797510/the-getreferencenearesttargetframeworktask-task-was-not-found">https://stackoverflow.com/questions/47797510/the-getreferencenearesttargetframeworktask-task-was-not-found</a>
 <br />
 <br />
@@ -128,7 +164,9 @@ Time Elapsed 00:00:02.20
 </pre>
 <br />
 <a href="https://github.com/dotnet/msbuild/blob/88f5fadfbef809b7ed2689f72319b7d91792460e/src/Tasks/Microsoft.Common.CurrentVersion.targets#L1657">https://github.com/dotnet/msbuild/blob/88f5fadfbef809b7ed2689f72319b7d91792460e/src/Tasks/Microsoft.Common.CurrentVersion.targets#L1657</a>
-
+<br />
+<br />
+<a href="https://github.com/dotnet/msbuild/issues/4923">https://github.com/dotnet/msbuild/issues/4923</a>
 
 <script type="text/javascript" src="../collapsable.js"></script>
 <script type="text/javascript">

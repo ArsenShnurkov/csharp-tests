@@ -1,0 +1,569 @@
+﻿<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8" />
+<title>Не собирается Mono.WebServer.Test</title>
+<link rel="stylesheet" href="../collapsable.css">
+</head>
+<body>
+<h1>Не собирается Mono.WebServer.Test</h1>
+
+<button type="button" class="collapsible">
+warning MSB3245: Could not resolve this reference. Could not locate the assembly "nunit.core".
+</button>
+<div class="content">
+<pre>
+$ sudo emerge -v =xsp-4.7.1-r1
+reexecassword: 
+merge
+<span style="color:green;">These are the packages that would be merged, in order:</span>
+
+Calculating dependencies   - \ - | | \ - / / \ - - | \ / \ / - | - / / | \ / / | | \ | / / - / - / \ / / \ / | - | / - | \ / | - - - \ / | - \ | / | | | \ \ / / / | | | | \ | - - - - - | \ / / \ - \ - / - / - \ \ - \ | - | | - | \ \ | \ \ / | | \ - / | / - | | / | / \ - / - - - \ / | \ - \ \ \ \ - | \ \ / \ | | - | \ - | - \ | | | \ / - \ \ / | \ | / / - \ | / | \ - - - | - \ - - \ - - \ / / | - | - - | | | \ \ | - \ -... done!
+[<span style="color:green;font-weight:bold;">ebuild</span>     <span style="color:teal;font-weight:bold;">U</span>  ] <span style="color:green;font-weight:bold;">www-servers/xsp-4.7.1-r1::shnurise</span> <span style="color:blue;font-weight:bold;">[4.7.1::shnurise]</span> USE=&quot;<span style="color:red;font-weight:bold;">modmono</span> <span style="color:red;font-weight:bold;">net45</span> <span style="color:red;font-weight:bold;">systemd</span> <span style="color:red;font-weight:bold;">xsp</span> <span style="color:olive;font-weight:bold;">-debug</span>% <span style="color:olive;font-weight:bold;">-developer</span>% <span style="color:blue;font-weight:bold;">-doc</span> <span style="color:blue;font-weight:bold;">-examples</span> <span style="color:blue;font-weight:bold;">-fastcgi</span> <span style="color:blue;font-weight:bold;">-net35</span> <span style="color:blue;font-weight:bold;">-net40</span> <span style="color:blue;font-weight:bold;">-openrc</span> <span style="color:blue;font-weight:bold;">-test</span>&quot; 0 KiB
+
+Total: 1 package (1 upgrade), Size of downloads: 0 KiB
+
+
+&gt;&gt;&gt; Verifying ebuild manifests
+
+&gt;&gt;&gt; Emerging (<span style="color:olive;font-weight:bold;">1</span> of <span style="color:olive;font-weight:bold;">1</span>) <span style="color:green;">www-servers/xsp-4.7.1-r1::shnurise</span>
+merge: (1 of 1) www-servers/xsp-4.7.1-r1 Clean<span style="color:green;font-weight:bold;"> * </span>xsp-4.7.1.tar.gz SHA256 SHA512 WHIRLPOOL size ;-) ...                                                                                                       <span style="color:blue;font-weight:bold;">[ </span><span style="color:green;font-weight:bold;">ok</span><span style="color:blue;font-weight:bold;"> ]</span>
+merge: (1 of 1) www-servers/xsp-4.7.1-r1 Compile <span style="color:green;font-weight:bold;">*</span>  -- USING .NET 4.5 FRAMEWORK -- 
+&gt;&gt;&gt; Unpacking source...
+&gt;&gt;&gt; Unpacking xsp-4.7.1.tar.gz to /var/tmp/portage/www-servers/xsp-4.7.1-r1/work
+&gt;&gt;&gt; Source unpacked in /var/tmp/portage/www-servers/xsp-4.7.1-r1/work
+&gt;&gt;&gt; Preparing source in /var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f ...
+ <span style="color:green;font-weight:bold;">*</span> Applying acme.patch ...
+ <span style="color:blue;font-weight:bold;">[ </span><span style="color:green;font-weight:bold;">ok</span><span style="color:blue;font-weight:bold;"> ]</span>
+ <span style="color:green;font-weight:bold;">*</span> Applying aclocal-fix.patch ...
+patching file Makefile.am
+Hunk #1 succeeded at 1 with fuzz 1.
+ <span style="color:blue;font-weight:bold;">[ </span><span style="color:green;font-weight:bold;">ok</span><span style="color:blue;font-weight:bold;"> ]</span>
+ <span style="color:green;font-weight:bold;">*</span> Running aclocal -I build/m4/shamrock -I build/m4/shave ...
+ <span style="color:blue;font-weight:bold;">[ </span><span style="color:green;font-weight:bold;">ok</span><span style="color:blue;font-weight:bold;"> ]</span>
+libtoolize: putting auxiliary files in '.'.
+libtoolize: copying file './ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'build/m4'.
+libtoolize: copying file 'build/m4/libtool.m4'
+libtoolize: copying file 'build/m4/ltoptions.m4'
+libtoolize: copying file 'build/m4/ltsugar.m4'
+libtoolize: copying file 'build/m4/ltversion.m4'
+libtoolize: copying file 'build/m4/lt~obsolete.m4'
+libtoolize: Consider adding '-I build/m4' to ACLOCAL_AMFLAGS in Makefile.am.
+ <span style="color:green;font-weight:bold;">*</span> Running autoconf ...
+ <span style="color:blue;font-weight:bold;">[ </span><span style="color:green;font-weight:bold;">ok</span><span style="color:blue;font-weight:bold;"> ]</span>
+ <span style="color:green;font-weight:bold;">*</span> Running automake --add-missing --copy --force-missing --gnu --add-missing --force --copy ...
+ <span style="color:blue;font-weight:bold;">[ </span><span style="color:green;font-weight:bold;">ok</span><span style="color:blue;font-weight:bold;"> ]</span>
+&gt;&gt;&gt; Source prepared.
+&gt;&gt;&gt; Configuring source in /var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f ...
+ * econf: updating xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/config.sub with /usr/share/gnuconfig/config.sub
+ * econf: updating xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/config.guess with /usr/share/gnuconfig/config.guess
+./configure --prefix=/usr --build=x86_64-pc-linux-gnu --host=x86_64-pc-linux-gnu --mandir=/usr/share/man --infodir=/usr/share/info --datadir=/usr/share --sysconfdir=/etc --localstatedir=/var/lib --disable-dependency-tracking --disable-silent-rules --docdir=/usr/share/doc/xsp-4.7.1-r1 --htmldir=/usr/share/doc/xsp-4.7.1-r1/html --with-sysroot=/ --libdir=/usr/lib64 --enable-maintainer-mode
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking target system type... x86_64-pc-linux-gnu
+checking for a BSD-compatible install... /usr/lib/portage/python3.7/ebuild-helpers/xattr/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether to enable maintainer-specific portions of Makefiles... yes
+checking for gawk... (cached) gawk
+checking how to print strings... printf
+checking whether make supports the include directive... yes (GNU style)
+checking for x86_64-pc-linux-gnu-gcc... x86_64-pc-linux-gnu-gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether x86_64-pc-linux-gnu-gcc accepts -g... yes
+checking for x86_64-pc-linux-gnu-gcc option to accept ISO C89... none needed
+checking whether x86_64-pc-linux-gnu-gcc understands -c and -o together... yes
+checking dependency style of x86_64-pc-linux-gnu-gcc... none
+checking for a sed that does not truncate output... /bin/sed
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for fgrep... /bin/grep -F
+checking for ld used by x86_64-pc-linux-gnu-gcc... /usr/x86_64-pc-linux-gnu/bin/ld
+checking if the linker (/usr/x86_64-pc-linux-gnu/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/x86_64-pc-linux-gnu-nm -B
+checking the name lister (/usr/bin/x86_64-pc-linux-gnu-nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/x86_64-pc-linux-gnu/bin/ld option to reload object files... -r
+checking for x86_64-pc-linux-gnu-objdump... x86_64-pc-linux-gnu-objdump
+checking how to recognize dependent libraries... pass_all
+checking for x86_64-pc-linux-gnu-dlltool... no
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for x86_64-pc-linux-gnu-ar... x86_64-pc-linux-gnu-ar
+checking for archiver @FILE support... @
+checking for x86_64-pc-linux-gnu-strip... x86_64-pc-linux-gnu-strip
+checking for x86_64-pc-linux-gnu-ranlib... x86_64-pc-linux-gnu-ranlib
+checking command to parse /usr/bin/x86_64-pc-linux-gnu-nm -B output from x86_64-pc-linux-gnu-gcc object... ok
+checking for sysroot... /
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for x86_64-pc-linux-gnu-mt... no
+checking for mt... no
+checking if : is a manifest tool... no
+checking how to run the C preprocessor... x86_64-pc-linux-gnu-gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if x86_64-pc-linux-gnu-gcc supports -fno-rtti -fno-exceptions... no
+checking for x86_64-pc-linux-gnu-gcc option to produce PIC... -fPIC -DPIC
+checking if x86_64-pc-linux-gnu-gcc PIC flag -fPIC -DPIC works... yes
+checking if x86_64-pc-linux-gnu-gcc static flag -static works... yes
+checking if x86_64-pc-linux-gnu-gcc supports -c -o file.o... yes
+checking if x86_64-pc-linux-gnu-gcc supports -c -o file.o... (cached) yes
+checking whether the x86_64-pc-linux-gnu-gcc linker (/usr/x86_64-pc-linux-gnu/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for send... yes
+checking for recv... yes
+checking for bind... yes
+checking for listen... yes
+checking for accept... yes
+checking for chmod... yes
+checking for unlink... yes
+checking for fork... yes
+checking for execv... yes
+checking for exit... yes
+checking for getpid... yes
+checking for getuid... yes
+checking for geteuid... yes
+checking for getgid... yes
+checking for getegid... yes
+checking for setreuid... yes
+checking for setregid... yes
+checking for strlen... yes
+checking for strncpy... yes
+checking for strncmp... yes
+checking for printf... yes
+checking for fprintf... yes
+checking for snprintf... yes
+checking for vprintf... yes
+checking for strftime... yes
+checking for time... yes
+checking for perror... yes
+checking for x86_64-pc-linux-gnu-pkg-config... /usr/bin/x86_64-pc-linux-gnu-pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for mono &gt;= 2.10.0... yes
+checking for dmcs... /usr/local/bin/dmcs
+checking for mono... /usr/local/bin/mono
+checking for gacutil... /usr/local/bin/gacutil
+checking for sn... /usr/local/bin/sn
+checking for Mono 4.5 GAC for System.Core.dll... found
+checking for Mono 4.5 GAC for System.Configuration.dll... found
+checking for Mono 4.5 GAC for System.Data.dll... found
+checking for Mono 4.5 GAC for System.Web.dll... found
+checking for Mono 4.5 GAC for Mono.Posix.dll... found
+checking for Mono 4.5 GAC for Mono.Security.dll... found
+checking for Mono 4.5 GAC for Mono.Data.Sqlite.dll... found
+checking for mdoc... /usr/local/bin/mdoc
+checking for sed... /bin/sed
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating build/Makefile
+config.status: creating build/m4/Makefile
+config.status: creating build/m4/shave/shave
+config.status: creating build/m4/shave/shave-libtool
+config.status: creating docs/Makefile
+config.status: creating docs/Mono.FastCGI/Makefile
+config.status: creating docs/Mono.WebServer/Makefile
+config.status: creating man/Makefile
+config.status: creating packaging/Makefile
+config.status: creating packaging/opensuse/Makefile
+config.status: creating scripts/Makefile
+config.status: creating lib/Makefile
+config.status: creating shim/Makefile
+config.status: creating src/Makefile
+config.status: creating src/Mono.WebServer.Apache/Makefile
+config.status: creating src/Mono.WebServer.FastCgi/Makefile
+config.status: creating src/Mono.WebServer.XSP/Makefile
+config.status: creating src/Mono.WebServer/Makefile
+config.status: creating src/Mono.WebServer.Fpm/Makefile
+config.status: creating test/1.1/Makefile
+config.status: creating test/1.1/asp.net/Makefile
+config.status: creating test/1.1/authtest/Makefile
+config.status: creating test/1.1/customcontrol/Makefile
+config.status: creating test/1.1/databind/Makefile
+config.status: creating test/1.1/handlers/Makefile
+config.status: creating test/1.1/html/Makefile
+config.status: creating test/1.1/webcontrols/Makefile
+config.status: creating test/1.1/webservice/Makefile
+config.status: creating test/2.0/Makefile
+config.status: creating test/2.0/gridview/Makefile
+config.status: creating test/2.0/masterpages/Makefile
+config.status: creating test/2.0/menu/Makefile
+config.status: creating test/2.0/treeview/Makefile
+config.status: creating test/App_Code/Makefile
+config.status: creating test/Makefile
+config.status: creating test/controls/Makefile
+config.status: creating tools/Makefile
+config.status: creating tools/asp_state/Makefile
+config.status: creating tools/dbsessmgr/Makefile
+config.status: creating tools/mono-asp-apps/Makefile
+config.status: creating unittests/Makefile
+config.status: creating unittests/Tests.XSP.Security/Makefile
+config.status: creating unittests/webroot/Makefile
+config.status: creating xsp.spec
+config.status: creating man/xsp.1
+config.status: creating man/dbsessmgr.1
+config.status: creating man/asp-state.1
+config.status: creating man/mono-asp-apps.1
+config.status: creating src/Mono.WebServer/AssemblyInfo2.cs
+config.status: creating src/Mono.WebServer/AssemblyInfo4.cs
+config.status: creating src/Mono.WebServer.Apache/AssemblyInfo.cs
+config.status: creating src/Mono.WebServer.FastCgi/AssemblyInfo.cs
+config.status: creating src/Mono.WebServer.Fpm/AssemblyInfo.cs
+config.status: creating src/Mono.WebServer.XSP/AssemblyInfo.cs
+config.status: creating src/Mono.WebServer.XSP/xsp.pc
+config.status: creating src/Mono.WebServer.XSP/xsp-2.pc
+config.status: creating src/Mono.WebServer.XSP/xsp-4.pc
+config.status: creating tools/asp_state/AssemblyInfo.cs
+config.status: creating tools/dbsessmgr/AssemblyInfo.cs
+config.status: executing depfiles commands
+config.status: executing libtool commands
+
+xsp-4.7.1
+
+  Build Environment
+    Install prefix:          /usr
+    Datadir:                 /usr/share
+    Libdir:                  /usr/lib64
+    Build documentation:     yes
+    Mono compiler:           /usr/local/bin/dmcs
+    Target frameworks:       .NET 4.5
+    Build SQLite samples:    yes
+&gt;&gt;&gt; Source configured.
+&gt;&gt;&gt; Compiling source in /var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f ...
+ <span style="color:green;font-weight:bold;">*</span> /p:Configuration=Release /p:DebugSymbols=False /p:PrepareProjectReferencesDependsOn=&quot;AssignProjectConfiguration;_SplitProjectReferencesByFileExistence&quot; /p:GetCopyToOutputDirectoryItemsDependsOn=&quot;AssignTargetPaths;_SplitProjectReferencesByFileExistence&quot; xsp.sln
+Microsoft (R) Build Engine version 15.9.20.62856 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Building the projects in this solution one at a time. To enable parallel build, please add the &quot;/m&quot; switch.
+Build started 10/24/2020 19:13:09.
+Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; on node 1 (default targets).
+ValidateSolutionConfiguration:
+  Building solution configuration &quot;Release|Any CPU&quot;.
+Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (1) is building &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/Mono.WebServer.csproj&quot; (2) on node 1 (default targets).
+PrepareForBuild:
+  Creating directory &quot;bin/Release/&quot;.
+  Creating directory &quot;obj/Release/&quot;.
+CoreCompile:
+  /usr/lib/mono/4.5/csc.exe /noconfig /nowarn:1701,1702 /nostdlib+ /errorreport:prompt /warn:4 /highentropyva- /reference:/usr/lib/mono/4.0-api/Mono.Posix.dll /reference:/usr/lib/mono/4.0-api/mscorlib.dll /reference:/usr/lib/mono/4.0-api/System.Configuration.dll /reference:/usr/lib/mono/4.0-api/System.Core.dll /reference:/usr/lib/mono/4.0-api/System.dll /reference:/usr/lib/mono/4.0-api/System.Web.dll /reference:/usr/lib/mono/4.0-api/System.Xml.dll /debug- /keyfile:../mono.snk /optimize+ /out:obj/Release/Mono.WebServer.dll /target:library /utf8output /features:assume-digests /features:binpkg-docompress /features:binpkg-dostrip /features:binpkg-logs /features:config-protect-if-modified /features:distlocks /features:ebuild-locks /features:fixlafiles /features:ipc-sandbox /features:merge-sync /features:multilib-strict /features:network-sandbox /features:news /features:parallel-fetch /features:pid-sandbox /features:preserve-libs /features:protect-owned /features:qa-unresolved-soname-deps /features:sandbox /features:sfperms /features:strict /features:unknown-features-warn /features:unmerge-logs /features:unmerge-orphans /features:userfetch /features:userpriv /features:usersandbox /features:usersync /features:xattr ApplicationServer.cs BaseApplicationHost.cs BaseRequestBroker.cs EndOfRequestHandler.cs FinePlatformID.cs HttpErrors.cs IApplicationHost.cs InitialWorkerRequest.cs IRequestBroker.cs LingeringNetworkStream.cs LockRecursionException.cs LockRecursionPolicy.cs Log/Logger.cs Log/LogLevel.cs MapPathEventArgs.cs MapPathEventHandler.cs MonoWorkerRequest.cs Options/ConfigurationManagerExtensions.cs Options/ConfigurationManager.Fields.cs Options/IHelpConfigurationManager.cs Options/ServerConfigurationManager.cs Options/ConfigurationManager.cs Options/Options.cs Options/Descriptions.cs Paths.cs Platform.cs RequestData.cs RequestLineException.cs SearchPattern.cs UnregisterRequestEventArgs.cs UnregisterRequestEventHandler.cs Version.cs VPathToHost.cs WebSource.cs Worker.cs WebTrace.cs Log/FileLogger.cs Log/ILogger.cs AssemblyInfo4.cs IdentityToken.cs Options/Settings/BoolSetting.cs Options/Settings/Int32Setting.cs Options/Settings/EnumSetting.cs Options/Settings/UInt16Setting.cs Options/Settings/UInt32Setting.cs Options/Settings/StringSetting.cs Options/Settings/NullableInt32Setting.cs Options/Settings/NullableSetting.cs Options/Settings/ISetting.cs Options/Settings/NullableUInt16Setting.cs Options/Settings/Setting.cs Options/Settings/SettingsCollection.cs Options/Settings/SettingSource.cs Options/Settings/Parser.cs &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/temp/.NETFramework,Version=v4.0.AssemblyAttributes.cs&quot;
+MonoWorkerRequest.cs(490,12): warning CS0618: 'FileStream.FileStream(IntPtr, FileAccess)' is obsolete: 'Use FileStream(SafeFileHandle handle, FileAccess access) instead' [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/Mono.WebServer.csproj]
+CopyFilesToOutputDirectory:
+  Copying file from &quot;obj/Release/Mono.WebServer.dll&quot; to &quot;bin/Release/Mono.WebServer.dll&quot;.
+  Mono.WebServer -&gt; /var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/bin/Release/Mono.WebServer.dll
+Done Building Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/Mono.WebServer.csproj&quot; (default targets).
+Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (1) is building &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Apache/Mono.WebServer.Apache.csproj&quot; (3) on node 1 (default targets).
+PrepareForBuild:
+  Creating directory &quot;bin/Release/&quot;.
+  Creating directory &quot;obj/Release/&quot;.
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target &quot;GenerateTargetFrameworkMonikerAttribute&quot; because all output files are up-to-date with respect to the input files.
+CoreCompile:
+  /usr/lib/mono/4.5/csc.exe /noconfig /unsafe+ /nowarn:1701,1702 /nostdlib+ /errorreport:prompt /warn:4 /highentropyva- /reference:/usr/lib/mono/4.0-api/Mono.Posix.dll /reference:/usr/lib/mono/4.0-api/Mono.Security.dll /reference:/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/bin/Release/Mono.WebServer.dll /reference:/usr/lib/mono/4.0-api/mscorlib.dll /reference:/usr/lib/mono/4.0-api/System.Configuration.dll /reference:/usr/lib/mono/4.0-api/System.Core.dll /reference:/usr/lib/mono/4.0-api/System.dll /reference:/usr/lib/mono/4.0-api/System.Web.dll /debug- /keyfile:../mono.snk /optimize+ /out:obj/Release/Mono.WebServer.Apache.exe /target:exe /utf8output /features:assume-digests /features:binpkg-docompress /features:binpkg-dostrip /features:binpkg-logs /features:config-protect-if-modified /features:distlocks /features:ebuild-locks /features:fixlafiles /features:ipc-sandbox /features:merge-sync /features:multilib-strict /features:network-sandbox /features:news /features:parallel-fetch /features:pid-sandbox /features:preserve-libs /features:protect-owned /features:qa-unresolved-soname-deps /features:sandbox /features:sfperms /features:strict /features:unknown-features-warn /features:unmerge-logs /features:unmerge-orphans /features:userfetch /features:userpriv /features:usersandbox /features:usersync /features:xattr ConfigurationManager.cs main.cs ModMonoApplicationHost.cs ModMonoCmd.cs ModMonoConfig.cs ModMonoRequest.cs ModMonoRequestBroker.cs ModMonoTCPWebSource.cs ModMonoWebSource.cs ModMonoWorker.cs ModMonoWorkerRequest.cs RequestReader.cs AssemblyInfo.cs &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/temp/.NETFramework,Version=v4.0.AssemblyAttributes.cs&quot;
+ModMonoWorkerRequest.cs(610,12): warning CS0618: 'FileStream.FileStream(IntPtr, FileAccess)' is obsolete: 'Use FileStream(SafeFileHandle handle, FileAccess access) instead' [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Apache/Mono.WebServer.Apache.csproj]
+_CopyFilesMarkedCopyLocal:
+  Copying file from &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/bin/Release/Mono.WebServer.dll&quot; to &quot;bin/Release/Mono.WebServer.dll&quot;.
+  Creating &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Apache/obj/Release//Mono.WebServer.Apache.csproj.CopyComplete&quot; because &quot;AlwaysCreate&quot; was specified.
+CopyFilesToOutputDirectory:
+  Copying file from &quot;obj/Release/Mono.WebServer.Apache.exe&quot; to &quot;bin/Release/Mono.WebServer.Apache.exe&quot;.
+  Mono.WebServer.Apache -&gt; /var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Apache/bin/Release/Mono.WebServer.Apache.exe
+Done Building Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Apache/Mono.WebServer.Apache.csproj&quot; (default targets).
+Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (1) is building &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/Mono.WebServer.FastCgi.csproj&quot; (4) on node 1 (default targets).
+PrepareForBuild:
+  Creating directory &quot;bin/Release/&quot;.
+  Creating directory &quot;obj/Release/&quot;.
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target &quot;GenerateTargetFrameworkMonikerAttribute&quot; because all output files are up-to-date with respect to the input files.
+CoreCompile:
+  /usr/lib/mono/4.5/csc.exe /noconfig /unsafe+ /nowarn:1701,1702 /nostdlib+ /errorreport:prompt /warn:4 /highentropyva- /reference:/usr/lib/mono/4.0-api/Mono.Posix.dll /reference:/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/bin/Release/Mono.WebServer.dll /reference:/usr/lib/mono/4.0-api/mscorlib.dll /reference:/usr/lib/mono/4.0-api/System.Configuration.dll /reference:/usr/lib/mono/4.0-api/System.Core.dll /reference:/usr/lib/mono/4.0-api/System.dll /reference:/usr/lib/mono/4.0-api/System.Web.dll /reference:/usr/lib/mono/4.0-api/System.Xml.dll /debug- /keyfile:../mono.snk /optimize+ /out:obj/Release/fastcgi-mono-server4.exe /target:exe /utf8output /features:assume-digests /features:binpkg-docompress /features:binpkg-dostrip /features:binpkg-logs /features:config-protect-if-modified /features:distlocks /features:ebuild-locks /features:fixlafiles /features:ipc-sandbox /features:merge-sync /features:multilib-strict /features:network-sandbox /features:news /features:parallel-fetch /features:pid-sandbox /features:preserve-libs /features:protect-owned /features:qa-unresolved-soname-deps /features:sandbox /features:sfperms /features:strict /features:unknown-features-warn /features:unmerge-logs /features:unmerge-orphans /features:userfetch /features:userpriv /features:usersandbox /features:usersync /features:xattr ApplicationHost.cs BeginRequestBody.cs Connection.cs EndRequestBody.cs main.cs NameValuePair.cs Request.cs Responder.cs ResponderRequest.cs Server.cs Server/ConnectionProxy.cs Strings.cs UnknownTypeBody.cs WebSource.cs WorkerRequest.cs AssemblyInfo.cs DictionaryExtensions.cs Watchdog.cs BufferManager.cs RecordType.cs Compatibility/CompatArraySegment.cs Compatibility/IReadOnlyCollection.cs Compatibility/IReadOnlyList.cs Buffers.cs Server/GenericServer.cs Server/ServerProxy.cs Server/IConnection.cs Server/IServerCallback.cs Compatibility/ArrayExtensions.cs Server/IServer.cs Server/SocketPassing.cs Server/OnDemandServer.cs Server/FakeGenericServer.cs Server/IGenericServer.cs Obsolete/SocketFactory.cs Obsolete/ConfigurationManager.cs ConfigurationManager.cs ConfigurationManager.Obsolete.cs Obsolete/Record.cs Record.cs Sockets/TcpSocket.cs Sockets/StandardSocket.cs Sockets/UnmanagedSocket.cs Sockets/UnixSocket.cs Sockets/Socket.cs &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/temp/.NETFramework,Version=v4.0.AssemblyAttributes.cs&quot;
+Record.cs(119,43): warning CS0612: 'Record' is obsolete [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/Mono.WebServer.FastCgi.csproj]
+Request.cs(572,4): warning CS0612: 'Record.CopyTo(byte[], int)' is obsolete [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/Mono.WebServer.FastCgi.csproj]
+Server/OnDemandServer.cs(42,29): warning CS0067: The event 'OnDemandServer.RequestReceived' is never used [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/Mono.WebServer.FastCgi.csproj]
+Server/FakeGenericServer.cs(37,29): warning CS0067: The event 'FakeGenericServer&lt;T&gt;.RequestReceived' is never used [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/Mono.WebServer.FastCgi.csproj]
+_CopyFilesMarkedCopyLocal:
+  Copying file from &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/bin/Release/Mono.WebServer.dll&quot; to &quot;bin/Release/Mono.WebServer.dll&quot;.
+  Creating &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/obj/Release//Mono.WebServer.FastCgi.csproj.CopyComplete&quot; because &quot;AlwaysCreate&quot; was specified.
+CopyFilesToOutputDirectory:
+  Copying file from &quot;obj/Release/fastcgi-mono-server4.exe&quot; to &quot;bin/Release/fastcgi-mono-server4.exe&quot;.
+  Mono.WebServer.FastCgi -&gt; /var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/bin/Release/fastcgi-mono-server4.exe
+Done Building Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/Mono.WebServer.FastCgi.csproj&quot; (default targets).
+Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (1) is building &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.XSP/Mono.WebServer.XSP.csproj&quot; (5) on node 1 (default targets).
+PrepareForBuild:
+  Creating directory &quot;bin/Release/&quot;.
+  Creating directory &quot;obj/Release/&quot;.
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target &quot;GenerateTargetFrameworkMonikerAttribute&quot; because all output files are up-to-date with respect to the input files.
+CoreCompile:
+  /usr/lib/mono/4.5/csc.exe /noconfig /unsafe+ /nowarn:1701,1702 /nostdlib+ /errorreport:prompt /warn:4 /highentropyva- /reference:/usr/lib/mono/4.0-api/Mono.Security.dll /reference:/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/bin/Release/Mono.WebServer.dll /reference:/usr/lib/mono/4.0-api/mscorlib.dll /reference:/usr/lib/mono/4.0-api/System.Configuration.dll /reference:/usr/lib/mono/4.0-api/System.Core.dll /reference:/usr/lib/mono/4.0-api/System.dll /reference:/usr/lib/mono/4.0-api/System.Web.dll /debug- /keyfile:../mono.snk /optimize+ /out:obj/Release/Mono.WebServer.XSP.exe /target:exe /utf8output /features:assume-digests /features:binpkg-docompress /features:binpkg-dostrip /features:binpkg-logs /features:config-protect-if-modified /features:distlocks /features:ebuild-locks /features:fixlafiles /features:ipc-sandbox /features:merge-sync /features:multilib-strict /features:network-sandbox /features:news /features:parallel-fetch /features:pid-sandbox /features:preserve-libs /features:protect-owned /features:qa-unresolved-soname-deps /features:sandbox /features:sfperms /features:strict /features:unknown-features-warn /features:unmerge-logs /features:unmerge-orphans /features:userfetch /features:userpriv /features:usersandbox /features:usersync /features:xattr ConfigurationManager.cs main.cs SecurityConfiguration.cs SslInformation.cs XSPApplicationHost.cs XSPRequestBroker.cs XSPWebSource.cs XSPWorker.cs XSPWorkerRequest.cs AssemblyInfo.cs CompatTuple.cs &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/temp/.NETFramework,Version=v4.0.AssemblyAttributes.cs&quot;
+XSPWorkerRequest.cs(708,28): warning CS0618: 'FileStream.Handle' is obsolete: 'Use SafeFileHandle instead' [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.XSP/Mono.WebServer.XSP.csproj]
+main.cs(44,14): warning CS0649: Field 'Server.key' is never assigned to, and will always have its default value null [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.XSP/Mono.WebServer.XSP.csproj]
+XSPWorker.cs(52,27): warning CS0649: Field 'XSPWorker.ssl' is never assigned to, and will always have its default value null [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.XSP/Mono.WebServer.XSP.csproj]
+_CopyFilesMarkedCopyLocal:
+  Copying file from &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/bin/Release/Mono.WebServer.dll&quot; to &quot;bin/Release/Mono.WebServer.dll&quot;.
+  Creating &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.XSP/obj/Release//Mono.WebServer.XSP.csproj.CopyComplete&quot; because &quot;AlwaysCreate&quot; was specified.
+CopyFilesToOutputDirectory:
+  Copying file from &quot;obj/Release/Mono.WebServer.XSP.exe&quot; to &quot;bin/Release/Mono.WebServer.XSP.exe&quot;.
+  Mono.WebServer.XSP -&gt; /var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.XSP/bin/Release/Mono.WebServer.XSP.exe
+Done Building Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.XSP/Mono.WebServer.XSP.csproj&quot; (default targets).
+Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (1) is building &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj&quot; (6) on node 1 (default targets).
+PrepareForBuild:
+  Creating directory &quot;bin/Release/&quot;.
+  Creating directory &quot;obj/Release/&quot;.
+Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj&quot; (6) is building &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Fpm/Mono.WebServer.Fpm.csproj&quot; (7) on node 1 (default targets).
+PrepareForBuild:
+  Creating directory &quot;bin/Release/&quot;.
+  Creating directory &quot;obj/Release/&quot;.
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target &quot;GenerateTargetFrameworkMonikerAttribute&quot; because all output files are up-to-date with respect to the input files.
+CoreCompile:
+  /usr/lib/mono/4.5/csc.exe /noconfig /nowarn:1701,1702 /nostdlib+ /platform:AnyCPU /errorreport:prompt /warn:4 /define:TRACE /highentropyva- /reference:/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/bin/Release/fastcgi-mono-server4.exe /reference:/usr/lib/mono/4.0-api/Mono.Posix.dll /reference:/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/bin/Release/Mono.WebServer.dll /reference:/usr/lib/mono/4.0-api/mscorlib.dll /reference:/usr/lib/mono/4.0-api/System.Core.dll /reference:/usr/lib/mono/4.0-api/System.dll /reference:/usr/lib/mono/4.0-api/System.Xml.dll /debug- /debug:pdbonly /filealign:512 /keyfile:../mono.snk /optimize+ /out:obj/Release/Mono.WebServer.Fpm.exe /target:exe /utf8output /features:assume-digests /features:binpkg-docompress /features:binpkg-dostrip /features:binpkg-logs /features:config-protect-if-modified /features:distlocks /features:ebuild-locks /features:fixlafiles /features:ipc-sandbox /features:merge-sync /features:multilib-strict /features:network-sandbox /features:news /features:parallel-fetch /features:pid-sandbox /features:preserve-libs /features:protect-owned /features:qa-unresolved-soname-deps /features:sandbox /features:sfperms /features:strict /features:unknown-features-warn /features:unmerge-logs /features:unmerge-orphans /features:userfetch /features:userpriv /features:usersandbox /features:usersync /features:xattr ChildConfigurationManager.cs ChildInfo.cs ChildrenManager.cs ConfigurationManager.cs main.cs AssemblyInfo.cs Spawner.cs Connection.cs InstanceType.cs ProcessArgumentBuilder.cs &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/temp/.NETFramework,Version=v4.0.AssemblyAttributes.cs&quot;
+Connection.cs(39,29): warning CS0067: The event 'Connection.RequestReceived' is never used [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Fpm/Mono.WebServer.Fpm.csproj]
+_CopyFilesMarkedCopyLocal:
+  Copying file from &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/bin/Release/fastcgi-mono-server4.exe&quot; to &quot;bin/Release/fastcgi-mono-server4.exe&quot;.
+  Copying file from &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/bin/Release/Mono.WebServer.dll&quot; to &quot;bin/Release/Mono.WebServer.dll&quot;.
+  Creating &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Fpm/obj/Release//Mono.WebServer.Fpm.csproj.CopyComplete&quot; because &quot;AlwaysCreate&quot; was specified.
+CopyFilesToOutputDirectory:
+  Copying file from &quot;obj/Release/Mono.WebServer.Fpm.exe&quot; to &quot;bin/Release/Mono.WebServer.Fpm.exe&quot;.
+  Mono.WebServer.Fpm -&gt; /var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Fpm/bin/Release/Mono.WebServer.Fpm.exe
+  Copying file from &quot;obj/Release/Mono.WebServer.Fpm.pdb&quot; to &quot;bin/Release/Mono.WebServer.Fpm.pdb&quot;.
+Done Building Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Fpm/Mono.WebServer.Fpm.csproj&quot; (default targets).
+ResolveAssemblyReferences:
+  Primary reference &quot;nunit.core&quot;.
+/usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(2110,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly &quot;nunit.core&quot;. Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors. [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+          For SearchPath &quot;{TargetFrameworkDirectory}&quot;.
+          Considered &quot;/usr/lib/mono/xbuild-frameworks/.NETFramework/v4.0/nunit.core.winmd&quot;, but it didn't exist.
+          Considered &quot;/usr/lib/mono/xbuild-frameworks/.NETFramework/v4.0/nunit.core.dll&quot;, but it didn't exist.
+          Considered &quot;/usr/lib/mono/xbuild-frameworks/.NETFramework/v4.0/nunit.core.exe&quot;, but it didn't exist.
+          Considered &quot;/usr/lib/mono/4.0-api/nunit.core.winmd&quot;, but it didn't exist.
+          Considered &quot;/usr/lib/mono/4.0-api/nunit.core.dll&quot;, but it didn't exist.
+          Considered &quot;/usr/lib/mono/4.0-api/nunit.core.exe&quot;, but it didn't exist.
+          For SearchPath &quot;{Registry:Software/Microsoft/.NETFramework,v4.0,AssemblyFoldersEx}&quot;.
+          Considered AssemblyFoldersEx locations.
+          For SearchPath &quot;{GAC}&quot;.
+          Considered &quot;{GAC}/nunit.core.winmd&quot;, but it didn't exist.
+          Considered &quot;{GAC}/nunit.core.dll&quot;, but it didn't exist.
+          Considered &quot;{GAC}/nunit.core.exe&quot;, but it didn't exist.
+          For SearchPath &quot;{RawFileName}&quot;.
+          Considered treating &quot;nunit.core, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77&quot; as a file name, but it didn't exist.
+          For SearchPath &quot;bin/Release/&quot;.
+          Considered &quot;bin/Release/nunit.core.winmd&quot;, but it didn't exist.
+          Considered &quot;bin/Release/nunit.core.dll&quot;, but it didn't exist.
+          Considered &quot;bin/Release/nunit.core.exe&quot;, but it didn't exist.
+  Primary reference &quot;nunit.framework&quot;.
+/usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(2110,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly &quot;nunit.framework&quot;. Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors. [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+          For SearchPath &quot;{TargetFrameworkDirectory}&quot;.
+          Considered &quot;/usr/lib/mono/xbuild-frameworks/.NETFramework/v4.0/nunit.framework.winmd&quot;, but it didn't exist.
+          Considered &quot;/usr/lib/mono/xbuild-frameworks/.NETFramework/v4.0/nunit.framework.dll&quot;, but it didn't exist.
+          Considered &quot;/usr/lib/mono/xbuild-frameworks/.NETFramework/v4.0/nunit.framework.exe&quot;, but it didn't exist.
+          Considered &quot;/usr/lib/mono/4.0-api/nunit.framework.winmd&quot;, but it didn't exist.
+          Considered &quot;/usr/lib/mono/4.0-api/nunit.framework.dll&quot;, but it didn't exist.
+          Considered &quot;/usr/lib/mono/4.0-api/nunit.framework.exe&quot;, but it didn't exist.
+          For SearchPath &quot;{Registry:Software/Microsoft/.NETFramework,v4.0,AssemblyFoldersEx}&quot;.
+          Considered AssemblyFoldersEx locations.
+          For SearchPath &quot;{GAC}&quot;.
+          Considered &quot;{GAC}/nunit.framework.winmd&quot;, but it didn't exist.
+          Considered &quot;{GAC}/nunit.framework.dll&quot;, but it didn't exist.
+          Considered &quot;{GAC}/nunit.framework.exe&quot;, but it didn't exist.
+          For SearchPath &quot;{RawFileName}&quot;.
+          Considered treating &quot;nunit.framework, Version=2.4.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77&quot; as a file name, but it didn't exist.
+          For SearchPath &quot;bin/Release/&quot;.
+          Considered &quot;bin/Release/nunit.framework.winmd&quot;, but it didn't exist.
+          Considered &quot;bin/Release/nunit.framework.dll&quot;, but it didn't exist.
+          Considered &quot;bin/Release/nunit.framework.exe&quot;, but it didn't exist.
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target &quot;GenerateTargetFrameworkMonikerAttribute&quot; because all output files are up-to-date with respect to the input files.
+CoreCompile:
+  /usr/lib/mono/4.5/csc.exe /noconfig /nowarn:1701,1702 /nostdlib+ /errorreport:prompt /warn:4 /highentropyva- /reference:/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/bin/Release/fastcgi-mono-server4.exe /reference:/usr/lib/mono/4.0-api/Mono.Posix.dll /reference:/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Apache/bin/Release/Mono.WebServer.Apache.exe /reference:/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/bin/Release/Mono.WebServer.dll /reference:/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Fpm/bin/Release/Mono.WebServer.Fpm.exe /reference:/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.XSP/bin/Release/Mono.WebServer.XSP.exe /reference:/usr/lib/mono/4.0-api/mscorlib.dll /reference:/usr/lib/mono/4.0-api/System.Core.dll /reference:/usr/lib/mono/4.0-api/System.dll /debug- /keyfile:../mono.snk /optimize- /out:obj/Release/Mono.WebServer.Test.dll /target:library /utf8output /features:assume-digests /features:binpkg-docompress /features:binpkg-dostrip /features:binpkg-logs /features:config-protect-if-modified /features:distlocks /features:ebuild-locks /features:fixlafiles /features:ipc-sandbox /features:merge-sync /features:multilib-strict /features:network-sandbox /features:news /features:parallel-fetch /features:pid-sandbox /features:preserve-libs /features:protect-owned /features:qa-unresolved-soname-deps /features:sandbox /features:sfperms /features:strict /features:unknown-features-warn /features:unmerge-logs /features:unmerge-orphans /features:userfetch /features:userpriv /features:usersandbox /features:usersync /features:xattr HelloWorld.cs Socket.cs Utilities.cs Stress.cs FailLogger.cs CompatArraySegmentTest.cs DebugServer.cs ModMonoWorkerTest.cs &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/temp/.NETFramework,Version=v4.0.AssemblyAttributes.cs&quot;
+HelloWorld.cs(30,7): error CS0246: The type or namespace name 'NUnit' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+Socket.cs(35,7): error CS0246: The type or namespace name 'NUnit' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+Stress.cs(30,7): error CS0246: The type or namespace name 'NUnit' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+FailLogger.cs(30,7): error CS0246: The type or namespace name 'NUnit' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+CompatArraySegmentTest.cs(30,7): error CS0246: The type or namespace name 'NUnit' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+ModMonoWorkerTest.cs(29,7): error CS0246: The type or namespace name 'NUnit' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+HelloWorld.cs(35,3): error CS0246: The type or namespace name 'TestFixtureAttribute' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+HelloWorld.cs(35,3): error CS0246: The type or namespace name 'TestFixture' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+Stress.cs(37,3): error CS0246: The type or namespace name 'TestFixtureAttribute' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+Stress.cs(37,3): error CS0246: The type or namespace name 'TestFixture' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+ModMonoWorkerTest.cs(35,3): error CS0246: The type or namespace name 'TestFixtureAttribute' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+ModMonoWorkerTest.cs(35,3): error CS0246: The type or namespace name 'TestFixture' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+Socket.cs(38,3): error CS0246: The type or namespace name 'TestFixtureAttribute' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+Socket.cs(38,3): error CS0246: The type or namespace name 'TestFixture' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+CompatArraySegmentTest.cs(34,3): error CS0246: The type or namespace name 'TestFixtureAttribute' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+CompatArraySegmentTest.cs(34,3): error CS0246: The type or namespace name 'TestFixture' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+HelloWorld.cs(38,4): error CS0246: The type or namespace name 'SetUpAttribute' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+HelloWorld.cs(38,4): error CS0246: The type or namespace name 'SetUp' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+Stress.cs(40,4): error CS0246: The type or namespace name 'SetUpAttribute' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+Stress.cs(40,4): error CS0246: The type or namespace name 'SetUp' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+HelloWorld.cs(46,4): error CS0616: 'Mono.WebServer.Test' is not an attribute class [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+ModMonoWorkerTest.cs(38,4): error CS0616: 'Mono.WebServer.Test' is not an attribute class [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+Stress.cs(48,4): error CS0616: 'Mono.WebServer.Test' is not an attribute class [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+Stress.cs(73,4): error CS0616: 'Mono.WebServer.Test' is not an attribute class [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+CompatArraySegmentTest.cs(37,4): error CS0616: 'Mono.WebServer.Test' is not an attribute class [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+Socket.cs(45,4): error CS0616: 'Mono.WebServer.Test' is not an attribute class [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+Socket.cs(59,4): error CS0616: 'Mono.WebServer.Test' is not an attribute class [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+Done Building Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj&quot; (default targets) -- FAILED.
+Done Building Project &quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default targets) -- FAILED.
+
+Build FAILED.
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/Mono.WebServer.csproj&quot; (default target) (2) -&gt;
+(CoreCompile target) -&gt; 
+  MonoWorkerRequest.cs(490,12): warning CS0618: 'FileStream.FileStream(IntPtr, FileAccess)' is obsolete: 'Use FileStream(SafeFileHandle handle, FileAccess access) instead' [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer/Mono.WebServer.csproj]
+
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Apache/Mono.WebServer.Apache.csproj&quot; (default target) (3) -&gt;
+  ModMonoWorkerRequest.cs(610,12): warning CS0618: 'FileStream.FileStream(IntPtr, FileAccess)' is obsolete: 'Use FileStream(SafeFileHandle handle, FileAccess access) instead' [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Apache/Mono.WebServer.Apache.csproj]
+
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/Mono.WebServer.FastCgi.csproj&quot; (default target) (4) -&gt;
+  Record.cs(119,43): warning CS0612: 'Record' is obsolete [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/Mono.WebServer.FastCgi.csproj]
+  Request.cs(572,4): warning CS0612: 'Record.CopyTo(byte[], int)' is obsolete [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/Mono.WebServer.FastCgi.csproj]
+  Server/OnDemandServer.cs(42,29): warning CS0067: The event 'OnDemandServer.RequestReceived' is never used [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/Mono.WebServer.FastCgi.csproj]
+  Server/FakeGenericServer.cs(37,29): warning CS0067: The event 'FakeGenericServer&lt;T&gt;.RequestReceived' is never used [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.FastCgi/Mono.WebServer.FastCgi.csproj]
+
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.XSP/Mono.WebServer.XSP.csproj&quot; (default target) (5) -&gt;
+  XSPWorkerRequest.cs(708,28): warning CS0618: 'FileStream.Handle' is obsolete: 'Use SafeFileHandle instead' [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.XSP/Mono.WebServer.XSP.csproj]
+  main.cs(44,14): warning CS0649: Field 'Server.key' is never assigned to, and will always have its default value null [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.XSP/Mono.WebServer.XSP.csproj]
+  XSPWorker.cs(52,27): warning CS0649: Field 'XSPWorker.ssl' is never assigned to, and will always have its default value null [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.XSP/Mono.WebServer.XSP.csproj]
+
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj&quot; (default target) (6) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Fpm/Mono.WebServer.Fpm.csproj&quot; (default target) (7) -&gt;
+  Connection.cs(39,29): warning CS0067: The event 'Connection.RequestReceived' is never used [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Fpm/Mono.WebServer.Fpm.csproj]
+
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj&quot; (default target) (6) -&gt;
+(ResolveAssemblyReferences target) -&gt; 
+  /usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(2110,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly &quot;nunit.core&quot;. Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors. [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+  /usr/share/msbuild/15.9/Microsoft.Common.CurrentVersion.targets(2110,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly &quot;nunit.framework&quot;. Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors. [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+
+
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/xsp.sln&quot; (default target) (1) -&gt;
+&quot;/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj&quot; (default target) (6) -&gt;
+(CoreCompile target) -&gt; 
+  HelloWorld.cs(30,7): error CS0246: The type or namespace name 'NUnit' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+  Socket.cs(35,7): error CS0246: The type or namespace name 'NUnit' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+  Stress.cs(30,7): error CS0246: The type or namespace name 'NUnit' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+  FailLogger.cs(30,7): error CS0246: The type or namespace name 'NUnit' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+  CompatArraySegmentTest.cs(30,7): error CS0246: The type or namespace name 'NUnit' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+  ModMonoWorkerTest.cs(29,7): error CS0246: The type or namespace name 'NUnit' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+  HelloWorld.cs(35,3): error CS0246: The type or namespace name 'TestFixtureAttribute' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+  HelloWorld.cs(35,3): error CS0246: The type or namespace name 'TestFixture' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+  Stress.cs(37,3): error CS0246: The type or namespace name 'TestFixtureAttribute' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+  Stress.cs(37,3): error CS0246: The type or namespace name 'TestFixture' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+  ModMonoWorkerTest.cs(35,3): error CS0246: The type or namespace name 'TestFixtureAttribute' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+  ModMonoWorkerTest.cs(35,3): error CS0246: The type or namespace name 'TestFixture' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+  Socket.cs(38,3): error CS0246: The type or namespace name 'TestFixtureAttribute' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+  Socket.cs(38,3): error CS0246: The type or namespace name 'TestFixture' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+  CompatArraySegmentTest.cs(34,3): error CS0246: The type or namespace name 'TestFixtureAttribute' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+  CompatArraySegmentTest.cs(34,3): error CS0246: The type or namespace name 'TestFixture' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+  HelloWorld.cs(38,4): error CS0246: The type or namespace name 'SetUpAttribute' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+  HelloWorld.cs(38,4): error CS0246: The type or namespace name 'SetUp' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+  Stress.cs(40,4): error CS0246: The type or namespace name 'SetUpAttribute' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+  Stress.cs(40,4): error CS0246: The type or namespace name 'SetUp' could not be found (are you missing a using directive or an assembly reference?) [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+  HelloWorld.cs(46,4): error CS0616: 'Mono.WebServer.Test' is not an attribute class [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+  ModMonoWorkerTest.cs(38,4): error CS0616: 'Mono.WebServer.Test' is not an attribute class [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+  Stress.cs(48,4): error CS0616: 'Mono.WebServer.Test' is not an attribute class [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+  Stress.cs(73,4): error CS0616: 'Mono.WebServer.Test' is not an attribute class [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+  CompatArraySegmentTest.cs(37,4): error CS0616: 'Mono.WebServer.Test' is not an attribute class [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+  Socket.cs(45,4): error CS0616: 'Mono.WebServer.Test' is not an attribute class [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+  Socket.cs(59,4): error CS0616: 'Mono.WebServer.Test' is not an attribute class [/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f/src/Mono.WebServer.Test/Mono.WebServer.Test.csproj]
+
+    12 Warning(s)
+    27 Error(s)
+
+Time Elapsed 00:00:09.72
+ <span style="color:red;font-weight:bold;">*</span> ERROR: www-servers/xsp-4.7.1-r1::shnurise failed (compile phase):
+ <span style="color:red;font-weight:bold;">*</span>   (no error message)
+ <span style="color:red;font-weight:bold;">*</span> 
+ <span style="color:red;font-weight:bold;">*</span> Call stack:
+ <span style="color:red;font-weight:bold;">*</span>     ebuild.sh, line  125:  Called src_compile
+ <span style="color:red;font-weight:bold;">*</span>   environment, line 2404:  Called emsbuild '/p:PrepareProjectReferencesDependsOn=&quot;AssignProjectConfiguration;_SplitProjectReferencesByFileExistence&quot;' '/p:GetCopyToOutputDirectoryItemsDependsOn=&quot;AssignTargetPaths;_SplitProjectReferencesByFileExistence&quot;' 'xsp.sln'
+ <span style="color:red;font-weight:bold;">*</span>   environment, line 1275:  Called emsbuild_raw '/p:Configuration=Release' '/p:DebugSymbols=False' '/p:PrepareProjectReferencesDependsOn=&quot;AssignProjectConfiguration;_SplitProjectReferencesByFileExistence&quot;' '/p:GetCopyToOutputDirectoryItemsDependsOn=&quot;AssignTargetPaths;_SplitProjectReferencesByFileExistence&quot;' 'xsp.sln'
+ <span style="color:red;font-weight:bold;">*</span>   environment, line 1280:  Called die
+ <span style="color:red;font-weight:bold;">*</span> The specific snippet of code:
+ <span style="color:red;font-weight:bold;">*</span>       msbuild &quot;$@&quot; || die
+ <span style="color:red;font-weight:bold;">*</span> 
+ <span style="color:red;font-weight:bold;">*</span> If you need support, post the output of `emerge --info '=www-servers/xsp-4.7.1-r1::shnurise'`,
+ <span style="color:red;font-weight:bold;">*</span> the complete build log and the output of `emerge -pqv '=www-servers/xsp-4.7.1-r1::shnurise'`.
+ <span style="color:red;font-weight:bold;">*</span> The complete build log is located at '/var/tmp/portage/www-servers/xsp-4.7.1-r1/temp/build.log'.
+ <span style="color:red;font-weight:bold;">*</span> The ebuild environment file is located at '/var/tmp/portage/www-servers/xsp-4.7.1-r1/temp/environment'.
+ <span style="color:red;font-weight:bold;">*</span> Working directory: '/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f'
+ <span style="color:red;font-weight:bold;">*</span> S: '/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f'
+
+&gt;&gt;&gt; <span style="color:red;font-weight:bold;">Failed</span> to emerge <span style="color:green;">www-servers/xsp-4.7.1-r1</span>, Log file:
+
+&gt;&gt;&gt;  '<span style="color:green;">/var/tmp/portage/www-servers/xsp-4.7.1-r1/temp/build.log</span>'
+
+<span style="color:green;font-weight:bold;"> * </span>Messages for package <span style="color:green;">www-servers/xsp-4.7.1-r1</span>:
+
+<span style="color:green;font-weight:bold;"> * </span>/p:Configuration=Release /p:DebugSymbols=False /p:PrepareProjectReferencesDependsOn=&quot;AssignProjectConfiguration;_SplitProjectReferencesByFileExistence&quot; /p:GetCopyToOutputDirectoryItemsDependsOn=&quot;AssignTargetPaths;_SplitProjectReferencesByFileExistence&quot; xsp.sln
+<span style="color:red;font-weight:bold;"> * </span>ERROR: www-servers/xsp-4.7.1-r1::shnurise failed (compile phase):
+<span style="color:red;font-weight:bold;"> * </span>  (no error message)
+<span style="color:red;font-weight:bold;"> * </span>
+<span style="color:red;font-weight:bold;"> * </span>Call stack:
+<span style="color:red;font-weight:bold;"> * </span>    ebuild.sh, line  125:  Called src_compile
+<span style="color:red;font-weight:bold;"> * </span>  environment, line 2404:  Called emsbuild '/p:PrepareProjectReferencesDependsOn=&quot;AssignProjectConfiguration;_SplitProjectReferencesByFileExistence&quot;' '/p:GetCopyToOutputDirectoryItemsDependsOn=&quot;AssignTargetPaths;_SplitProjectReferencesByFileExistence&quot;' 'xsp.sln'
+<span style="color:red;font-weight:bold;"> * </span>  environment, line 1275:  Called emsbuild_raw '/p:Configuration=Release' '/p:DebugSymbols=False' '/p:PrepareProjectReferencesDependsOn=&quot;AssignProjectConfiguration;_SplitProjectReferencesByFileExistence&quot;' '/p:GetCopyToOutputDirectoryItemsDependsOn=&quot;AssignTargetPaths;_SplitProjectReferencesByFileExistence&quot;' 'xsp.sln'
+<span style="color:red;font-weight:bold;"> * </span>  environment, line 1280:  Called die
+<span style="color:red;font-weight:bold;"> * </span>The specific snippet of code:
+<span style="color:red;font-weight:bold;"> * </span>      msbuild &quot;$@&quot; || die
+<span style="color:red;font-weight:bold;"> * </span>
+<span style="color:red;font-weight:bold;"> * </span>If you need support, post the output of `emerge --info '=www-servers/xsp-4.7.1-r1::shnurise'`,
+<span style="color:red;font-weight:bold;"> * </span>the complete build log and the output of `emerge -pqv '=www-servers/xsp-4.7.1-r1::shnurise'`.
+<span style="color:red;font-weight:bold;"> * </span>The complete build log is located at '/var/tmp/portage/www-servers/xsp-4.7.1-r1/temp/build.log'.
+<span style="color:red;font-weight:bold;"> * </span>The ebuild environment file is located at '/var/tmp/portage/www-servers/xsp-4.7.1-r1/temp/environment'.
+<span style="color:red;font-weight:bold;"> * </span>Working directory: '/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f'
+<span style="color:red;font-weight:bold;"> * </span>S: '/var/tmp/portage/www-servers/xsp-4.7.1-r1/work/xsp-b7190dd996b2c652630297ed9b1b9907602b0d4f'
+oot@:otify;Command completed;sudo emerge -v =xsp-4.7.1-r1
+</pre>
+</div>
+<br />
+<br />
+src/Mono.WebServer.Test/Mono.WebServer.Test.csproj
+<br />
+<br />
+<a href="https://stackoverflow.com/questions/9778916/how-can-i-exclude-a-project-from-a-build-in-msbuild">https://stackoverflow.com/questions/9778916/how-can-i-exclude-a-project-from-a-build-in-msbuild</a>
+<br />
+«If you delete this "Build.0" entry, it will load in the solution fine, but will not be built»
+
+<script type="text/javascript" src="../collapsable.js"></script>
+<script type="text/javascript">
+	page_process();
+</script>
+</body>
+</body>
+</html>
