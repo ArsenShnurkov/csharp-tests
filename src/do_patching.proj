@@ -1,0 +1,14 @@
+<!-- 
+https://docs.microsoft.com/en-us/visualstudio/msbuild/walkthrough-creating-an-msbuild-project-file-from-scratch
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<Target Name="Build">
+		<Message Text="Patching the projects: $(Project)" />
+		<Copy SourceFiles="$(Project)" DestinationFolder="bin" />
+		<XmlPoke
+			XmlInputPath="bin/$(Project)"
+			Value="Gentoo.NET.Sdk"
+			Query="/Project[@Sdk='Microsoft.NET.Sdk']/@Sdk[1]"
+		/>
+	</Target>
+</Project>
